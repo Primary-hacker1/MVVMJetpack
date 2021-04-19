@@ -1,4 +1,4 @@
-package com.yx.coroutine
+package com.common.throwe
 
 import com.common.throwe.BaseResponseThrowable
 import java.lang.Exception
