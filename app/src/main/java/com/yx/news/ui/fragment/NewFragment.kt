@@ -1,5 +1,6 @@
 package com.yx.news.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.CommonBaseFragment
@@ -35,6 +36,7 @@ class NewFragment : CommonBaseFragment<FragmentNewBinding>() {
         return R.layout.fragment_new
     }
 
+    @SuppressLint("UseRequireInsteadOfGet")
     override fun initView() {
         val type = arguments!!.getString("type", "")
         viewModel.getRxNews(type)
