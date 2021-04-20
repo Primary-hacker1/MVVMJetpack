@@ -21,6 +21,8 @@ import javax.inject.Inject
 
 abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
 
+    protected val TAG: String = CommonBaseFragment::class.java.simpleName
+
     /**
      * 控件是否初始化完成
      */

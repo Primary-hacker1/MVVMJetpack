@@ -20,6 +20,8 @@ import java.util.*
  */
 abstract class CommonBaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
+    protected val TAG: String = CommonBaseActivity::class.java.simpleName
+
     lateinit var binding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {

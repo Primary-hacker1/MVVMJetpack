@@ -15,8 +15,8 @@ public class GlideApp {
      *加载图片(默认)
      */
     public static void loadImage(String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.ic_logo) //占位图
-                .error(R.mipmap.ic_logo) //错误图
+        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.icon) //占位图
+                .error(R.mipmap.icon) //错误图
                 // .priority(Priority.HIGH)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
@@ -26,8 +26,8 @@ public class GlideApp {
     }
 
     public static void loadImage(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.ic_logo) //占位图
-                .error(R.mipmap.ic_logo) //错误图
+        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.icon) //占位图
+                .error(R.mipmap.icon) //错误图
                 // .priority(Priority.HIGH)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
@@ -37,7 +37,7 @@ public class GlideApp {
     }
 
     public static void loadImage(Context context, Bitmap url, ImageView imageView) {
-        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.ic_launcher) //占位图
+        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.icon) //占位图
                 .error(R.drawable.ic_launcher_background) //错误图
                 // .priority(Priority.HIGH)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -47,7 +47,7 @@ public class GlideApp {
     }
 
     public static void loadImage(Context context, int url, ImageView imageView) {
-        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.ic_launcher) //占位图
+        RequestOptions options = new RequestOptions().centerCrop().placeholder(R.mipmap.icon) //占位图
                 .error(R.drawable.ic_launcher_background) //错误图
                 // .priority(Priority.HIGH)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

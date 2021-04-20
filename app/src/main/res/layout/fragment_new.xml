@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.yx.news.ui.fragment.NewViewModel" />
+            type="com.yx.news.ui.viewmodel.NewViewModel" />
     </data>
 
     <LinearLayout

@@ -8,6 +8,7 @@ import com.yx.news.R
 import com.yx.news.databinding.FragmentNewBinding
 import com.yx.news.di.FragmentScoped
 import com.yx.news.ui.adapter.NewAdapter
+import com.yx.news.ui.viewmodel.NewViewModel
 import javax.inject.Inject
 
 /**

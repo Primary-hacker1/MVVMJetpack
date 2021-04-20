@@ -67,9 +67,6 @@
     subscribe(observer)
 }
 ```
-### 4 示列
-   代码中是以网易新闻api为接口
-   ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f7c77be61cb43e18a2c5b232e6dc5f8~tplv-k3u1fbpfcp-zoom-1.image)
 ### 5 更多介绍
    [掘金](https://juejin.im/post/6873448411727986701)
    [csdn](https://blog.csdn.net/qq_30710615/article/details/108649677)
