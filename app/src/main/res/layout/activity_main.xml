@@ -5,6 +5,10 @@
 
     <data>
 
+        <import type="com.yx.news.R" />
+
+
+
     </data>
 
     <LinearLayout
@@ -14,8 +18,12 @@
         tools:context=".ui.MainActivity">
 
         <include
+            android:id="@+id/toolbar"
             layout="@layout/view_toolbar"
-            title="交接班" />
+            setTitleImage="@{R.drawable.ic_back}"
+            title='@{"标题"}'
+            titleRight='@{"submit"}'
+            />
 
         <FrameLayout
             android:layout_width="match_parent"

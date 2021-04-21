@@ -1,7 +1,9 @@
 package com.yx.news.ui.viewmodel
 
 import android.app.Application
+import android.view.View
 import androidx.databinding.ObservableArrayList
+import androidx.databinding.ObservableField
 import androidx.databinding.ObservableList
 import com.common.base.subscribes
 import com.common.viewmodel.BaseViewModel
@@ -18,6 +20,7 @@ class NewViewModel @Inject constructor(application: Application) : BaseViewModel
 
     @Inject
     lateinit var repository: UserRepository
+
 
     var itemNews: ObservableList<NewResponses.T1348647853363Bean> = ObservableArrayList()
 

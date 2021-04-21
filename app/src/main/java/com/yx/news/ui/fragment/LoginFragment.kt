@@ -17,5 +17,6 @@ class LoginFragment : CommonBaseActivity<FragmentLoginBinding>() {
 
     override fun initView() {
 
+
     }
 }

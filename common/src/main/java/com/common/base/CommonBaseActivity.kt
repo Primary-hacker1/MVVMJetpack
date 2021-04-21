@@ -43,27 +43,5 @@ abstract class CommonBaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
     protected abstract fun initView()
 
-    //设置toolbar
-    fun setSupportToolBar(toolBar: Toolbar) {
-        setSupportActionBar(toolBar)
-        val actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setDisplayShowHomeEnabled(true)
-            actionBar.setHomeButtonEnabled(true)
-        }
-    }
 
-    fun setTitle(title: String) {
-        Objects.requireNonNull<ActionBar>(supportActionBar).title = title
-    }
-
-    override fun setTitle(title: Int) {
-        Objects.requireNonNull<ActionBar>(supportActionBar).title = getString(title)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 }

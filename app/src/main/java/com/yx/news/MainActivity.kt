@@ -2,17 +2,12 @@ package com.yx.news
 
 import android.content.Context
 import android.content.Intent
-import androidx.fragment.app.Fragment
-import com.common.base.BasePageAdapter
 import com.common.base.CommonBaseActivity
 import com.yx.news.databinding.ActivityMainBinding
-import com.yx.news.model.Constants
-import com.yx.news.ui.fragment.NewFragment
-import com.yx.news.ui.activity.SucceedPrisonActivity
 import com.yx.news.util.BaseUtil
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
+class MainActivity : CommonBaseActivity<ActivityMainBinding>(){
+
 
     companion object {
         /**
@@ -25,7 +20,7 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         }
     }
 
-//    var titleList = arrayListOf<String>(
+    //    var titleList = arrayListOf<String>(
 //        "新闻", "娱乐"
 //    )
 //    var titleType = arrayListOf<String>(
@@ -33,9 +28,15 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
 //        "T1348648517839"
 //    )
 
+
+
     override fun initView() {
 
-        setTitle(Constants.succeedName)
+        binding.toolbar.tvRight.setOnClickListener {
+
+
+        }
+
 
 /*        val mFragment = ArrayList<Fragment>()
         for (i in titleList.indices) {
@@ -45,9 +46,9 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         viewPager.adapter = adapter
         tabLyout.setupWithViewPager(viewPager)*/
 
-        startActivity<SucceedPrisonActivity> {
-            putExtra("", "")
-        }
+//        startActivity<SucceedPrisonActivity> {
+//            putExtra("", "")
+//        }
 
     }
 

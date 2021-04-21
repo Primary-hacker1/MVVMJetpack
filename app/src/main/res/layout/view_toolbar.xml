@@ -4,21 +4,64 @@
     tools:ignore="MissingDefaultResource">
 
     <data>
+
+        <import type="com.yx.news.R" />
+
+        <import type="com.yx.news.MainActivity" />
+
+
         <variable
             name="title"
             type="String" />
+
+        <variable
+            name="titleRight"
+            type="String" />
+
+        <variable
+            name="setTitleImage"
+            type="Integer" />
+
+        <variable
+            name="setRightOnClick"
+            type="Integer" />
+
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:orientation="vertical">
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatImageView
+            setImage="@{setTitleImage}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            onText="@{title}"
-            />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" />
 
-    </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            setText="@{title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorWhile"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_right"
+            setText="@{titleRight}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+
+            android:textColor="@color/colorWhile"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 </layout>

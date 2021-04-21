@@ -92,11 +92,11 @@
     <orderEntry type="module-library">
       <library name="Gradle: kaptGeneratedClasses">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/debug" />
           <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/debugAndroidTest" />
           <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/releaseUnitTest" />
-          <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/debugUnitTest" />
           <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/release" />
+          <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/debugUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../common/build/tmp/kapt3/classes/debug" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

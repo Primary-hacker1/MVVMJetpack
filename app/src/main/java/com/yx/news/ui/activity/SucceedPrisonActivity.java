@@ -1,6 +1,8 @@
 package com.yx.news.ui.activity;
 
 
+import android.view.View;
+
 import com.common.base.CommonBaseActivity;
 import com.yx.news.R;
 import com.yx.news.databinding.ActivitySucceedPrisonBinding;
@@ -22,8 +24,6 @@ public class SucceedPrisonActivity extends CommonBaseActivity<ActivitySucceedPri
 
     @Override
     protected void initView() {
-        binding.toolbar.setTitle(Constants.succeed);//标题
-//        setTitle(Constants.succeed);
     }
 
 }

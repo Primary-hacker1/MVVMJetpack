@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <import type="com.yx.news.R" />
     </data>
 
     <LinearLayout
@@ -11,8 +11,10 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/toolbar"
-            layout="@layout/view_toolbar" />
+            layout="@layout/view_toolbar"
+            setTitleImage="@{R.drawable.ic_back}"
+            title='@{"标题"}'
+            titleRight='@{"submit"}' />
 
         <com.yx.news.ui.layout.SucceedFragmentLayout
             android:id="@+id/sfl_succeed"
