@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JectPackMvvM.iml" filepath="$PROJECT_DIR$/.idea/modules/JectPackMvvM.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JectPackMvvM.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JectPackMvvM.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/JectPackMvvM.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/JectPackMvvM.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/handover.iml" filepath="$PROJECT_DIR$/.idea/modules/handover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/handover.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/handover.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/handover.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/handover.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libview/handover.libview.iml" filepath="$PROJECT_DIR$/.idea/modules/libview/handover.libview.iml" />
     </modules>
   </component>
 </project>

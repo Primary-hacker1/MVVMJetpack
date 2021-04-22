@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="com.yx.news.R" />
+        <import type="com.just.news.R" />
 
 
 
@@ -17,11 +17,11 @@
         android:orientation="vertical"
         tools:context=".ui.MainActivity">
 
+<!--            title='@{"标题"}'-->
         <include
             android:id="@+id/toolbar"
             layout="@layout/view_toolbar"
             setTitleImage="@{R.drawable.ic_back}"
-            title='@{"标题"}'
             titleRight='@{"submit"}'
             />
 

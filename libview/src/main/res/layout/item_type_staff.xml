@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/succeed_bg"
+        android:layout_marginTop="5dp">
+
+
+        <RelativeLayout
+            android:id="@+id/ll_1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/ming"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scrollbars="horizontal"
+                android:layout_marginLeft="@dimen/space_10"
+                android:gravity="center_vertical"
+                android:text="姓名"
+                android:lines="2"
+                android:ellipsize="end"
+                android:textColor="@color/c000000"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/orgNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ming"
+                android:layout_toLeftOf="@id/cb"
+                android:layout_marginLeft="@dimen/space_5"
+                android:lines="2"
+                android:ellipsize="end"
+                android:text="工号"
+                android:textColor="@color/c000000"
+                android:textSize="15dp" />
+
+            <CheckBox
+                android:id="@+id/cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/space_20"
+                android:button="@drawable/org_selector"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f4f5f7" />
+    </RelativeLayout>
+</LinearLayout>

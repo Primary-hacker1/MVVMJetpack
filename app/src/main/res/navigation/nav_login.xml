@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/NewFragment">
+    app:startDestination="@id/LoginFragment">
 
     <fragment
-        android:id="@+id/NewFragment"
-        android:name="com.yx.news.ui.fragment.NewFragment"
+        android:id="@+id/LoginFragment"
+        android:name="com.just.news.ui.fragment.LoginFragment"
         android:label="newFragment"
-        tools:layout="@layout/fragment_new" />
+        tools:layout="@layout/fragment_login" />
 
 </navigation>

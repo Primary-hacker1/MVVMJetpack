@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hk_padding">2dp</dimen>
+    <dimen name="hk_margin">1dp</dimen>
+
+    <dimen name="bladeview_fontsize">12sp</dimen>
+    <dimen name="bladeview_popup_fontsize">20sp</dimen>
+    <dimen name="bladeview_popup_height">80.0dip</dimen>
+
+    <dimen name="text_title">19sp</dimen>
+    <dimen name="text_subhead">17sp</dimen>
+    <dimen name="text_body">12sp</dimen>
+    <dimen name="text_caption">13sp</dimen>
+    <dimen name="line_height">1dp</dimen>
+
+
+    <dimen name="item_menu">50dp</dimen>
+    <dimen name="item_menu_large">55dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="abc_config_prefDialogWidth">320dp</dimen>
+    <dimen name="abc_action_bar_stacked_tab_max_width">180dp</dimen>
+    <dimen name="abc_action_bar_stacked_max_height">48dp</dimen>
+    <dimen name="abc_panel_menu_list_width">296dp</dimen>
+    <dimen name="abc_search_view_text_min_width">160dip</dimen>
+    <dimen name="abc_search_view_preferred_width">320dip</dimen>
+    <dimen name="qiu">500dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_left">8dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_right">8dip</dimen>
+    <dimen name="abc_dropdownitem_icon_width">32dip</dimen>
+    <dimen name="NormalTextSize">14.5sp</dimen>
+    <dimen name="InputEditTextMinHeight">32.0dip</dimen>
+    <dimen name="BasicPaddingSize">4.0dip</dimen>
+    <dimen name="NormalPadding">12.0dip</dimen>
+    <dimen name="HintTextSize">14.0dip</dimen>
+    <dimen name="SmallPadding">12dip</dimen>
+    <dimen name="SmallListHeight">48.0dip</dimen>
+    <dimen name="LargestPadding">32.0dip</dimen>
+    <dimen name="SmallTextSize">14.0dip</dimen>
+    <dimen name="BigTextSize">17.0dip</dimen>
+    <dimen name="SmallestPadding">2.0dip</dimen>
+    <dimen name="SmallestTextSize">12.0dip</dimen>
+    <dimen name="DefaultTabbarHeight">40.0dip</dimen>
+    <dimen name="ccp_button_text_size">18sp</dimen>
+    <dimen name="primary_text_size">14sp</dimen>
+    <dimen name="NormalButtonHeight">48.0dip</dimen>
+    <dimen name="LargerPadding">12.0dip</dimen>
+    <dimen name="LargePadding">12.0dip</dimen>
+    <dimen name="SmallButtonWidth">48.0dip</dimen>
+    <dimen name="SmallButtonHeight">32.0dip</dimen>
+    <dimen name="ButtonCornerSize">2.0dip</dimen>
+    <dimen name="NormalAvatarWrapSize">56.0dip</dimen>
+    <dimen name="NormalListHeight">57.0dip</dimen>
+    <dimen name="SmallerPadding">3.0dip</dimen>
+    <dimen name="NormalAvatarSize">48.0dip</dimen>
+    <dimen name="OneDPPadding">1.0dip</dimen>
+    <dimen name="SmallerTextSize">13.0dip</dimen>
+    <dimen name="ChattingContentMinHeight">49.0dip</dimen>
+    <dimen name="CheckBoxWidth">20.0dip</dimen>
+    <dimen name="CheckBoxHeight">20.0dip</dimen>
+    <dimen name="ChattingFootPaddingBottom">7.5dip</dimen>
+    <dimen name="ChattingFootEditMaxHeigh">80.0dip</dimen>
+    <dimen name="ChattingFootEditMinHeigh">28.0dip</dimen>
+    <dimen name="ChattingFootSendHeight">29.0dip</dimen>
+    <dimen name="ChattingFootVoiceHeight">34.0dip</dimen>
+    <dimen name="ChattingFootSmallerPadding">4.0dip</dimen>
+    <dimen name="ChattingFootSendMinWidth">44.0dip</dimen>
+    <dimen name="LittlePadding">6.0dip</dimen>
+    <dimen name="FixedTitleWidth">80.0dip</dimen>
+    <dimen name="popup_menu_item_width">220.0dip</dimen>
+    <dimen name="popup_menu_item_minHeight">49.0dip</dimen>
+    <dimen name="popup_menu_image_margin_left">14.0dip</dimen>
+    <dimen name="popup_menu_image_margin_top">0.0dip</dimen>
+    <dimen name="popup_menu_image_margin_right">12.0dip</dimen>
+    <dimen name="popup_menu_image_margin_bottom">0.0dip</dimen>
+    <dimen name="topbar_content_height">50.0dip</dimen>
+    <dimen name="btn_topbar_layout_minwidth">80.0dip</dimen>
+    <dimen name="btn_topbar_marginHorizontal">10.0dip</dimen>
+    <dimen name="btn_topbar_minwidth">58.0dip</dimen>
+    <dimen name="btn_topbar_paddingHorizontal">10.0dip</dimen>
+    <dimen name="topbar_height">52.0dip</dimen>
+    <dimen name="TitleTextSize">18.0dip</dimen>
+    <dimen name="ContactAvatarSize">36.0dip</dimen>
+    <dimen name="ContactListHeight">52.0dip</dimen>
+    <dimen name="MediumListHeight">56.0dip</dimen>
+    <dimen name="ActionBarTextSize">18.0dip</dimen>
+    <dimen name="dialog_round_radius">4.0dip</dimen>
+    <dimen name="dialog_padding">15.0dip</dimen>
+    <dimen name="text_view_content">15.0sp</dimen>
+    <dimen name="NormalIconSize">32.0dip</dimen>
+
+    <dimen name="NormalButtonWidth">80.0dip</dimen>
+    <dimen name="MinDialogWidth">320.0dip</dimen>
+    <dimen name="text_list_title">16.0sp</dimen>
+    <dimen name="message_editor_hight">49.0dip</dimen>
+    <dimen name="Emoji_icon_size">20.0sp</dimen>
+    <dimen name="size_small">14.0dip</dimen>
+    <dimen name="text_size_middle">14sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+
+
+    <!--Emphasis modifiers for "on" colors-->
+    <dimen name="alpha_emphasis_high">@dimen/material_emphasis_high_type</dimen>
+    <dimen name="alpha_emphasis_medium">@dimen/material_emphasis_medium</dimen>
+    <dimen name="alpha_emphasis_disabled">@dimen/material_emphasis_disabled</dimen>
+    <dimen name="small_image_size">30dp</dimen>
+    <dimen name="call_dragger">300dp</dimen>
+    <dimen name="small_image_left_margin">5dp</dimen>
+    <dimen name="bottom_dialog_chat_height">450dp</dimen>
+    <dimen name="icon_video_button">50dp</dimen>
+
+
+    <dimen name="qiu_call">18dp</dimen>
+
+    <dimen name="icon_video_button_interval">30dp</dimen>
+    <dimen name="icon_video_button_small">40dp</dimen>
+    <dimen name="icon_video_button_bottom">60dp</dimen>
+    <dimen name="civ_border_width">0dp</dimen>
+    <dimen name="dimens_40dp">40dp</dimen>
+    <dimen name="dimens_50dp">50dp</dimen>
+
+    <dimen name="emc_footer_maginleft">6dp</dimen>
+
+    <dimen name="wheel_title_bar_cancel_size">15dp</dimen>
+    <dimen name="wheel_title_bar_ok_size">15dp</dimen>
+
+    <dimen name="wheel_title_bar_title_size">15dp</dimen>
+
+    <dimen name="wheel_picker_padding_left">0dp</dimen>
+    <dimen name="wheel_picker_padding_top">4dp</dimen>
+    <dimen name="wheel_picker_padding_right">0dp</dimen>
+    <dimen name="wheel_picker_padding_bottom">4dp</dimen>
+
+    <dimen name="wheel_picker_total_offset_x">4dp</dimen>
+
+
+
+    <!--时间选择器新-->
+    <dimen name="item_height">48dp</dimen>
+    <dimen name="space_1">1dp</dimen>
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_3">3dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_5">5dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="space_7">7dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_9">9dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_11">11dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_13">13dp</dimen>
+    <dimen name="space_14">14dp</dimen>
+    <dimen name="space_15">15dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_17">17dp</dimen>
+    <dimen name="space_18">18dp</dimen>
+    <dimen name="space_19">19dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_21">21dp</dimen>
+    <dimen name="space_22">22dp</dimen>
+    <dimen name="space_23">23dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_25">25dp</dimen>
+    <dimen name="space_26">26dp</dimen>
+    <dimen name="space_27">27dp</dimen>
+    <dimen name="space_28">28dp</dimen>
+    <dimen name="space_29">29dp</dimen>
+    <dimen name="space_30">30dp</dimen>
+    <dimen name="space_31">31dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_33">33dp</dimen>
+    <dimen name="space_34">34dp</dimen>
+    <dimen name="space_35">35dp</dimen>
+    <dimen name="space_36">36dp</dimen>
+    <dimen name="space_37">37dp</dimen>
+    <dimen name="space_38">38dp</dimen>
+    <dimen name="space_39">39dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_41">41dp</dimen>
+    <dimen name="space_42">42dp</dimen>
+    <dimen name="space_43">43dp</dimen>
+    <dimen name="space_44">44dp</dimen>
+    <dimen name="space_45">45dp</dimen>
+    <dimen name="space_46">46dp</dimen>
+    <dimen name="space_47">47dp</dimen>
+    <dimen name="space_48">48dp</dimen>
+    <dimen name="space_49">49dp</dimen>
+    <dimen name="space_50">50dp</dimen>
+    <dimen name="space_56">56dp</dimen>
+    <dimen name="space_64">64dp</dimen>
+    <dimen name="space_72">72dp</dimen>
+
+    <dimen name="space_90">90dp</dimen>
+    <dimen name="space_100">100dp</dimen>
+    <dimen name="space_120">120dp</dimen>
+
+    <dimen name="space_200">200dp</dimen>
+
+    <!--时间选择器新-->
+
+
+    <dimen name="page_title_height">49dp</dimen>
+    <dimen name="ptz_height">40dp</dimen>
+    <dimen name="ptz_parent_height">45dp</dimen>
+
+    <dimen name="timeseek_height">50dp</dimen>
+
+    <dimen name="timeseek_height2">20dp</dimen>
+
+    <dimen name="me_item_space">8dp</dimen>
+    <dimen name="dimen_toolbar_height">50dp</dimen>
+
+
+    <dimen name="emc_personal_item_height">50dp</dimen>
+    <dimen name="emc_personal_item_icon_width">20dp</dimen>
+    <dimen name="emc_personal_item_icon_margin_left_10">10dp</dimen>
+    <dimen name="emc_personal_item_icon_margin_left">30dp</dimen>
+    <dimen name="emc_live_footer_height">40dp</dimen>
+
+
+    <dimen name="scanner_view_corner_width">14dp</dimen>
+    <dimen name="scanner_view_corner_thick">4dp</dimen>
+    <dimen name="scanner_view_focus_line_thick">1dp</dimen>
+    <dimen name="scanner_view_tip_top">28dp</dimen>
+    <dimen name="scanner_view_tip_size">14sp</dimen>
+
+</resources>

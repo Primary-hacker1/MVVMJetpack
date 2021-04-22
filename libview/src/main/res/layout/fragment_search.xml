@@ -1,0 +1,66 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_14"
+                android:background="@drawable/succeed_bg"
+                android:drawableLeft="@drawable/icon_search"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                android:hint="输入姓名/警号/手机号"
+                android:imeOptions="actionSearch"
+                android:padding="8dp"
+                android:paddingLeft="14dp"
+                android:singleLine="true"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/search_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@android:color/transparent"
+                android:padding="6dp"
+                android:src="@drawable/btn_close"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/prList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="@dimen/space_14"
+            android:divider="@color/c888888" />
+
+        <TextView
+            android:id="@+id/no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="33dp"
+            android:text="未找到满足条件的人员"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</layout>

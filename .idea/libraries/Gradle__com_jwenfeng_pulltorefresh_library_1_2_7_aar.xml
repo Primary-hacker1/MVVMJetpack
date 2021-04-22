@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jwenfeng.pulltorefresh:library:1.2.7@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1f01b1899132274aed76b3a43a752d/jetified-library-1.2.7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1f01b1899132274aed76b3a43a752d/jetified-library-1.2.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1f01b1899132274aed76b3a43a752d/jetified-library-1.2.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1f01b1899132274aed76b3a43a752d/jetified-library-1.2.7/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jwenfeng.pulltorefresh/library/1.2.7/1be139c982cbca3a7a701c9216e8eea7cfe069ff/library-1.2.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jwenfeng.pulltorefresh/library/1.2.7/6cadd708a53cc9858dcc808f70b1238bbd06a955/library-1.2.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

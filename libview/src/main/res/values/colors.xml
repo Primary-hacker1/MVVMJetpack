@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="color_toolbar">#1d5dd4</color>
+
+    <color name="colorPrimary">#285774</color>
+    <color name="colorPrimaryDark">#285774</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="cf5f5f5">#f5f5f5</color>
+    <color name="cffffff">#ffffff</color>
+    <color name="c353535">#353535</color>
+    <color name="Indigo_colorPrimaryDark">#303f9f</color>
+    <color name="Indigo_colorPrimary">#3f51b5</color>
+    <color name="Indigo_nav_color">#4675FF</color>
+    <color name="c888888">#888888</color>
+    <color name="c000000">#000000</color>
+    <color name="c3786db">#3786db</color>
+    <color name="c1d268a">#1d268a</color>
+    <color name="cdcdcdc">#dcdcdc</color>
+    <color name="dbdbdb">#cdcdcd</color>
+
+    <color name="c0e0e0e">#0e0e0e</color>
+    <color name="light_gray">#808080</color>
+    <color name="c3A5FCD">#285774</color>
+    <color name="c238E23">#238E23</color>
+    <color name="sub_title">#ababab</color>
+
+    <color name="red">#FFFF0004</color>
+    <color name="blue">#FF5757EA</color>
+    <color name="gray">#B4B3AE</color>
+
+    <color name="absence_bg">#EAEAEA</color>
+    <color name="attend_bg">#40B0F7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cB8B8B8">#D1D1D1</color>
+    <color name="absence_red">#FF2B2E</color>
+    <color name="content_background">#f2f2f2</color>
+
+    <color name="dialog_line_bg">#c6c6c6</color>
+    <color name="font_blue">#066fff</color>
+    <color name="colorDefault">#ffffff</color>
+    <color name="colorBackground">#f1f0f6</color>
+    <color name="colorText">#9b9b9b</color>
+
+    <!--时间选择器最新-->
+    <color name="wheel_default_background">#F2F2F2</color>
+    <color name="wheel_title_bar_background_color">@color/wheel_default_background</color>
+    <color name="wheel_title_bar_title_color">@color/wheel_text_color_1</color>
+    <color name="wheel_text_color_1">#333333</color>
+
+    <color name="wheel_title_bar_cancel_color">#D81B60</color>
+    <color name="wheel_title_bar_ok_color">#008577</color>
+    <color name="color_gray_BDBDBD">#BDBDBD</color>
+    <color name="color_black_212121">#212121</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="default_menu_back">#f1f1f1</color>
+    <color name="default_menu_press_back">#fafafa</color>
+    <color name="default_menu_press_text">#000000</color>
+    <color name="default_menu_text">#00cf9b</color>
+    <color name="divider">#f1f1f1</color>
+
+    <!--面包屑-->
+    <color name="light_color">#333333</color>
+    <color name="dark_color">#4A90E2</color>
+    <color name="succeed_view">#e1e1e1</color>
+    <color name="date_picker_text_dark">#333333</color>
+    <color name="ce1e1e1">#e1e1e1</color>
+    <color name="c333333">#333333</color>
+    <color name="c999999">#999999</color>
+    <color name="date_picker_divider">#11112233</color>
+</resources>

@@ -5,9 +5,9 @@
 
     <data>
 
-        <import type="com.yx.news.R" />
+        <import type="com.just.news.R" />
 
-        <import type="com.yx.news.MainActivity" />
+        <import type="com.just.news.MainActivity" />
 
 
         <variable
@@ -35,12 +35,14 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_title_back"
             setImage="@{setTitleImage}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             setText="@{title}"
@@ -59,7 +61,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-
             android:textColor="@color/colorWhile"
             android:textSize="16sp" />
 

@@ -1,3 +1,4 @@
-rootProject.name='JectPackMvvM'
+rootProject.name='handover'
 include ':app'
 include ':common'
+include ':libview'

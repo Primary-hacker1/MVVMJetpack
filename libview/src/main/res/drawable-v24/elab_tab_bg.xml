@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_selected="false" >
+    <shape android:shape="rectangle"><!-- 可选rectagle矩形，oval椭圆，line水平直线，ring环形 -->
+        <stroke android:width="1dp"  android:color="#fff"/>
+    </shape>
+    </item>
+
+    <item android:drawable="@color/white"
+        android:state_selected="true" />
+</selector>

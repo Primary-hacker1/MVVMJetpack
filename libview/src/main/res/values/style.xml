@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="TransparentDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!-- 自定义AlertDialog的样式 -->
+    <style name="TUIKit_AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <declare-styleable name="CrumbViewAttrs">
+        <attr name="light_color" format="color" />
+        <attr name="dark_color" format="color" />
+        <attr name="padding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RequiredTextView">
+        <attr name="android:text" />
+        <attr name="prefix" format="string|reference" />
+        <attr name="prefix_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CornerLabelView">
+        <attr name="side_length" format="dimension" />
+        <attr name="margin_lean_side" format="dimension" />
+        <attr name="bg_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text" format="string" />
+        <attr name="position">
+            <enum name="right_top" value="0" />
+            <enum name="right_bottom" value="1" />
+            <enum name="left_bottom" value="2" />
+            <enum name="left_top" value="3" />
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <include layout="@layout/wheel_dialog_title_bar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_4"
+        android:layout_marginEnd="@dimen/space_10"
+        android:layout_marginBottom="@dimen/space_5"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_gravity="end"
+        android:text="按月选择"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/space_10" />
+    <LinearLayout
+        android:id="@+id/wheel_id_picker_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/wheel_picker_padding_left"
+        android:paddingTop="@dimen/wheel_picker_padding_top"
+        android:paddingEnd="@dimen/wheel_picker_padding_right"
+        android:paddingBottom="@dimen/wheel_picker_padding_bottom"
+        android:paddingLeft="@dimen/wheel_picker_padding_left"
+        android:paddingRight="@dimen/wheel_picker_padding_right" />
+
+</LinearLayout>
