@@ -1,6 +1,7 @@
 package com.just.news.ui.fragment
 
 import com.common.base.CommonBaseFragment
+import com.just.news.MainActivity
 import com.just.news.R
 import com.just.news.databinding.FragmentLoginBinding
 import com.just.news.ui.viewmodel.NewViewModel
@@ -16,7 +17,9 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
     }
 
     override fun initView() {
-
+        binding.btnLogin.setOnClickListener {
+            MainActivity.startMainActivity(context)
+        }
     }
 
     /**

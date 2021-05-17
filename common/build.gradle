@@ -62,4 +62,10 @@ dependencies {
 
     api 'com.uber.autodispose:autodispose:1.1.0'
     api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'
+
+    def navigation_version = "2.2.2"
+    implementation "androidx.navigation:navigation-fragment:$navigation_version"
+    implementation "androidx.navigation:navigation-ui:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 }

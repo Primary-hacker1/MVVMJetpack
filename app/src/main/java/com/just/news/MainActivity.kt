@@ -16,10 +16,10 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         /**
          * @param context -跳转主界面
          */
-        fun startMainActivity(context: Context) {
+        fun startMainActivity(context: Context?) {
             if (BaseUtil.isFastDoubleClick()) return//双击过快处理
             val intent = Intent(context, MainActivity::class.java)
-            context.startActivity(intent)
+            context?.startActivity(intent)
         }
     }
 

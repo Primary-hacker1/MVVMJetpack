@@ -1,16 +1,15 @@
 package com.common.base
 
 import android.content.Context
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import android.os.Bundle
-import androidx.annotation.LayoutRes
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-
+import androidx.navigation.Navigation
 import dagger.android.support.AndroidSupportInjection
 
 abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
@@ -37,9 +36,9 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, getLayout(), null, false)
         isViewCreated = true
@@ -57,6 +56,14 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
         if (isVisibleToUser) {
             lazyLoad()
         }
+    }
+
+    protected open fun navigate(view: View, id: Int) {
+        Navigation.findNavController(view).navigate(id)
+    }
+
+    protected open fun navigate(view: View, id: Int, bundle: Bundle?) {
+        Navigation.findNavController(view).navigate(id, bundle)
     }
 
     /**

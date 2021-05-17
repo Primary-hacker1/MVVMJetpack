@@ -7,8 +7,6 @@
 
         <import type="com.just.news.R" />
 
-
-
     </data>
 
     <LinearLayout
@@ -30,7 +28,7 @@
             android:layout_height="match_parent">
 
             <fragment
-                android:id="@+id/login_layout"
+                android:id="@+id/main_layout"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
