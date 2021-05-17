@@ -3,12 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/NewFragment">
+    app:startDestination="@id/MainFragment">
 
     <fragment
         android:id="@+id/NewFragment"
         android:name="com.just.news.ui.fragment.NewFragment"
         android:label="newFragment"
         tools:layout="@layout/fragment_new" />
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.just.news.ui.fragment.MainFragment"
+        android:label="mainFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_MainFragment_to_NewFragment"
+            app:destination="@id/NewFragment" />
+    </fragment>
 
 </navigation>

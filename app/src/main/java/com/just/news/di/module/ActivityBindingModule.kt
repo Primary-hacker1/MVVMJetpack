@@ -4,7 +4,6 @@ import com.just.news.MainActivity
 import com.just.news.di.ActivityScoped
 import com.just.news.di.FragmentScoped
 import com.just.news.ui.activity.LoginActivity
-import com.just.news.ui.activity.SucceedPrisonActivity
 import com.just.news.ui.fragment.LoginFragment
 import com.just.news.ui.fragment.NewFragment
 import dagger.Module
@@ -19,10 +18,6 @@ abstract class ActivityBindingModule {
     @FragmentScoped
     @ContributesAndroidInjector
     abstract fun newFragment(): NewFragment
-
-    @ActivityScoped
-    @ContributesAndroidInjector
-    abstract fun succeedActivity(): SucceedPrisonActivity
 
     @FragmentScoped
     @ContributesAndroidInjector

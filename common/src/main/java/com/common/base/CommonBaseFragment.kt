@@ -11,17 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
-import io.reactivex.Observable
-import io.reactivex.subjects.BehaviorSubject
-import javax.inject.Inject
 
 abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
 
     protected val TAG: String = CommonBaseFragment::class.java.simpleName
+
+    private var mContext: Context? = null
 
     /**
      * 控件是否初始化完成
@@ -37,13 +33,13 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
-
+        this.mContext = context
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, getLayout(), null, false)
         isViewCreated = true

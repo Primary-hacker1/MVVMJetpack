@@ -2,68 +2,86 @@ package com.common.network;
 
 import android.util.Log;
 
-import androidx.viewbinding.BuildConfig;
+import androidx.databinding.library.baseAdapters.BuildConfig;
 
 
+/**
+ * Log封装
+ */
 public class LogUtils {
-	public static boolean isDebug = BuildConfig.DEBUG;
-	public static <T> void d(String tag, T msg) {
-		if (isDebug) {
-			Log.d(tag, String.valueOf(msg));
-		}
-	}
-	public static <T> void e(String tag, T msg) {
-		if (isDebug) {
-			Log.e(tag, String.valueOf(msg));
-		}
-	}
-	public static <T> void e(String tag, T msg, Throwable tr){
-		if(isDebug){
-			Log.e(tag, String.valueOf(msg), tr);
-		}
-	}
-	public static <T> void i(String tag, T msg) {
-		if (isDebug) {
 
-			Log.i(tag, String.valueOf(msg));
-		}
-	}
-	public static void printJson(String tag, String msg){
-		if (isDebug) {
+    public static boolean isDebug = BuildConfig.DEBUG;
 
-			if (tag == null || tag.length() == 0 || msg == null || ((String) msg).length() == 0) {
-				return;
-			}
-			int segmentSize = 3 * 1024;
-			long length = ((String) msg).length();
-			if (length <= segmentSize) {
-				// 长度小于等于限制直接打印
-				Log.i(tag, ((String) msg));
-			} else {
-				while (((String) msg).length() > segmentSize) {// 循环分段打印日志
-					String logContent = ((String) msg).substring(0, segmentSize);
-					msg = ((String) msg).replace(logContent, "");
-					Log.i("", logContent);
-				}
-				Log.i("", ((String) msg));
-				// 打印剩余日志 }
-			}
-		}
+    /**
+     * TAG根，用于全局过滤Logcat信息，不同开发者可在后面追加自己的信息
+     */
+    static String ROOT_TAG = "Just_";
 
-	}
-	public static <T> void v(String tag, T msg) {
-		if (isDebug) {
-			Log.v(tag, String.valueOf(msg));
-		}
-	}
+    static String className;//类名
+    static String methodName;//方法名
+    static int lineNumber;//行数
 
-	public static <T> void w(String tag, T msg) {
-		if (isDebug) {
-			Log.w(tag, String.valueOf(msg));
-		}
-	}
+    /**
+     * 判断是否可以调试
+     *
+     * @return
+     */
+    public static boolean isDebuggable() {
+        return BuildConfig.DEBUG;
+    }
 
+    private static String createLog(String log) {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("================");
+        buffer.append(methodName);
+        buffer.append("(").append(className).append(":").append(lineNumber).append(")================:");
+        buffer.append(log);
+        return buffer.toString();
+    }
 
+    /**
+     * 获取文件名、方法名、所在行数
+     *
+     * @param sElements
+     */
+    private static void getMethodNames(StackTraceElement[] sElements) {
+        className = sElements[1].getFileName();
+        methodName = sElements[1].getMethodName();
+        lineNumber = sElements[1].getLineNumber();
+    }
 
+    public static void e(String message) {
+        if (!isDebuggable())
+            return;
+        getMethodNames(new Throwable().getStackTrace());
+        Log.e(ROOT_TAG + className, createLog(message));
+    }
 
+    public static void i(String message) {
+        if (!isDebuggable())
+            return;
+        getMethodNames(new Throwable().getStackTrace());
+        Log.i(ROOT_TAG + className, createLog(message));
+    }
+
+    public static void d(String message) {
+        if (!isDebuggable())
+            return;
+        getMethodNames(new Throwable().getStackTrace());
+        Log.d(ROOT_TAG + className, createLog(message));
+    }
+
+    public static void v(String message) {
+        if (!isDebuggable())
+            return;
+        getMethodNames(new Throwable().getStackTrace());
+        Log.v(ROOT_TAG + className, createLog(message));
+    }
+
+    public static void w(String message) {
+        if (!isDebuggable())
+            return;
+        getMethodNames(new Throwable().getStackTrace());
+        Log.w(ROOT_TAG + className, createLog(message));
+    }
 }

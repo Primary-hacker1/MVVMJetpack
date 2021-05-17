@@ -6,7 +6,6 @@ import android.view.View
 import com.common.base.CommonBaseActivity
 import com.just.news.databinding.ActivityMainBinding
 import com.just.news.model.Constants
-import com.just.news.ui.activity.SucceedPrisonActivity
 import com.just.news.util.BaseUtil
 import kotlinx.android.synthetic.main.view_toolbar.view.*
 
@@ -47,10 +46,6 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         val adapter = BasePageAdapter(supportFragmentManager, mFragment, titleList)
         viewPager.adapter = adapter
         tabLyout.setupWithViewPager(viewPager)*/
-
-        startActivity<SucceedPrisonActivity> {
-            putExtra("", "")
-        }
 
     }
 

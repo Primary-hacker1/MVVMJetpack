@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="com.just.news.R" />
         <variable
             name="viewModel"
             type="com.just.news.ui.viewmodel.NewViewModel" />
@@ -13,6 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            setTitleImage="@{R.drawable.ic_back}"
+            titleRight='@{"submit"}'
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycle_view"
