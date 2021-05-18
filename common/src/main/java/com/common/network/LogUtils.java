@@ -2,7 +2,7 @@ package com.common.network;
 
 import android.util.Log;
 
-import androidx.databinding.library.baseAdapters.BuildConfig;
+import com.common.BuildConfig;
 
 
 /**

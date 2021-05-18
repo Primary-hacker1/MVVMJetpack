@@ -14,7 +14,7 @@ import dagger.android.support.AndroidSupportInjection
 
 abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
 
-    protected val TAG: String = CommonBaseFragment::class.java.simpleName
+    protected val TAG: String = CommonBaseFragment::class.java.canonicalName
 
     private var mContext: Context? = null
 
