@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.just.news.R" />
+        <variable
+            name="viewModel"
+            type="com.just.news.ui.viewmodel.NewViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            setTitleImage="@{R.drawable.ic_back}"
+            titleRight='@{"submit"}'
+            />
+
+    </LinearLayout>
+
+</layout>

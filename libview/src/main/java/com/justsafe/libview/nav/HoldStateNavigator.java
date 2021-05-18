@@ -14,13 +14,13 @@ import androidx.navigation.Navigator;
 import androidx.navigation.fragment.FragmentNavigator;
 
 /**
- * 导航器优化
+ * 导航器优化(fragment保活)
  */
 @Navigator.Name("hold_state_fragment")
 public class HoldStateNavigator extends FragmentNavigator {
-    private Context context;
-    private FragmentManager manager;
-    private int containerId;
+    private final Context context;
+    private final FragmentManager manager;
+    private final int containerId;
 
     public HoldStateNavigator(@NonNull Context context, @NonNull FragmentManager manager, int containerId) {
         super(context, manager, containerId);

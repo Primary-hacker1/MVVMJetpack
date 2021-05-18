@@ -32,6 +32,8 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
                 })
     }
 
+
+
     private fun initToolbar() {
         binding.toolbar.title = Constants.succeedName
         binding.toolbar.tvRight.visibility = View.GONE

@@ -3,22 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/MainFragment">
+    app:startDestination="@id/mainFragment">
 
-    <fragment
+    <!--  hold_state_fragment 保活机制  -->
+    <hold_state_fragment
+        android:id="@+id/mainFragment"
+        android:name="com.just.news.ui.fragment.MainFragment"
+        android:label="mainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_MainFragment_to_NewFragment"
+            app:destination="@id/NewFragment" />
+    </hold_state_fragment>
+
+    <hold_state_fragment
         android:id="@+id/NewFragment"
         android:name="com.just.news.ui.fragment.NewFragment"
         android:label="newFragment"
         tools:layout="@layout/fragment_new" />
 
-    <fragment
-        android:id="@+id/MainFragment"
-        android:name="com.just.news.ui.fragment.MainFragment"
-        android:label="mainFragment"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_MainFragment_to_NewFragment"
-            app:destination="@id/NewFragment" />
-    </fragment>
+    <hold_state_fragment
+        android:id="@+id/meFragment"
+        android:name="com.just.news.ui.fragment.MeFragment"
+        android:label="meFragment"
+        tools:layout="@layout/fragment_new" />
 
 </navigation>

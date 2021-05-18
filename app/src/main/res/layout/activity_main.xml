@@ -9,10 +9,9 @@
 
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context=".ui.MainActivity">
 
         <FrameLayout
@@ -25,10 +24,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:defaultNavHost="true"
-                app:navGraph="@navigation/nav_main" />
+                />
+<!--                app:navGraph="@navigation/nav_main" -->
 
         </FrameLayout>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_home_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/windowBackground"
+            app:itemTextColor="@color/main_bottom_tab_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_navigation_main_emc">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
