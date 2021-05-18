@@ -33,12 +33,6 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
 
 
     override fun initView() {
-
-        binding.toolbar.title = Constants.succeedName
-
-        binding.toolbar.tvRight.visibility = View.GONE
-
-        binding.toolbar.ivTitleBack.visibility = View.GONE
 /*        val mFragment = ArrayList<Fragment>()
         for (i in titleList.indices) {
             mFragment.add(NewFragment().newInstance(titleType[i]))

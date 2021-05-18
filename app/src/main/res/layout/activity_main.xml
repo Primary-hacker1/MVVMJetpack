@@ -15,14 +15,6 @@
         android:orientation="vertical"
         tools:context=".ui.MainActivity">
 
-<!--            title='@{"标题"}'-->
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/view_toolbar"
-            setTitleImage="@{R.drawable.ic_back}"
-            titleRight='@{"submit"}'
-            />
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
