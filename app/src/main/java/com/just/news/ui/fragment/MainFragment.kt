@@ -1,12 +1,10 @@
 package com.just.news.ui.fragment
 
 import android.view.View
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
-import com.common.network.LogUtils
 import com.just.news.R
 import com.just.news.databinding.FragmentMainBinding
+import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants
 
 /**
@@ -14,13 +12,12 @@ import com.just.news.model.Constants
  * 主界面
  *@author zt
  */
+@FragmentScoped
 class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     override fun initView() {
         initToolbar()
     }
-
-
 
     private fun initToolbar() {
         binding.toolbar.title = Constants.succeedName

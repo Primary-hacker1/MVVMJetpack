@@ -84,11 +84,11 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
         isComplete = false
     }
 
-    @LayoutRes
-    abstract fun getLayout(): Int
-
     protected abstract fun initView()
 
     protected abstract fun loadData()
+
+    @LayoutRes
+    abstract fun getLayout(): Int
 
 }

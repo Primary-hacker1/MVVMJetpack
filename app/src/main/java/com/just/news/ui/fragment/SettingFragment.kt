@@ -4,6 +4,7 @@ import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.just.news.R
 import com.just.news.databinding.FragmentSettingBinding
+import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants
 
 /**
@@ -11,10 +12,8 @@ import com.just.news.model.Constants
  * 设置界面
  *@author zt
  */
+@FragmentScoped
 class SettingFragment : CommonBaseFragment<FragmentSettingBinding>() {
-    override fun getLayout(): Int {
-        return R.layout.fragment_setting
-    }
 
     override fun initView() {
         initToolbar()
@@ -30,5 +29,10 @@ class SettingFragment : CommonBaseFragment<FragmentSettingBinding>() {
     }
 
     override fun loadData() {
+
+    }
+
+    override fun getLayout(): Int {
+        return R.layout.fragment_setting
     }
 }

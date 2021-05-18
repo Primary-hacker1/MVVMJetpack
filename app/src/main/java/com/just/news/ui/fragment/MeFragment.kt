@@ -1,6 +1,5 @@
 package com.just.news.ui.fragment
 
-import android.annotation.SuppressLint
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -29,10 +28,6 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
         binding.toolbar.ivTitleBack.visibility = View.GONE
     }
 
-    override fun getLayout(): Int {
-        return R.layout.fragment_me
-    }
-
     override fun initView() {
         initToolbar()
 
@@ -51,5 +46,9 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
 
     override fun loadData() {
 
+    }
+
+    override fun getLayout(): Int {
+        return R.layout.fragment_me
     }
 }

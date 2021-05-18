@@ -39,6 +39,10 @@
         android:id="@+id/settingFragment"
         android:name="com.just.news.ui.fragment.SettingFragment"
         android:label="settingFragment"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_meFragment"
+            app:destination="@id/meFragment" />
+    </fragment>
 
 </navigation>
