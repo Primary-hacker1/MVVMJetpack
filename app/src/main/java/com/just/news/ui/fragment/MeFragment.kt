@@ -1,8 +1,11 @@
 package com.just.news.ui.fragment
 
 import android.annotation.SuppressLint
+import android.view.View
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
+import com.common.network.LogUtils
 import com.just.news.R
 import com.just.news.databinding.FragmentMeBinding
 import com.just.news.di.FragmentScoped
@@ -22,20 +25,28 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
 
     private fun initToolbar() {
         binding.toolbar.title = me//标题
-        binding.toolbar.ivTitleBack.setOnClickListener {//返回
-            val navController =  findNavController()//fragment返回数据处理
-            navController.previousBackStackEntry?.savedStateHandle?.set("key","傻逼")
-            navController.popBackStack()
-        }
+        binding.toolbar.tvRight.visibility = View.GONE
+        binding.toolbar.ivTitleBack.visibility = View.GONE
     }
 
     override fun getLayout(): Int {
         return R.layout.fragment_me
     }
 
-    @SuppressLint("UseRequireInsteadOfGet")
     override fun initView() {
         initToolbar()
+
+        binding.btnMe.setOnClickListener {
+            navigate(it, R.id.settingFragment)
+        }
+
+        val navController = findNavController()//fragment返回数据处理
+
+        navController.currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")
+            ?.observe(this,
+                Observer {
+                    LogUtils.e(TAG + it.toString())
+                })
     }
 
     override fun loadData() {

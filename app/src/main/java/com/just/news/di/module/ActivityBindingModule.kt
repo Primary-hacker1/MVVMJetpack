@@ -4,10 +4,7 @@ import com.just.news.MainActivity
 import com.just.news.di.ActivityScoped
 import com.just.news.di.FragmentScoped
 import com.just.news.ui.activity.LoginActivity
-import com.just.news.ui.fragment.LoginFragment
-import com.just.news.ui.fragment.MainFragment
-import com.just.news.ui.fragment.MeFragment
-import com.just.news.ui.fragment.NewFragment
+import com.just.news.ui.fragment.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -36,4 +33,9 @@ abstract class ActivityBindingModule {
     @FragmentScoped
     @ContributesAndroidInjector
     abstract fun newMeFragment(): MeFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract fun newSettingFragment(): SettingFragment
+
 }

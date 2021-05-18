@@ -17,11 +17,5 @@
             setTitleImage="@{R.drawable.ic_back}"
             titleRight='@{"submit"}' />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name" />
-
     </LinearLayout>
 </layout>

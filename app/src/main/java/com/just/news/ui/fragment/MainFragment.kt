@@ -17,19 +17,7 @@ import com.just.news.model.Constants
 class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     override fun initView() {
-
         initToolbar()
-
-        binding.btnMain.setOnClickListener {
-            navigate(it, R.id.NewFragment)
-        }
-
-        val navController = findNavController()//fragment返回数据处理
-
-        navController.currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")?.observe(this,
-                Observer {
-                    LogUtils.e(TAG + it.toString())
-                })
     }
 
 
