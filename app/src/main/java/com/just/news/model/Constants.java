@@ -1,10 +1,11 @@
 package com.just.news.model;
 
 public interface Constants {
-    public static final String succeedName = "交接班";
-    public static final String succeed = "交班";
-    public static final String news = "最新";
-    public static final String me = "我的";
-    public static final String setting = "设置";
+    String succeedName = "交接班";
+    String succeed = "交班";
+    String news = "最新";
+    String me = "我的";
+    String setting = "设置";
 
+    int fragmentID = 0;
 }

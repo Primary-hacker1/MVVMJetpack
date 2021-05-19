@@ -25,21 +25,21 @@
         android:label="newFragment"
         tools:layout="@layout/fragment_new" />
 
-    <hold_state_fragment
+    <fragment
         android:id="@+id/meFragment"
         android:name="com.just.news.ui.fragment.MeFragment"
         android:label="meFragment"
-        tools:layout="@layout/fragment_me" >
+        tools:layout="@layout/fragment_me">
         <action
             android:id="@+id/action_meFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
-    </hold_state_fragment>
+    </fragment>
 
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.just.news.ui.fragment.SettingFragment"
         android:label="settingFragment"
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_settingFragment_to_meFragment"
             app:destination="@id/meFragment" />
