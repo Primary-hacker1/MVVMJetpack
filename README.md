@@ -1,3 +1,5 @@
+
+## 技术交流群773699239
 ## 项目架构组成
   为 mvvm+ okhttp+ retrofit+ RxJava+ LiveData+ dagger+ 协程RxJava在本文中是多一个使用方式和协程并不冲突 但是有点显得多余，可以自由选择
 ## 框架简介
