@@ -14,7 +14,7 @@ public abstract class BaseDialogFragment<B extends ViewDataBinding> extends Dial
 
     protected B binding;
 
-    protected String TAG = getClass().getSimpleName();
+    protected String tag = getClass().getSimpleName();
 
     boolean isShow = false;//防多次点击
 

@@ -18,7 +18,7 @@ import com.just.news.util.LiveDataBus
  *@author zt
  */
 @FragmentScoped
-class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
+class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
     override fun initView() {
         initToolbar()
@@ -32,9 +32,5 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     override fun loadData() {//懒加载
 
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.fragment_main
     }
 }

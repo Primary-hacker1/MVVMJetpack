@@ -12,11 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import dagger.android.support.AndroidSupportInjection
 
-abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
+abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (LayoutInflater) -> VB) : Fragment() {
 
     protected val TAG: String = CommonBaseFragment::class.java.canonicalName
 
     private var mContext: Context? = null
+
+    protected val binding by lazy { layout(layoutInflater) }
 
     /**
      * 控件是否初始化完成
@@ -28,7 +30,6 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
      */
     private var isComplete: Boolean = false
 
-    lateinit var binding: VB
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
@@ -40,7 +41,6 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, getLayout(), null, false)
         isViewCreated = true
         return binding.root
     }
@@ -87,8 +87,5 @@ abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
     protected abstract fun initView()
 
     protected abstract fun loadData()
-
-    @LayoutRes
-    abstract fun getLayout(): Int
 
 }

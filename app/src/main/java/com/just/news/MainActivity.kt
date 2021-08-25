@@ -2,22 +2,17 @@ package com.just.news
 
 import android.content.Context
 import android.content.Intent
-import androidx.navigation.NavActionBuilder
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import androidx.navigation.ui.NavigationUI
 import com.common.base.CommonBaseActivity
-import com.common.network.LogUtils
 import com.just.news.databinding.ActivityMainBinding
 import com.just.news.util.BaseUtil
 import com.justsafe.libview.nav.HoldStateNavigator
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_toolbar.view.*
 
-class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
-
+class MainActivity : CommonBaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     companion object {
         /**
@@ -73,10 +68,5 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
 
 //        binding.bottomHomeTabs.selectedItemId =
     }
-
-    override fun getLayout(): Int {
-        return R.layout.activity_main
-    }
-
 
 }

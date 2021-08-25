@@ -20,7 +20,7 @@ import javax.inject.Inject
  *@author zt
  */
 @FragmentScoped
-class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
+class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::inflate) {
 
     @Inject
     lateinit var viewModel: NewViewModel
@@ -52,7 +52,4 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
 
     }
 
-    override fun getLayout(): Int {
-        return R.layout.fragment_me
-    }
 }

@@ -14,7 +14,7 @@ import javax.inject.Inject
  *@author zt
  */
 @FragmentScoped
-class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
+class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     @Inject
     lateinit var viewModel: NewViewModel
@@ -30,9 +30,5 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
      */
     override fun loadData() {
 
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.fragment_login
     }
 }

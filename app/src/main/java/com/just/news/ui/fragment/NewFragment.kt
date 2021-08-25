@@ -16,7 +16,7 @@ import javax.inject.Inject
  *@author zt
  */
 @FragmentScoped
-class NewFragment : CommonBaseFragment<FragmentNewBinding>() {
+class NewFragment : CommonBaseFragment<FragmentNewBinding>(FragmentNewBinding::inflate) {
 
     @Inject
     lateinit var viewModel: NewViewModel
@@ -29,10 +29,6 @@ class NewFragment : CommonBaseFragment<FragmentNewBinding>() {
         binding.toolbar.title = news//标题
         binding.toolbar.tvRight.visibility = View.GONE
         binding.toolbar.ivTitleBack.visibility = View.GONE
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.fragment_new
     }
 
     @SuppressLint("UseRequireInsteadOfGet")

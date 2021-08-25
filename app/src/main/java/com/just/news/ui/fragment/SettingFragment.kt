@@ -13,7 +13,7 @@ import com.just.news.model.Constants
  *@author zt
  */
 @FragmentScoped
-class SettingFragment : CommonBaseFragment<FragmentSettingBinding>() {
+class SettingFragment : CommonBaseFragment<FragmentSettingBinding>(FragmentSettingBinding::inflate) {
 
     override fun initView() {
         initToolbar()
@@ -32,7 +32,4 @@ class SettingFragment : CommonBaseFragment<FragmentSettingBinding>() {
 
     }
 
-    override fun getLayout(): Int {
-        return R.layout.fragment_setting
-    }
 }
