@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import com.common.network.RequestObserver
 import com.common.throwe.BaseResponseThrowable
 import com.uber.autodispose.SingleSubscribeProxy
@@ -196,6 +197,15 @@ fun View.clickNoRepeat(interval: Long = 500, action: (view: View) -> Unit) {
 }
 
 fun AppCompatActivity.clickNoRepeat(interval: Long = 500): Boolean {
+    val currentTime = System.currentTimeMillis()
+    if (lastClickTime != 0L && (currentTime - lastClickTime < interval)) {
+        return true
+    }
+    lastClickTime = currentTime
+    return false
+}
+
+fun DialogFragment.clickNoRepeat(interval: Long = 500): Boolean {
     val currentTime = System.currentTimeMillis()
     if (lastClickTime != 0L && (currentTime - lastClickTime < interval)) {
         return true
