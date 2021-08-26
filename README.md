@@ -12,7 +12,7 @@
 
 [6]:https://github.com/hegaojian/JetpackMvvm/blob/master/LICENSE
 
-# :chicken::chicken::chicken:JetPackMvvm
+# :JetPackMvvm
 
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation、Retrofit、 RxJava、
   dagger2组件**
@@ -23,19 +23,19 @@
 
 - **已经使用2年多时间优化和踩bug，现已经可以完全实现单一vm和单activity模式，快速开发，冗余代码几乎为0，解耦5.0分，之后会一直更新为了更高阶开发身法努力！**
 
-#### 效果图展示
+[comment]: <> (#### 效果图展示)
 
-![项目效果图](https://upload-images.jianshu.io/upload_images/9305757-818106225dd01e65.gif?imageMogr2/auto-orient/strip)
+[comment]: <> (![项目效果图]&#40;https://upload-images.jianshu.io/upload_images/9305757-818106225dd01e65.gif?imageMogr2/auto-orient/strip&#41;)
 
-#### APK下载：
+[comment]: <> (#### APK下载：)
 
-- [Github下载](https://github.com/hegaojian/JetpackMvvm/releases/download/1.1.8/app-release.apk)
+[comment]: <> (- [Github下载]&#40;https://github.com/hegaojian/JetpackMvvm/releases/download/1.1.8/app-release.apk&#41;)
 
-- [firm下载(推荐)](http://d.6short.com/v9q7)
+[comment]: <> (- [firm下载&#40;推荐&#41;]&#40;http://d.6short.com/v9q7&#41;)
 
-- 扫码下载(推荐)
+[comment]: <> (- 扫码下载&#40;推荐&#41;)
 
-![](https://upload-images.jianshu.io/upload_images/9305757-4999111e26d5e93a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[comment]: <> (![]&#40;https://upload-images.jianshu.io/upload_images/9305757-4999111e26d5e93a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#41;)
 
 ## 1.如何集成
 
