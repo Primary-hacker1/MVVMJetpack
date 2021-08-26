@@ -19,7 +19,6 @@ class NewViewModel @Inject constructor(application: Application) : BaseViewModel
     @Inject
     lateinit var repository: UserRepository
 
-
     var itemNews: ObservableList<NewResponses.T1348647853363Bean> = ObservableArrayList()
 
     //协程请求->直接获取结果的
