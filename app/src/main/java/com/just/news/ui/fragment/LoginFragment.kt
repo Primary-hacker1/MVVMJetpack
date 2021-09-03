@@ -2,7 +2,6 @@ package com.just.news.ui.fragment
 
 import com.common.base.CommonBaseFragment
 import com.just.news.MainActivity
-import com.just.news.R
 import com.just.news.databinding.FragmentLoginBinding
 import com.just.news.di.FragmentScoped
 import com.just.news.ui.viewmodel.NewViewModel

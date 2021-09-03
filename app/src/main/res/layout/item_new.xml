@@ -8,9 +8,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
-            android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/image">
 
             <TextView

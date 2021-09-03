@@ -1,0 +1,23 @@
+ext {
+    //Android
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 30
+    androidCompileSdkVersion = 30
+    androidBuildToolsVersion = "30.0.3"
+
+    navigation_version = "2.3.5"
+    constraintlayoutVersion = "2.0.4"
+    gson = "2.8.6"
+    glide = "4.11.0"
+
+    presentationDependencies = [
+            constraintlayout       : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            navigation_fragment    : "androidx.navigation:navigation-fragment:${navigation_version}",
+            navigation_ui          : "androidx.navigation:navigation-ui:$navigation_version",
+            navigation_fragment_ktx: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            navigation_ui_ktx      : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            glide                  : "com.github.bumptech.glide:glide:$glide",
+            gson                   : "com.google.code.gson:gson:$gson"
+    ]
+
+}

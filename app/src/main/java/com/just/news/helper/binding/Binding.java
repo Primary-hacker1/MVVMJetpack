@@ -11,6 +11,10 @@ import androidx.databinding.ObservableList;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.common.base.BaseRecyclerViewAdapter;
+import com.just.news.R;
+import com.just.news.model.Data;
+import com.just.news.model.NewResponses;
+import com.just.news.ui.adapter.NewAdapter;
 
 import java.util.List;
 
@@ -38,6 +42,15 @@ public class Binding {
         }
     }
 
+    @BindingAdapter({"setItmes"})
+    public static <T> void setItem(RecyclerView recyclerView, ObservableList<Data> it) {
+        if (it != null) {
+            recyclerView.setAdapter(new NewAdapter((ObservableList<Data>) it,
+                    R.layout.item_new,
+                    0));
+        }
+
+    }
 
     @BindingAdapter({"listener"})
     public static <T> void setListener(RecyclerView recyclerView, List<T> it) {

@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.just.news.ui.viewmodel.NewViewModel" />
+
     </data>
 
     <RelativeLayout

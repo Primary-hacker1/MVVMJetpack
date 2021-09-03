@@ -6,8 +6,12 @@
         <entry key="..\:/JustSafe/app/src/main/res/drawable/bg_select_form.xml" value="0.38229166666666664" />
         <entry key="..\:/JustSafe/app/src/main/res/drawable/succeed_dialog_bg.xml" value="0.38229166666666664" />
         <entry key="..\:/JustSafe/app/src/main/res/drawable/succeed_dialog_transparent_bg.xml" value="0.38229166666666664" />
+        <entry key="..\:/JustSafe/app/src/main/res/layout/activity_login.xml" value="0.17806484295845998" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/JustSafe/app/src/main/res/layout/fragment_login.xml" value="0.17806484295845998" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/fragment_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/JustSafe/app/src/main/res/layout/fragment_new.xml" value="0.17806484295845998" />
+        <entry key="..\:/JustSafe/app/src/main/res/layout/item_new.xml" value="0.36614583333333334" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/item_select_form.xml" value="0.27355072463768115" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/select_form_fragment.xml" value="0.23777173913043478" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/view_toolbar.xml" value="0.15729483282674772" />

@@ -21,10 +21,6 @@ class NewFragment : CommonBaseFragment<FragmentNewBinding>(FragmentNewBinding::i
     @Inject
     lateinit var viewModel: NewViewModel
 
-    private val adapter by lazy {
-        NewAdapter(viewModel.itemNews, R.layout.item_new, 0)
-    }
-
     private fun initToolbar() {
         binding.toolbar.title = news//标题
         binding.toolbar.tvRight.visibility = View.GONE

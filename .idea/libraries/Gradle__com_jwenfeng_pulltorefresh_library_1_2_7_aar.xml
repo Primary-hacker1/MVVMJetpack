@@ -1,16 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.jwenfeng.pulltorefresh:library:1.2.7@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed48e3664634b44c95a611a4e8320ff5/jetified-library-1.2.7/annotations.zip!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7fe3e66e42ebc76989bed74dd0c9c939/jetified-library-1.2.7/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f5d2684593b25482c30d1bbcd2c66a7/jetified-library-1.2.7/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed48e3664634b44c95a611a4e8320ff5/jetified-library-1.2.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed48e3664634b44c95a611a4e8320ff5/jetified-library-1.2.7/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed48e3664634b44c95a611a4e8320ff5/jetified-library-1.2.7/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7fe3e66e42ebc76989bed74dd0c9c939/jetified-library-1.2.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7fe3e66e42ebc76989bed74dd0c9c939/jetified-library-1.2.7/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7fe3e66e42ebc76989bed74dd0c9c939/jetified-library-1.2.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f5d2684593b25482c30d1bbcd2c66a7/jetified-library-1.2.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f5d2684593b25482c30d1bbcd2c66a7/jetified-library-1.2.7/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f5d2684593b25482c30d1bbcd2c66a7/jetified-library-1.2.7/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jwenfeng.pulltorefresh/library/1.2.7/1be139c982cbca3a7a701c9216e8eea7cfe069ff/library-1.2.7-javadoc.jar!/" />

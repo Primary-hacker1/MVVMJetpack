@@ -10,9 +10,11 @@ import kotlinx.coroutines.*
 /**
  *create by 2020/5/22
  * ViewModel 基础类
- *@author yx
+ *@author zt
  */
 open class BaseViewModel(application: Application) : BaseLifeViewModel(application) {
+
+    protected var tag = BaseViewModel::class.simpleName
 
     var stateView = StateView()
 

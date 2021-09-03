@@ -4,33 +4,43 @@ import android.app.Application
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
 import com.common.base.subscribes
+import com.common.network.LogUtils
 import com.common.viewmodel.BaseViewModel
 import com.just.news.api.UserRepository
-import com.just.news.model.NewResponses
+import com.just.news.model.Data
 import javax.inject.Inject
 
 /**
  * create by 2020/6/19
  *
- * @author yx
+ * @author zt
  */
 class NewViewModel @Inject constructor(application: Application) : BaseViewModel(application) {
 
     @Inject
     lateinit var repository: UserRepository
 
-    var itemNews: ObservableList<NewResponses.T1348647853363Bean> = ObservableArrayList()
+    var itemNews: ObservableList<Data> = ObservableArrayList()
 
     //协程请求->直接获取结果的
     fun getNews(type: String) {
-        async({ repository.getNews(type) }, {
-            itemNews.clear()
-            itemNews.addAll(it.list)
-        }, {
-            it.printStackTrace()
-        }, {
 
-        })
+        for (index in 1 until 10) {
+            val bean = Data()
+            bean.title = "nice${index}"
+            itemNews.add(bean)
+        }
+
+        LogUtils.e(tag + itemNews.toString())
+
+//        async({ repository.getNews(type) }, {
+//            itemNews.clear()
+//            itemNews.addAll(it.list)
+//        }, {
+//            it.printStackTrace()
+//        }, {
+//
+//        })
     }
 
     //协程请求->带loading的
