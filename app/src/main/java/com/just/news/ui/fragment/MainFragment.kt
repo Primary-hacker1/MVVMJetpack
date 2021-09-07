@@ -1,20 +1,12 @@
 package com.just.news.ui.fragment
 
-import android.annotation.SuppressLint
 import android.view.View
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.OrientationHelper
 import com.common.base.CommonBaseFragment
-import com.common.network.LogUtils
-import com.just.news.R
 import com.just.news.databinding.FragmentMainBinding
 import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants
-import com.just.news.ui.adapter.NewAdapter
 import com.just.news.ui.viewmodel.NewViewModel
-import com.just.news.util.LiveDataBus
 import javax.inject.Inject
 
 

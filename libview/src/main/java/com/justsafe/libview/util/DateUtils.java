@@ -1,5 +1,7 @@
 package com.justsafe.libview.util;
 
+import android.annotation.SuppressLint;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,7 +19,9 @@ public class DateUtils {
 
     public static final String DEFAULT_FORMAT_DATE = "yyyy-MM-dd HH:mm:ss";
     public static final String DEFAULT_FORMAT_DATE_DAY = "yyyy-MM-dd";
+    @SuppressLint("SimpleDateFormat")
     public static final SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    @SuppressLint("SimpleDateFormat")
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
@@ -36,16 +40,19 @@ public class DateUtils {
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     public static String formatDate(Date date, String formatStr) {
         return (new SimpleDateFormat((formatStr == null ? DEFAULT_FORMAT_DATE
                 : formatStr))).format(date);
     }
 
+    @SuppressLint("SimpleDateFormat")
     public static String formatDateDay(Date date, String formatStr) {
         return (new SimpleDateFormat((formatStr == null ? DEFAULT_FORMAT_DATE_DAY
                 : formatStr))).format(date);
     }
 
+    @SuppressLint("SimpleDateFormat")
     public static Date formatDate(String dateStr, String formatStr)
             throws ParseException {
         return (new SimpleDateFormat((formatStr == null ? DEFAULT_FORMAT_DATE

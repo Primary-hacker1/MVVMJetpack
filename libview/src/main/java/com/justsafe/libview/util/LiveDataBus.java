@@ -1,4 +1,4 @@
-package com.just.news.util;
+package com.justsafe.libview.util;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

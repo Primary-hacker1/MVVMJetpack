@@ -3,11 +3,9 @@ package com.just.news.ui.activity
 import android.content.Context
 import android.content.Intent
 import com.common.base.CommonBaseActivity
-import com.just.news.R
 import com.just.news.databinding.ActivityLoginBinding
-import com.just.news.databinding.ActivityMainBinding
 import com.just.news.ui.viewmodel.NewViewModel
-import com.just.news.util.BaseUtil
+import com.justsafe.libview.util.BaseUtil
 import javax.inject.Inject
 
 

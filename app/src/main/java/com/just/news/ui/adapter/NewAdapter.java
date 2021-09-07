@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * create by 2020/6/19
  *
- * @author yx
+ * @author zt
  */
 public class NewAdapter extends BaseRecyclerViewAdapter<Data, ItemNewBinding> {
 
