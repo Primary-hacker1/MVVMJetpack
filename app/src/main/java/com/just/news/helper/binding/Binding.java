@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.common.base.BaseRecyclerViewAdapter;
 import com.just.news.R;
 import com.just.news.model.Data;
-import com.just.news.model.NewResponses;
 import com.just.news.ui.adapter.NewAdapter;
 
 import java.util.List;

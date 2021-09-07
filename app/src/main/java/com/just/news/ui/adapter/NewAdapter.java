@@ -8,8 +8,6 @@ import com.common.base.BaseRecyclerViewAdapter;
 import com.just.news.databinding.ItemNewBinding;
 import com.just.news.helper.GlideApp;
 import com.just.news.model.Data;
-import com.just.news.model.NewResponse;
-import com.just.news.model.NewResponses;
 
 import org.jetbrains.annotations.NotNull;
 

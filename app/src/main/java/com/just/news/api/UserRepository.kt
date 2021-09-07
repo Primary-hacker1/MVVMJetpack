@@ -1,7 +1,7 @@
 package com.just.news.api
 
 import com.just.news.helper.async
-import com.just.news.model.NewResponses
+import com.just.news.model.NewResponse
 import javax.inject.Inject
 
 /**
@@ -12,7 +12,7 @@ class UserRepository @Inject internal constructor(private val apiService: BaseAp
     /**
      * 协程请求
      */
-    suspend fun getNews(type: String): NewResponses = apiService.getNews(type)
+    suspend fun getNews(type: String): NewResponse = apiService.getNews(type)
 
     fun getRxNews(type: String)=apiService.getRxNews(type).async()
 

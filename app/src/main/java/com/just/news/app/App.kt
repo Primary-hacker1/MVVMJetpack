@@ -10,7 +10,6 @@ import dagger.android.support.DaggerApplication
 
 class App: DaggerApplication() {
 
-
     override fun onCreate() {
         super.onCreate()
     }

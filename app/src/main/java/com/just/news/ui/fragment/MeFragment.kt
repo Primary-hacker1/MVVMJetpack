@@ -2,8 +2,6 @@ package com.just.news.ui.fragment
 
 import android.view.View
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.common.network.LogUtils

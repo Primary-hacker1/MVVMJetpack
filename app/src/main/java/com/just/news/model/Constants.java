@@ -6,6 +6,4 @@ public interface Constants {
     String news = "最新";
     String me = "我的";
     String setting = "设置";
-
-    int fragmentID = 0;
 }

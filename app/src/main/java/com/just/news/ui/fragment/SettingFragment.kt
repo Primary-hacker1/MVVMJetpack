@@ -2,7 +2,6 @@ package com.just.news.ui.fragment
 
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
-import com.just.news.R
 import com.just.news.databinding.FragmentSettingBinding
 import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants

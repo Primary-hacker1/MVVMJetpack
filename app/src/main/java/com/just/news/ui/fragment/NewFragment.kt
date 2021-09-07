@@ -3,11 +3,9 @@ package com.just.news.ui.fragment
 import android.annotation.SuppressLint
 import android.view.View
 import com.common.base.CommonBaseFragment
-import com.just.news.R
 import com.just.news.databinding.FragmentNewBinding
 import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants.news
-import com.just.news.ui.adapter.NewAdapter
 import com.just.news.ui.viewmodel.NewViewModel
 import javax.inject.Inject
 
