@@ -1,5 +1,6 @@
 package com.just.news.ui.layout;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 
@@ -38,6 +39,7 @@ public class SucceedFragmentLayout extends BaseFrameLayout<FragmelayoutSucceedBi
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void initData() {
         binding.saveImageMatrix.setText("hellow");
     }
