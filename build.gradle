@@ -28,6 +28,19 @@ allprojects {
         google()
         jcenter()
     }
+
+    ext {
+        androidApplicationId = 'com.just.news'
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testApplicationId = 'com.elab3.android.presentation.presentation.test'
+        releaseVersionNameSuffix = androidTargetSdkVersion
+        //发布debug版本修改此参数，发布release版本同时去掉debug
+        androidVersionName = "1.0"
+        androidVersionCode = 1
+        apkVersion = "" + androidVersionName
+        androidNdkVersion = '22.1.7171670'
+        androidMultiDexEnabled = true
+    }
 }
 
 task clean(type: Delete) {
