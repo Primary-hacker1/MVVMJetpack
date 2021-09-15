@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers
 
 /**
  *create by 2020/7/7
- *@author yx
+ *@author zt
  */
 
 fun<T> Single<T>.async()=this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())

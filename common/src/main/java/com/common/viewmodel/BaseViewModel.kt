@@ -86,7 +86,7 @@ open class BaseViewModel(application: Application) : BaseLifeViewModel(applicati
         launchUi {
             handleRequest(withContext(Dispatchers.IO) {
                 request
-            }, {
+            }, {viewModelScope
                 success(it)
             }, {
                 error(it)

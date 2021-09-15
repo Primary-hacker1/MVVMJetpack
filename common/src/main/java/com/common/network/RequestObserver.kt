@@ -13,10 +13,10 @@ import java.util.concurrent.atomic.AtomicReference
 /**
  * create by 2020/9/12
  * rxjavaObserver
- * @author yx
+ * @author zt
  */
 class RequestObserver<T>(
-    val onSuccesss:(T)->Unit,
+    val onSuccesses:(T)->Unit,
     val onErrors: (BaseResponseThrowable)->Unit
 ) : AtomicReference<Disposable?>(), SingleObserver<T>, Disposable {
     override fun onError(e: Throwable) {
@@ -36,7 +36,7 @@ class RequestObserver<T>(
     override fun onSuccess(value: T) {
         lazySet(DisposableHelper.DISPOSED)
         try {
-            onSuccesss(value)
+            onSuccesses(value)
         } catch (ex: Throwable) {
             Exceptions.throwIfFatal(ex)
             RxJavaPlugins.onError(ex)

@@ -5,7 +5,7 @@ import com.just.news.model.NewResponse
 import javax.inject.Inject
 
 /**
- *create by 2020/6/19
+ *create by 2020/3/19
  *@author zt
  */
 class UserRepository @Inject internal constructor(private val apiService: BaseApiService) {

@@ -6,8 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 /**
- *create by 2020/6/19
- *@author yx
+ *create by 2020/3/19
+ *@author zt
  */
 interface BaseApiService {
 
