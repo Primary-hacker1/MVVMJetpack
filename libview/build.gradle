@@ -10,8 +10,6 @@ android {
     defaultConfig {
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
-        versionCode globalConfiguration["androidVersionCode"]
-        versionName globalConfiguration["androidVersionName"]
         ndkVersion globalConfiguration["androidNdkVersion"]
 
         multiDexEnabled globalConfiguration["androidMultiDexEnabled"]
@@ -29,24 +27,23 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions{
+        jvmTarget = '11'
+    }
+
     dataBinding {
+        //noinspection DataBindingWithoutKapt
         enabled = true
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation gradleBase.appcompat
-    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation gradleBase.core
     testImplementation gradleBase.junit
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation presentationDependencies.recyclerview
     annotationProcessor presentationDependencies.compiler
     implementation presentationDependencies.constraintlayout
@@ -54,7 +51,6 @@ dependencies {
     implementation presentationDependencies.navigation_ui
     implementation presentationDependencies.navigation_fragment_ktx
     implementation presentationDependencies.navigation_ui_ktx
-    implementation 'com.wang.avi:library:2.1.3'
     implementation presentationDependencies.glide
     implementation presentationDependencies.gson
 

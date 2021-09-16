@@ -3,15 +3,15 @@ package com.just.news.ui.fragment
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.just.news.databinding.FragmentSettingBinding
-import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  *create by 2020/6/19
  * 设置界面
  *@author zt
  */
-@FragmentScoped
+@AndroidEntryPoint
 class SettingFragment : CommonBaseFragment<FragmentSettingBinding>(FragmentSettingBinding::inflate) {
 
     override fun initView() {

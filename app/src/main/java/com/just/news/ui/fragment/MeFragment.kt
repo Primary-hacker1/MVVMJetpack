@@ -1,15 +1,16 @@
 package com.just.news.ui.fragment
 
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.common.network.LogUtils
 import com.just.news.R
 import com.just.news.databinding.FragmentMeBinding
-import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants.me
 import com.just.news.ui.viewmodel.NewViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
@@ -17,11 +18,10 @@ import javax.inject.Inject
  *create by 2020/6/19
  *@author zt
  */
-@FragmentScoped
+@AndroidEntryPoint
 class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::inflate) {
 
-    @Inject
-    lateinit var viewModel: NewViewModel
+    private val viewModel: NewViewModel by viewModels()
 
     private fun initToolbar() {
         binding.toolbar.title = me//标题
@@ -31,6 +31,10 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
 
     override fun initView() {
         initToolbar()
+
+        viewModel.getNews("")
+
+        LogUtils.e(TAG + viewModel.itemNews.toString())
 
         binding.btnMe.setOnClickListener {
             navigate(it, R.id.settingFragment)

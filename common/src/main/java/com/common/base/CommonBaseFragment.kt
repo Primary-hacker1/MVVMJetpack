@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import dagger.android.support.AndroidSupportInjection
 
 abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (LayoutInflater) -> VB) : Fragment() {
 
@@ -31,7 +28,6 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (Lay
     private var isComplete: Boolean = false
 
     override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
         super.onAttach(context)
         this.mContext = context
     }

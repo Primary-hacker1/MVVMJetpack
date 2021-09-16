@@ -8,6 +8,7 @@ import com.common.network.LogUtils
 import com.common.viewmodel.BaseViewModel
 import com.just.news.api.UserRepository
 import com.just.news.model.Data
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 /**
@@ -15,6 +16,7 @@ import javax.inject.Inject
  *
  * @author zt
  */
+@HiltViewModel
 class NewViewModel @Inject constructor(application: Application) : BaseViewModel(application) {
 
     @Inject
@@ -24,7 +26,7 @@ class NewViewModel @Inject constructor(application: Application) : BaseViewModel
 
     //协程请求->直接获取结果的
     fun getNews(type: String) {
-
+        //模拟数据
         for (index in 1 until 10) {
             val bean = Data()
             bean.title = "nice${index}"

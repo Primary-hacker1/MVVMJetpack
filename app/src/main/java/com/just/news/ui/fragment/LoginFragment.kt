@@ -1,22 +1,21 @@
 package com.just.news.ui.fragment
 
+import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.MainActivity
 import com.just.news.databinding.FragmentLoginBinding
-import com.just.news.di.FragmentScoped
 import com.just.news.ui.viewmodel.NewViewModel
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  *create by 2020/6/19
  * 登录界面
  *@author zt
  */
-@FragmentScoped
+@AndroidEntryPoint
 class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    @Inject
-    lateinit var viewModel: NewViewModel
+    private val viewModel: NewViewModel by viewModels()
 
     override fun initView() {
         binding.btnLogin.setOnClickListener {

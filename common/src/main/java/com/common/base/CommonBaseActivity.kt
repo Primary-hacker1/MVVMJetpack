@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
-import dagger.android.AndroidInjection
 
 /**
  * create by 2021/3/2
@@ -20,7 +19,6 @@ abstract class CommonBaseActivity<VB : ViewDataBinding>(
     protected val binding by lazy { layout(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initView()

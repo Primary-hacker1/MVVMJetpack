@@ -1,24 +1,16 @@
 package com.just.news.app
 
-import android.content.Context
-import androidx.multidex.MultiDex
-import com.just.news.di.component.DaggerAppComponent
+import android.app.Application
+import androidx.work.Configuration
+import com.just.news.BuildConfig
 
 
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import dagger.hilt.android.HiltAndroidApp
 
-class App: DaggerApplication() {
-
-    override fun onCreate() {
-        super.onCreate()
-    }
-
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
-    }
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-      return DaggerAppComponent.builder().application(this).build()
-    }
+@HiltAndroidApp
+class App : Application(), Configuration.Provider {
+    override fun getWorkManagerConfiguration(): Configuration =
+        Configuration.Builder()
+            .setMinimumLoggingLevel(if (BuildConfig.DEBUG) android.util.Log.DEBUG else android.util.Log.ERROR)
+            .build()
 }

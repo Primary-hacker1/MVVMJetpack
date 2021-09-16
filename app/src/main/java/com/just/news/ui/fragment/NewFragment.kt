@@ -2,22 +2,22 @@ package com.just.news.ui.fragment
 
 import android.annotation.SuppressLint
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.databinding.FragmentNewBinding
-import com.just.news.di.FragmentScoped
 import com.just.news.model.Constants.news
 import com.just.news.ui.viewmodel.NewViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
  *create by 2020/6/19
  *@author zt
  */
-@FragmentScoped
+@AndroidEntryPoint
 class NewFragment : CommonBaseFragment<FragmentNewBinding>(FragmentNewBinding::inflate) {
 
-    @Inject
-    lateinit var viewModel: NewViewModel
+    private val viewModel: NewViewModel by viewModels()
 
     private fun initToolbar() {
         binding.toolbar.title = news//标题
