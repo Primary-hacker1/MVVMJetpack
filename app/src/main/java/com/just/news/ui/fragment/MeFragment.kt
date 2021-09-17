@@ -38,7 +38,8 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
         LogUtils.e(TAG + viewModel.itemNews.toString())
 
         binding.btnMe.setOnClickListener {
-            navigate(it, R.id.settingFragment)
+            viewModel.getPlant()
+//            navigate(it, R.id.settingFragment)
         }
 
         val navController = findNavController()//fragment返回数据处理

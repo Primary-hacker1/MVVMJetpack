@@ -9,12 +9,13 @@ import javax.inject.Singleton
  * Collecting from the Flows in [PlantDao] is main-safe.  Room supports Coroutines and moves the
  * query execution off of the main thread.
  */
-@Singleton
 class PlantRepository @Inject constructor(private val plantDao: PlantDao) {
 
     fun getPlants() = plantDao.getPlants()
 
     fun getPlant(plantId: String) = plantDao.getPlant(plantId)
+
+    suspend fun insertAll(plants: List<Plant>) = plantDao.insertAll(plants)
 
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
         plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)

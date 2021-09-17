@@ -1,12 +1,16 @@
 package com.just.news.ui.viewmodel
 
-import android.app.Application
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
+import androidx.lifecycle.viewModelScope
+import com.common.network.LogUtils
 import com.common.viewmodel.BaseViewModel
 import com.just.news.api.UserRepository
+import com.just.news.dao.Plant
+import com.just.news.dao.PlantRepository
 import com.just.news.model.Data
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -17,12 +21,22 @@ import javax.inject.Inject
 @HiltViewModel
 class NewViewModel @Inject constructor(
     private var repository: UserRepository,
+    private var plantDao: PlantRepository
 ) : BaseViewModel() {
 
     var itemNews: ObservableList<Data> = ObservableArrayList()
 
     //协程请求->直接获取结果的
     fun getNews(type: String) {
+
+        viewModelScope.launch {
+            val plants: MutableList<Plant> = ArrayList()
+            val plant = Plant("123", "张涛的数据库操作", "", 6, 7, "")
+            plants.add(plant)
+            plantDao.insertAll(plants)
+        }
+
+
         async({ repository.getNews(type) }, {
             itemNews.clear()
             itemNews.addAll(it.data)
@@ -31,6 +45,11 @@ class NewViewModel @Inject constructor(
         }, {
 
         })
+    }
+
+    fun getPlant() {
+        val dao = plantDao.getPlant("123")
+        LogUtils.e(tag + dao.toString())
     }
 
 //    //协程请求->带loading的
