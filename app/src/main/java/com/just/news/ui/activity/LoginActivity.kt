@@ -14,7 +14,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginActivity : CommonBaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 
-    private val viewModel: NewViewModel by viewModels()
+    private val viewModel by viewModels<NewViewModel>()
 
     companion object {
         /**

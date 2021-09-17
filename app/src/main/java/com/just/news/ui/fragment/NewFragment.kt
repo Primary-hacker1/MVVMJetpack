@@ -2,6 +2,7 @@ package com.just.news.ui.fragment
 
 import android.annotation.SuppressLint
 import android.view.View
+import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.databinding.FragmentNewBinding
@@ -17,7 +18,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class NewFragment : CommonBaseFragment<FragmentNewBinding>(FragmentNewBinding::inflate) {
 
-    private val viewModel: NewViewModel by viewModels()
+    private val viewModel by viewModels<NewViewModel>()
 
     private fun initToolbar() {
         binding.toolbar.title = news//标题

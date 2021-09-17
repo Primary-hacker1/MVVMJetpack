@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
 
     <!--  hold_state_fragment 保活机制  -->
-    <hold_state_fragment
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.just.news.ui.fragment.MainFragment"
         android:label="mainFragment"
@@ -17,7 +17,7 @@
         <action
             android:id="@+id/action_mainFragment_to_meFragment"
             app:destination="@id/meFragment" />
-    </hold_state_fragment>
+    </fragment>
 
     <hold_state_fragment
         android:id="@+id/newFragment"

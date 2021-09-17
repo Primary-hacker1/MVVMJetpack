@@ -9,9 +9,11 @@ import com.common.base.CommonBaseActivity
 import com.just.news.databinding.ActivityMainBinding
 import com.justsafe.libview.util.BaseUtil
 import com.justsafe.libview.nav.HoldStateNavigator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_toolbar.view.*
 
+@AndroidEntryPoint
 class MainActivity : CommonBaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     companion object {

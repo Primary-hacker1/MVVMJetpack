@@ -1,5 +1,6 @@
 package com.just.news.ui.fragment
 
+import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.MainActivity
@@ -15,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    private val viewModel: NewViewModel by viewModels()
+    private val viewModel by viewModels<NewViewModel>()
 
     override fun initView() {
         binding.btnLogin.setOnClickListener {

@@ -1,18 +1,21 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply from: 'dependencies.gradle'
 buildscript {
+    ext.hilt_version = '2.36'
+    ext.hilt_viewmodels = '1.0.0-alpha03'
     repositories {
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         google()
-        jcenter()
-        
+        mavenCentral()
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.36"
     }
 }
 
@@ -33,7 +36,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://www.jitpack.io' }
         google()
-        jcenter()
+        mavenCentral()
     }
 
     ext {

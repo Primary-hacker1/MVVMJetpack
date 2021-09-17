@@ -2,6 +2,7 @@ package com.common.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import com.uber.autodispose.AutoDispose
 import com.uber.autodispose.AutoDisposeConverter
 import com.uber.autodispose.ScopeProvider
@@ -13,9 +14,9 @@ import io.reactivex.subjects.BehaviorSubject
 
 /**
  *create by 2020/9/16
- *@author yx
+ *@author zt
  */
-open class BaseLifeViewModel (application: Application) : AndroidViewModel(application),
+open class BaseLifeViewModel() : ViewModel(),
     LifecycleScopeProvider<ViewEvent> {
     private val lifecycleEvents = BehaviorSubject.createDefault(ViewEvent.CREATED)
 

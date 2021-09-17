@@ -88,7 +88,7 @@ public class SuperEditText extends AppCompatEditText {
         try {
 
             // 2. 通过反射 获取光标属性
-            Field f = TextView.class.getDeclaredField("mCursorDrawableRes");
+            @SuppressLint("SoonBlockedPrivateApi") Field f = TextView.class.getDeclaredField("mCursorDrawableRes");
             f.setAccessible(true);
             // 3. 传入资源ID
             f.set(this, cursor);

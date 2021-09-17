@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -17,6 +18,7 @@ android {
 
         multiDexEnabled globalConfiguration["androidMultiDexEnabled"]
         testInstrumentationRunner globalConfiguration["testInstrumentationRunner"]
+
     }
 
     buildTypes {
@@ -68,6 +70,14 @@ android {
 
 }
 
+kapt {
+    arguments {
+        // Make Hilt share the same definition of Components in tests instead of
+        // creating a new set of Components per test class.
+        arg("dagger.hilt.shareTestComponents", "true")
+    }
+}
+
 
 dependencies {
     implementation project(path: ':libview')
@@ -77,7 +87,6 @@ dependencies {
     implementation gradleBase.appcompat
     implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
     testImplementation gradleBase.junit
-    implementation 'androidx.work:work-runtime-ktx:2.5.0'
     implementation presentationDependencies.constraintlayout
     implementation presentationDependencies.navigation_fragment
     implementation presentationDependencies.navigation_ui
@@ -87,11 +96,14 @@ dependencies {
     implementation presentationDependencies.room_ktx
     kapt presentationDependencies.room_compiler
 
-    implementation "com.google.dagger:hilt-android:2.33-beta"
+    implementation 'androidx.work:work-runtime-ktx:2.5.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1'
 
-    implementation 'androidx.hilt:hilt-common:1.0.0-SNAPSHOT'
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-SNAPSHOT'
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodels"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 }

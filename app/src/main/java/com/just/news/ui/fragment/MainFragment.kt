@@ -20,7 +20,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
-    private val viewModel: NewViewModel by viewModels()
+    private val viewModel by viewModels<NewViewModel>()
 
     override fun initView() {
         initToolbar()

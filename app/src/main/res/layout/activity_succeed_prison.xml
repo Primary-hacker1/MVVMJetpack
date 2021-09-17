@@ -14,10 +14,6 @@
             android:id="@+id/toolbar"
             layout="@layout/view_toolbar" />
 
-        <com.just.news.ui.layout.SucceedFragmentLayout
-            android:id="@+id/sfl_succeed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </LinearLayout>
 </layout>

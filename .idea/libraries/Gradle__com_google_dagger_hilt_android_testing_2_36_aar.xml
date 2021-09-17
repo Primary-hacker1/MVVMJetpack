@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.dagger:hilt-android-testing:2.36@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0d2879147ae1737754ed8d642bbc2f29/transformed/jetified-hilt-android-testing-2.36/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d2879147ae1737754ed8d642bbc2f29/transformed/jetified-hilt-android-testing-2.36/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d2879147ae1737754ed8d642bbc2f29/transformed/jetified-hilt-android-testing-2.36/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.36/2596cead6b3207952fcaae100db7131740a9e598/hilt-android-testing-2.36-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.36/daafa208bb9341bb6154809127be283b5bf30820/hilt-android-testing-2.36-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

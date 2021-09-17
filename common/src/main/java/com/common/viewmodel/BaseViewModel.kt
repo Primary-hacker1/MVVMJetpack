@@ -12,7 +12,7 @@ import kotlinx.coroutines.*
  * ViewModel 基础类
  *@author zt
  */
-open class BaseViewModel(application: Application) : BaseLifeViewModel(application) {
+open class BaseViewModel() : BaseLifeViewModel() {
 
     protected var tag = BaseViewModel::class.simpleName
 

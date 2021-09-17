@@ -1,6 +1,7 @@
 package com.just.news.ui.fragment
 
 import android.view.View
+import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -21,7 +22,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::inflate) {
 
-    private val viewModel: NewViewModel by viewModels()
+    private val viewModel by viewModels<NewViewModel>()
 
     private fun initToolbar() {
         binding.toolbar.title = me//标题
