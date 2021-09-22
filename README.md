@@ -12,7 +12,7 @@
 
 [6]:https://github.com/hegaojian/JetpackMvvm/blob/master/LICENSE
 
-# :JetPackMvvm
+# 👕👕👕:JetPackMvvm
 
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation、Retrofit、 RxJava、
   hilt组件,后期增加flow持续更新最新最屌技术**
