@@ -15,7 +15,7 @@
 # :JetPackMvvm
 
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation、Retrofit、 RxJava、
-  dagger2组件**
+  hilt组件,后期增加flow持续更新最新最屌技术**
 - **使用kotlin语言，添加大量拓展函数，简化代码**
 - **加入Retrofit网络请求,协程，帮你简化各种操作，让你快速请求网络**
 
