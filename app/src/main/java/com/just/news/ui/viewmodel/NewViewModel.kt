@@ -3,7 +3,7 @@ package com.just.news.ui.viewmodel
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
 import androidx.lifecycle.viewModelScope
-import com.common.network.LogUtils
+import com.common.base.subscribes
 import com.common.viewmodel.BaseViewModel
 import com.just.news.api.UserRepository
 import com.just.news.dao.Plant
@@ -26,7 +26,9 @@ class NewViewModel @Inject constructor(
 
     var itemNews: ObservableList<Data> = ObservableArrayList()
 
-    //协程请求->直接获取结果的
+    /**
+     *@param type 协程请求->直接获取结果的
+     */
     fun getNews(type: String) {
 
         viewModelScope.launch {
@@ -35,7 +37,6 @@ class NewViewModel @Inject constructor(
             plants.add(plant)
             plantDao.insertAll(plants)
         }
-
 
         async({ repository.getNews(type) }, {
             itemNews.clear()
@@ -47,28 +48,35 @@ class NewViewModel @Inject constructor(
         })
     }
 
-    fun getPlant() {
-        val dao = plantDao.getPlant("123")
-        LogUtils.e(tag + dao.toString())
+
+    fun getPlant() {//数据库查询
+        viewModelScope.launch {
+            plantDao.getPlant("123")
+        }
+
     }
 
-//    //协程请求->带loading的
-//    fun getNewsLoading() {
-//        async({ repository.getNews("") }, {
-//            //返回结果
-//        }, true, {}, {})
-//    }
-//
-//    //rxjava请求->
-//    fun getRxNews(type: String) {
-//        repository.getRxNews(type)
-//            .`as`(auto(this))
-//            .subscribes({
-//
-//            }, {
-//
-//            })
-//    }
+    /**
+     *@param type 协程请求->带loading的
+     */
+    fun getNewsLoading(type: String) {
+        async({ repository.getNews("") }, {
+            //返回结果
+        }, true, {}, {})
+    }
+
+    /**
+     *@param type rxjava请求->直接获取结果的
+     */
+    fun getRxNews(type: String) {
+        repository.getRxNews(type)
+            .`as`(auto(this))
+            .subscribes({
+
+            }, {
+
+            })
+    }
 }
 
 

@@ -2,11 +2,9 @@
 package com.just.news.dao
 
 import android.content.Context
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
@@ -17,7 +15,9 @@ import com.just.news.helper.UriConfig.DATABASE_NAME
 import com.just.news.helper.UriConfig.PLANT_DATA_FILENAME
 
 /**
- * The Room database for this app
+ *create by 2021/9/18
+ *@author zt
+ * 此应用程序的房间数据库
  */
 @Database(entities = [Plant::class], version = 1, exportSchema = false)
 //@TypeConverters(Converters::class)
@@ -36,7 +36,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // Create and pre-populate the database. See this article for more details:
+        // 创建并预填充数据库。 有关更多详细信息，请参阅这篇文章：
         // https://medium.com/google-developers/7-pro-tips-for-room-fbadea4bfbd1#4785
         private fun buildDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)

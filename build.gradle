@@ -2,7 +2,6 @@
 apply from: 'dependencies.gradle'
 buildscript {
     ext.hilt_version = '2.36'
-    ext.hilt_viewmodels = '1.0.0-alpha03'
     repositories {
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }

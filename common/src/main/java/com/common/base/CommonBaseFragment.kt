@@ -9,9 +9,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
-abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (LayoutInflater) -> VB) : Fragment() {
+abstract class CommonBaseFragment<VB : ViewDataBinding>
+    (private val layout: (LayoutInflater) -> VB) :
+    Fragment() {
 
-    protected val TAG: String = CommonBaseFragment::class.java.canonicalName
+    protected val TAG: String = CommonBaseFragment::class.java.simpleName
 
     private var mContext: Context? = null
 
@@ -69,7 +71,6 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (Lay
         if (userVisibleHint && isViewCreated && !isComplete) {
             //可见 或者 控件初始化完成 就 加载数据
             loadData()
-
             isComplete = true
         }
 

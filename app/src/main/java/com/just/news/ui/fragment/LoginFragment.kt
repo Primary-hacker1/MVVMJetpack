@@ -1,6 +1,5 @@
 package com.just.news.ui.fragment
 
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.MainActivity

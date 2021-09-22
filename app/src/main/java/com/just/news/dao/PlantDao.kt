@@ -7,7 +7,7 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 /**
- * The Data Access Object for the Plant class.
+ * Plant 类的数据访问对象。
  */
 @Dao
 interface PlantDao {

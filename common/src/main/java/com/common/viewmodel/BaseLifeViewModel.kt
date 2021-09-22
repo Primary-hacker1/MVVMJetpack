@@ -1,7 +1,5 @@
 package com.common.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import com.uber.autodispose.AutoDispose
 import com.uber.autodispose.AutoDisposeConverter

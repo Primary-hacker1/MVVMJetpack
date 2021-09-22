@@ -29,11 +29,6 @@ class NewFragment : CommonBaseFragment<FragmentNewBinding>(FragmentNewBinding::i
     @SuppressLint("UseRequireInsteadOfGet")
     override fun initView() {
         initToolbar()
-//        val type = arguments!!.getString("type", "")
-//        viewModel.getRxNews(type)
-//        binding.viewModel = viewModel
-//        binding.recycleView.layoutManager = LinearLayoutManager(activity)
-//        binding.recycleView.adapter = adapter
     }
 
     override fun loadData() {

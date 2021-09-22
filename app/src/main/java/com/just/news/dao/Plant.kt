@@ -17,8 +17,8 @@ data class Plant(
 ) {
 
     /**
-     * Determines if the plant should be watered.  Returns true if [since]'s date > date of last
-     * watering + watering Interval; false otherwise.
+     * 确定植物是否应该浇水。 如果 [since] 的日期 > 上次日期，则返回 true
+     * 浇水+浇水间隔； 否则为假。
      */
     fun shouldBeWatered(since: Calendar, lastWateringDate: Calendar) =
         since > lastWateringDate.apply { add(DAY_OF_YEAR, wateringInterval) }

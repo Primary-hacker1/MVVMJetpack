@@ -1,6 +1,5 @@
 package com.common.viewmodel
 
-import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.common.BaseResponse
 import com.common.throwe.BaseResponseThrowable
