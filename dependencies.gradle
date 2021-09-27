@@ -17,6 +17,8 @@ ext {
     kotlin_version = "1.5.30"
     room = "2.3.0"
     core = "1.6.0"
+    hilt = "2.36"
+    lifecycle = "2.3.1"
 
     gradleBase = [
             junit    : "junit:junit:${junit}",
@@ -25,18 +27,25 @@ ext {
     ]
 
     presentationDependencies = [
-            constraintlayout       : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
-            navigation_fragment    : "androidx.navigation:navigation-fragment:${navigation_version}",
-            navigation_ui          : "androidx.navigation:navigation-ui:$navigation_version",
-            navigation_fragment_ktx: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
-            navigation_ui_ktx      : "androidx.navigation:navigation-ui-ktx:$navigation_version",
-            glide                  : "com.github.bumptech.glide:glide:$glide",
-            gson                   : "com.google.code.gson:gson:$gson",
-            compiler               : "com.github.bumptech.glide:compiler:$compiler",
-            recyclerview           : "androidx.recyclerview:recyclerview:$recyclerview",
-            room_runtime           : "androidx.room:room-runtime:$room",
-            room_ktx               : "androidx.room:room-ktx:$room",
-            room_compiler          : "androidx.room:room-compiler:$room"
+            constraintlayout              : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            navigation_fragment           : "androidx.navigation:navigation-fragment:${navigation_version}",
+            navigation_ui                 : "androidx.navigation:navigation-ui:$navigation_version",
+            navigation_fragment_ktx       : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            navigation_ui_ktx             : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            glide                         : "com.github.bumptech.glide:glide:$glide",
+            gson                          : "com.google.code.gson:gson:$gson",
+            compiler                      : "com.github.bumptech.glide:compiler:$compiler",
+            recyclerview                  : "androidx.recyclerview:recyclerview:$recyclerview",
+            room_runtime                  : "androidx.room:room-runtime:$room",
+            room_ktx                      : "androidx.room:room-ktx:$room",
+            room_compiler                 : "androidx.room:room-compiler:$room",
+            hilt_compiler                 : "com.google.dagger:hilt-compiler:$hilt",
+            hilt_andorid                  : "com.google.dagger:hilt-android:$hilt",
+            hilt_andorid_testing          : "com.google.dagger:hilt-android-testing:$hilt",
+            hilt_andorid_compiler         : "com.google.dagger:hilt-android-compiler:$hilt",
+            hilt_lifecycle_viewmodel      : "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT",
+            lifecycle_viewmodel_ktx       : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
+            lifecycle_viewmodel_savedstate: "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle"
     ]
 
     libview = [

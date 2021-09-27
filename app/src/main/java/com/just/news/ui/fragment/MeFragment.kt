@@ -1,10 +1,11 @@
 package com.just.news.ui.fragment
 
-import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
+import com.common.base.gone
 import com.common.network.LogUtils
+import com.just.news.R
 import com.just.news.databinding.FragmentMeBinding
 import com.just.news.model.Constants.me
 import com.just.news.ui.viewmodel.NewViewModel
@@ -20,22 +21,23 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
 
     private val viewModel by viewModels<NewViewModel>()
 
+    override fun loadData() {//懒加载
+
+    }
+
     private fun initToolbar() {
         binding.toolbar.title = me//标题
-        binding.toolbar.tvRight.visibility = View.GONE
-        binding.toolbar.ivTitleBack.visibility = View.GONE
+        binding.toolbar.tvRight.gone()
+        binding.toolbar.ivTitleBack.gone()
     }
 
     override fun initView() {
         initToolbar()
 
-        viewModel.getNews("")
-
         LogUtils.e(TAG + viewModel.itemNews.toString())
 
         binding.btnMe.setOnClickListener {
-            viewModel.getPlant()
-//            navigate(it, R.id.settingFragment)//fragment跳转
+            navigate(it, R.id.settingFragment)//fragment跳转
         }
 
         val navController = findNavController()//fragment返回数据处理
@@ -45,11 +47,6 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
                 {
                     LogUtils.e(TAG + it.toString())
                 })
-
-    }
-
-
-    override fun loadData() {//懒加载
 
     }
 

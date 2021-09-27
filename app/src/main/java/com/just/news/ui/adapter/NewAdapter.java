@@ -23,8 +23,8 @@ public class NewAdapter extends BaseRecyclerViewAdapter<Data, ItemNewBinding> {
     }
 
     @Override
-    protected void bindViewHolder(@NonNull @NotNull BaseDataBingViewHolder<ItemNewBinding> viewHolder, int position, Data t1348647853363Bean) {
-        super.bindViewHolder(viewHolder, position, t1348647853363Bean);
+    protected void bindViewHolder(@NonNull @NotNull BaseDataBingViewHolder<ItemNewBinding> viewHolder, int position, Data data) {
+        super.bindViewHolder(viewHolder, position, data);
         viewHolder.binding.title.setText(getItemData().get(position).getTitle());
         viewHolder.binding.source.setText(getItemData().get(position).getSource());
         GlideApp.loadImage(getItemData().get(position).getImgsrc(), viewHolder.binding.image);

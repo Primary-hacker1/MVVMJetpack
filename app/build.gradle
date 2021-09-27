@@ -48,10 +48,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = '11'
     }
-    ndkVersion '20.0.5594570'
 
     applicationVariants.all {
         variant ->
@@ -81,28 +80,34 @@ kapt {
 
 dependencies {
     implementation project(path: ':libview')
-    implementation project(':common')
+    implementation project(path: ':common')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation gradleBase.core
     implementation gradleBase.appcompat
     testImplementation gradleBase.junit
     implementation presentationDependencies.constraintlayout
+
+    // navigation
     implementation presentationDependencies.navigation_fragment
     implementation presentationDependencies.navigation_ui
     implementation presentationDependencies.navigation_fragment_ktx
     implementation presentationDependencies.navigation_ui_ktx
+
+    // room
+    kapt presentationDependencies.room_compiler
     implementation presentationDependencies.room_runtime
     implementation presentationDependencies.room_ktx
-    kapt presentationDependencies.room_compiler
 
     implementation 'androidx.work:work-runtime-ktx:2.5.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1'
+
+    // lifecycle
+    implementation presentationDependencies.lifecycle_viewmodel_ktx
+    implementation presentationDependencies.lifecycle_viewmodel_savedstate
 
     // Hilt
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt presentationDependencies.hilt_compiler
+    implementation presentationDependencies.hilt_andorid
+    implementation presentationDependencies.hilt_lifecycle_viewmodel
+    androidTestImplementation presentationDependencies.hilt_andorid_testing
+    kaptAndroidTest presentationDependencies.hilt_andorid_compiler
 }

@@ -4,15 +4,15 @@
     <item
         android:id="@+id/mainFragment"
         android:enabled="true"
-        android:title="@string/home"
-        android:icon="@drawable/main_home"
+        android:title="@string/newS"
+        android:icon="@drawable/main_new"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/newFragment"
         android:enabled="true"
-        android:title="@string/newS"
-        android:icon="@drawable/main_new"
+        android:title="@string/home"
+        android:icon="@drawable/main_home"
         app:showAsAction="ifRoom" />
 
     <item

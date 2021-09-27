@@ -122,5 +122,8 @@ open class BaseViewModel() : BaseLifeViewModel() {
             else throw BaseResponseThrowable(response.code, response.errorMsg)
         }
     }
+
+    var mEventHub: SingleLiveEvent<LiveDataEvent> =
+        SingleLiveEvent<LiveDataEvent>()
 }
 

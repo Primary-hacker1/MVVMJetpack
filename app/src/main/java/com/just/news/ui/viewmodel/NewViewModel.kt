@@ -2,14 +2,19 @@ package com.just.news.ui.viewmodel
 
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.viewModelScope
 import com.common.base.subscribes
+import com.common.network.LogUtils
 import com.common.viewmodel.BaseViewModel
+import com.common.viewmodel.LiveDataEvent
 import com.just.news.api.UserRepository
 import com.just.news.dao.Plant
 import com.just.news.dao.PlantRepository
 import com.just.news.model.Data
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -33,7 +38,7 @@ class NewViewModel @Inject constructor(
 
         viewModelScope.launch {
             val plants: MutableList<Plant> = ArrayList()
-            val plant = Plant("123", "张涛的数据库操作", "", 6, 7, "")
+            val plant = Plant("123", "张涛的数据库操作", "", 6, 7, "http//：www.baidu.com")
             plants.add(plant)
             plantDao.insertAll(plants)
         }
@@ -51,9 +56,13 @@ class NewViewModel @Inject constructor(
 
     fun getPlant() {//数据库查询
         viewModelScope.launch {
-            plantDao.getPlant("123")
+            plantDao.getPlant("123").collect {
+                mEventHub.value = LiveDataEvent(
+                    LiveDataEvent.LOGIN_FAIL,
+                    it
+                )
+            }
         }
-
     }
 
     /**

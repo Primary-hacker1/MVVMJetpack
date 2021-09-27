@@ -81,8 +81,9 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>
         isComplete = false
     }
 
+    protected abstract fun loadData()
+
     protected abstract fun initView()
 
-    protected abstract fun loadData()
 
 }

@@ -4,4 +4,5 @@
     <string name="personal">我的</string>
     <string name="newS">最新</string>
     <string name="setting">设置</string>
+    <string name="queryDatabase">查询数据库</string>
 </resources>

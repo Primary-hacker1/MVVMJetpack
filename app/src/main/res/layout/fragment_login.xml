@@ -21,23 +21,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="220dp"
             android:background="@mipmap/login_logo" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_background"
-            android:layout_centerHorizontal="true"
-            android:text="湖北监狱"
-            android:textColor="@color/cf5f5f5"
-            android:textSize="@dimen/space_26" />
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/tv_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/iv_background"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:text="汽车城"-->
+<!--            android:textColor="@color/cf5f5f5"-->
+<!--            android:textSize="@dimen/space_26" />-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/tv_name"
+            android:layout_below="@+id/iv_background"
             android:layout_centerHorizontal="true">
 
             <LinearLayout
@@ -45,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="26dp"
+                android:paddingTop="20dp"
                 android:layout_marginRight="26dp"
                 android:orientation="vertical"
                 tools:ignore="MissingConstraints,NotSibling">
@@ -56,7 +57,6 @@
                     android:layout_height="31dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginTop="120dp"
                     android:background="@drawable/bg_input"
                     android:hint="账号"
                     android:maxLength="11"
