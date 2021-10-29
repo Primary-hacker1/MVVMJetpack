@@ -270,22 +270,19 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
            
          
 ```Java
-      fun getNews(type: String) {
-        async({ repository.getNews(type) }
-            , {
-                itemNews.clear()
-                itemNews.addAll(it.list)
-            }, {
-                it.printStackTrace()
-            }, {
-
-            })
+        fun getNews(type: String) {//协程请求
+          async({ repository.getNews(type) }
+              , {
+                  itemNews.clear()
+                  itemNews.addAll(it.list)
+              }, {
+                  it.printStackTrace()
+              }, {
+  
+              })
     }
- 
-  ```
-
-```Java 
-    fun getRxNews(type: String) {//用RxJava请求
+    
+        fun getRxNews(type: String) {//用RxJava请求
         repository.getRxNews(type)
             .`as`(auto(this))
             .subscribes({
@@ -293,6 +290,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
             },{
 
             })
+ 
   ```
 
 ```Java 
