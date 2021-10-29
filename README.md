@@ -205,7 +205,7 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>(private val layout: (Lay
 
 - **3.2 创建ViewModel类继承BaseViewModel**
 
-``` xml
+``` kotlin
 class LoginActivity : CommonBaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 
     @Inject
@@ -271,7 +271,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
            suspend fun getNews(@Path("id") id : String?): NewResponses
            
          
-  ```Java
+```Java
       fun getNews(type: String) {
         async({ repository.getNews(type) }
             , {
@@ -286,8 +286,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
  
   ```
 
-  ```用RxJava请求
-  ```Java
+```Java 用RxJava请求
     fun getRxNews(type: String) {
         repository.getRxNews(type)
             .`as`(auto(this))
@@ -298,8 +297,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
             })
    ```
 
-  ```subscribes是自定义的一个扩展函数
-   ```Java
+```Java subscribes是自定义的一个扩展函数
    fun <T> SingleSubscribeProxy<T>.subscribes(onSuccess: (T) -> Unit,
                                             onError: (BaseResponseThrowable)->Unit) {
     ObjectHelper.requireNonNull(onSuccess, "onSuccess is null")
