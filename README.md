@@ -263,9 +263,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
           @FragmentScoped
           class NewFragment : CommonBaseFragment<FragmentNewBinding>() 
           
-          
-          class NewViewModel @Inject constructor(application: Application) : BaseViewModel(application) 
-   - 网络请求的使用我们可以协程请求
+          class NewViewModel @Inject constructor(application: Application) : BaseViewModel(application) - 网络请求的使用我们可以协程请求
    
            @GET("/nc/article/headline/{id}/0-10.html")
            suspend fun getNews(@Path("id") id : String?): NewResponses
@@ -286,8 +284,8 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
  
   ```
 
-```Java 用RxJava请求
-    fun getRxNews(type: String) {
+```Java 
+    fun getRxNews(type: String) {//用RxJava请求
         repository.getRxNews(type)
             .`as`(auto(this))
             .subscribes({
@@ -295,11 +293,11 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
             },{
 
             })
-   ```
+  ```
 
-```Java subscribes是自定义的一个扩展函数
+```Java 
    fun <T> SingleSubscribeProxy<T>.subscribes(onSuccess: (T) -> Unit,
-                                            onError: (BaseResponseThrowable)->Unit) {
+                                            onError: (BaseResponseThrowable)->Unit) {//subscribes是自定义的一个扩展函数
     ObjectHelper.requireNonNull(onSuccess, "onSuccess is null")
     ObjectHelper.requireNonNull(onError, "onError is null")
     val observer: RequestObserver<T> = RequestObserver(onSuccess, onError)
@@ -317,9 +315,9 @@ data class Tag(
 )
 ```
 
-该示例格式是 [玩Android Api](https://www.wanandroid.com/blog/show/2)返回的数据格式，如果errorCode等于200 请求成功，否则请求失败
+**该示例格式是 [玩Android Api](https://www.wanandroid.com/blog/show/2)返回的数据格式，如果errorCode等于200 请求成功，否则请求失败
 作为开发者的角度来说，我们主要是想得到脱壳数据-data，且不想每次都判断errorCode==0请求是否成功或失败
-这时我们可以用livedata把数据结果从viewModel传递给activity，实现相关方法：
+这时我们可以用livedata把数据结果从viewModel传递给activity，实现相关方法：**
 
 ``` kotlin
 class NewViewModel @Inject constructor(application: Application) : BaseViewModel(application) {
