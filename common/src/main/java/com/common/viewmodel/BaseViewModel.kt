@@ -37,7 +37,7 @@ open class BaseViewModel() : BaseLifeViewModel() {
             }, {
                 error(it)
             }, {
-                complete()
+                complete()//不管成功与否，执行结束调用
             })
         }
     }

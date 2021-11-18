@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.common.base.BaseRecyclerViewAdapter;
 import com.just.news.R;
 import com.just.news.model.Data;
-import com.just.news.ui.adapter.NewAdapter;
+import com.just.news.ui.adapter.MainAdapter;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class Binding {
     @BindingAdapter({"setItmes"})
     public static <T> void setItem(RecyclerView recyclerView, ObservableList<Data> it) {
         if (it != null) {
-            recyclerView.setAdapter(new NewAdapter((ObservableList<Data>) it,
+            recyclerView.setAdapter(new MainAdapter((ObservableList<Data>) it,
                     R.layout.item_new,
                     0));
         }

@@ -10,7 +10,7 @@ import com.just.news.R
 import com.just.news.dao.Plant
 import com.just.news.databinding.FragmentMainBinding
 import com.just.news.model.Constants
-import com.just.news.ui.adapter.NewAdapter
+import com.just.news.ui.adapter.MainAdapter
 import com.just.news.ui.viewmodel.NewViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,7 +25,7 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding
 
     private val viewModel by viewModels<NewViewModel>()
 
-    private val adapter by lazy { NewAdapter(viewModel.itemNews, R.layout.item_new, 0) }
+    private val adapter by lazy { MainAdapter(viewModel.itemNews, R.layout.item_new, 0) }
 
     override fun loadData() {//懒加载
         viewModel.getNews("")//插入或者请求网络数据
