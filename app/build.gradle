@@ -98,6 +98,7 @@ dependencies {
     implementation presentationDependencies.room_runtime
     implementation presentationDependencies.room_ktx
 
+    // work
     implementation 'androidx.work:work-runtime-ktx:2.5.0'
 
     // lifecycle
@@ -110,4 +111,8 @@ dependencies {
     implementation presentationDependencies.hilt_lifecycle_viewmodel
     androidTestImplementation presentationDependencies.hilt_andorid_testing
     kaptAndroidTest presentationDependencies.hilt_andorid_compiler
+
+    // datastore
+    implementation presentationDependencies.datastore_preferences
+    implementation presentationDependencies.datastore_core
 }
