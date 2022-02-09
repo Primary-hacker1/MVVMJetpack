@@ -42,13 +42,13 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding
             viewModel.getPlant()
         }
 
-        viewModel.mEventHub.observe(this, {
+        viewModel.mEventHub.observe(this) {
             when (it.action) {
                 LiveDataEvent.LOGIN_FAIL -> {
                     LogUtils.e(TAG + it.`object` as Plant)
                 }
             }
-        })
+        }
     }
 
     private fun initToolbar() {

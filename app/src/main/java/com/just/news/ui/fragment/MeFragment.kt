@@ -43,10 +43,10 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
         val navController = findNavController()//fragment返回数据处理
 
         navController.currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")
-            ?.observe(this,
-                {
-                    LogUtils.e(TAG + it.toString())
-                })
+            ?.observe(this
+            ) {
+                LogUtils.e(TAG + it.toString())
+            }
 
     }
 
