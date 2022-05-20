@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7e65db0328bb6182d84686686adb0eb3/transformed/jetified-glide-4.11.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7e65db0328bb6182d84686686adb0eb3/transformed/jetified-glide-4.11.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7e65db0328bb6182d84686686adb0eb3/transformed/jetified-glide-4.11.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9fed9119b5af0dc1018064ad10922781/transformed/jetified-glide-4.11.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fed9119b5af0dc1018064ad10922781/transformed/jetified-glide-4.11.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fed9119b5af0dc1018064ad10922781/transformed/jetified-glide-4.11.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.11.0/c7431a0f446d7be1d3e99914f1bfb8db403ae76a/glide-4.11.0-javadoc.jar!/" />

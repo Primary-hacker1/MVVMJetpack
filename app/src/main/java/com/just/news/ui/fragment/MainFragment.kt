@@ -1,5 +1,7 @@
 package com.just.news.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.CommonBaseFragment
@@ -8,6 +10,7 @@ import com.common.network.LogUtils
 import com.common.viewmodel.LiveDataEvent
 import com.just.news.R
 import com.just.news.dao.Plant
+import com.just.news.databinding.FragmentLoginBinding
 import com.just.news.databinding.FragmentMainBinding
 import com.just.news.model.Constants
 import com.just.news.ui.adapter.MainAdapter
@@ -21,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
  *@author zt
  */
 @AndroidEntryPoint
-class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
+class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     private val viewModel by viewModels<NewViewModel>()
 
@@ -56,5 +59,9 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>(FragmentMainBinding
         binding.toolbar.tvRight.gone()
         binding.toolbar.ivTitleBack.gone()
     }
+
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentMainBinding.inflate(inflater, container, false)
 
 }

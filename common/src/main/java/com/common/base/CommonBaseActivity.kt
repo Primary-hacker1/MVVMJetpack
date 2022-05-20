@@ -1,7 +1,6 @@
 package com.common.base
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 
@@ -10,19 +9,22 @@ import androidx.databinding.ViewDataBinding
  *
  * @author zt
  */
-abstract class CommonBaseActivity<VB : ViewDataBinding>(
-    private val layout: (LayoutInflater) -> VB
-) : AppCompatActivity() {
+abstract class CommonBaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
-    protected val tag: String = CommonBaseActivity::class.java.simpleName
+    private lateinit var _binding: VB
 
-    protected val binding by lazy { layout(layoutInflater) }
+    protected val binding get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        _binding = getViewBinding()
+        setContentView(_binding.root)
         initView()
     }
+
+    protected abstract fun getViewBinding(): VB
+
+    protected val tag: String = CommonBaseActivity::class.java.simpleName
 
     protected abstract fun initView()
 

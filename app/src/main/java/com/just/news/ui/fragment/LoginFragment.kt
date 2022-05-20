@@ -1,5 +1,7 @@
 package com.just.news.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.news.MainActivity
@@ -13,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
  *@author zt
  */
 @AndroidEntryPoint
-class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
+class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
 
     private val viewModel by viewModels<NewViewModel>()
 
@@ -29,4 +31,7 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>(FragmentLoginBind
     override fun loadData() {
 
     }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentLoginBinding.inflate(inflater, container, false)
 }

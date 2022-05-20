@@ -6,13 +6,14 @@ import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseActivity
 import com.just.news.databinding.ActivityLoginBinding
+import com.just.news.databinding.ActivityMainBinding
 import com.just.news.ui.viewmodel.NewViewModel
 import com.justsafe.libview.util.BaseUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginActivity : CommonBaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
+class LoginActivity : CommonBaseActivity<ActivityLoginBinding>() {
 
     private val viewModel by viewModels<NewViewModel>()
 
@@ -30,5 +31,7 @@ class LoginActivity : CommonBaseActivity<ActivityLoginBinding>(ActivityLoginBind
     override fun initView() {
 
     }
+
+    override fun getViewBinding() = ActivityLoginBinding.inflate(layoutInflater)
 
 }

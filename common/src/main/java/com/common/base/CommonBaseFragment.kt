@@ -2,22 +2,35 @@ package com.common.base
 
 import android.content.Context
 import android.os.Bundle
+import android.os.IBinder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
-abstract class CommonBaseFragment<VB : ViewDataBinding>
-    (private val layout: (LayoutInflater) -> VB) :
-    Fragment() {
+abstract class CommonBaseFragment<VB : ViewDataBinding> : Fragment() {
 
     protected val TAG: String = CommonBaseFragment::class.java.simpleName
 
     private var mContext: Context? = null
 
-    protected val binding by lazy { layout(layoutInflater) }
+
+    private lateinit var _binding: VB
+
+    protected val binding get() = _binding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        isViewCreated = true
+        _binding = getViewBinding(inflater, container)
+        return _binding.root
+    }
 
     /**
      * 控件是否初始化完成
@@ -32,15 +45,6 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.mContext = context
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        isViewCreated = true
-        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -81,9 +85,21 @@ abstract class CommonBaseFragment<VB : ViewDataBinding>
         isComplete = false
     }
 
+
     protected abstract fun loadData()
 
     protected abstract fun initView()
 
+    protected abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
+
+    /**
+     * @param token - 获取InputMethodManager，隐藏软键盘
+     */
+    open fun hideKeyboard(token: IBinder?) {
+        if (token != null) {
+            val im = mContext?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
+    }
 
 }

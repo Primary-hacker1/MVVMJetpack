@@ -1,11 +1,14 @@
 package com.just.news.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.common.base.gone
 import com.common.network.LogUtils
 import com.just.news.R
+import com.just.news.databinding.FragmentMainBinding
 import com.just.news.databinding.FragmentMeBinding
 import com.just.news.model.Constants.me
 import com.just.news.ui.viewmodel.NewViewModel
@@ -17,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
  *@author zt
  */
 @AndroidEntryPoint
-class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::inflate) {
+class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
 
     private val viewModel by viewModels<NewViewModel>()
 
@@ -49,5 +52,8 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>(FragmentMeBinding::infl
             }
 
     }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentMeBinding.inflate(inflater, container, false)
 
 }

@@ -52,7 +52,7 @@ dependencies {
 
     api 'io.reactivex.rxjava2:rxjava:2.2.16'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    api 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    api 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
     api 'com.uber.autodispose:autodispose:1.1.0'
     api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'

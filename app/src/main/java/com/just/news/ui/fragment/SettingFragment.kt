@@ -1,7 +1,10 @@
 package com.just.news.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
+import com.just.news.databinding.FragmentNewBinding
 import com.just.news.databinding.FragmentSettingBinding
 import com.just.news.model.Constants
 import dagger.hilt.android.AndroidEntryPoint
@@ -12,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
  *@author zt
  */
 @AndroidEntryPoint
-class SettingFragment : CommonBaseFragment<FragmentSettingBinding>(FragmentSettingBinding::inflate) {
+class SettingFragment : CommonBaseFragment<FragmentSettingBinding>() {
 
     override fun initView() {
         initToolbar()
@@ -30,5 +33,8 @@ class SettingFragment : CommonBaseFragment<FragmentSettingBinding>(FragmentSetti
     override fun loadData() {
 
     }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentSettingBinding.inflate(inflater, container, false)
 
 }

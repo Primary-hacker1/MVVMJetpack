@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/958a8eb98120a0e04c7a1f4c03803569/transformed/jetified-hilt-android-testing-2.36/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/958a8eb98120a0e04c7a1f4c03803569/transformed/jetified-hilt-android-testing-2.36/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/958a8eb98120a0e04c7a1f4c03803569/transformed/jetified-hilt-android-testing-2.36/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/64074e078c32534fce0b6970b120de60/transformed/jetified-hilt-android-testing-2.36/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/64074e078c32534fce0b6970b120de60/transformed/jetified-hilt-android-testing-2.36/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/64074e078c32534fce0b6970b120de60/transformed/jetified-hilt-android-testing-2.36/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/hilt-android-testing/2.36/2596cead6b3207952fcaae100db7131740a9e598/hilt-android-testing-2.36-javadoc.jar!/" />
