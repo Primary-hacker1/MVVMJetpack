@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.common.BaseResponse
 import com.common.throwe.BaseResponseThrowable
 import com.common.throwe.ThrowableHandler
+import com.common.viewmodel.LiveDataEvent.Companion.SUCCESS
 import kotlinx.coroutines.*
 
 /**
@@ -52,8 +53,8 @@ open class BaseViewModel() : BaseLifeViewModel() {
         launchUi {
             handleRequest(withContext(Dispatchers.IO) {
                 request
-            }, {response->
-                executeResponse(response){
+            }, { response ->
+                executeResponse(response) {
                     success(it)
                 }
             }, {
@@ -85,7 +86,8 @@ open class BaseViewModel() : BaseLifeViewModel() {
         launchUi {
             handleRequest(withContext(Dispatchers.IO) {
                 request
-            }, {viewModelScope
+            }, {
+                viewModelScope
                 success(it)
             }, {
                 error(it)
@@ -118,8 +120,10 @@ open class BaseViewModel() : BaseLifeViewModel() {
         success: suspend CoroutineScope.(T) -> Unit
     ) {
         coroutineScope {
-            if (response.code == 200) success(response.data)
-            else throw BaseResponseThrowable(response.code, response.errorMsg)
+            if (response.code == SUCCESS) success(response.data)
+            else {
+                error(BaseResponseThrowable(response.code, response.errorMsg))
+            }
         }
     }
 
