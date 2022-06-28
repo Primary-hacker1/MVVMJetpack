@@ -26,15 +26,6 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         }
     }
 
-//    var titleList = arrayListOf<String>(
-//        "新闻", "娱乐"
-//    )
-//    var titleType = arrayListOf<String>(
-//        "T1348647853363",
-//        "T1348648517839"
-//    )
-
-
     override fun initView() {
         initNavigationView()
 /*        val mFragment = ArrayList<Fragment>()

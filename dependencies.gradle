@@ -1,13 +1,13 @@
 ext {
     //Android
     androidMinSdkVersion = 19
-    androidTargetSdkVersion = 30
-    androidCompileSdkVersion = 30
+    androidTargetSdkVersion = 31
+    androidCompileSdkVersion = 31
     androidBuildToolsVersion = "30.0.3"
 
     junit = "4.13.2"
 
-    navigation_version = "2.3.5"
+    navigation_version = "2.4.2"
     constraintlayoutVersion = "2.0.4"
     gson = "2.8.6"
     glide = "4.11.0"

@@ -48,7 +48,7 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
         viewModel.mEventHub.observe(this) {
             when (it.action) {
                 LiveDataEvent.LOGIN_FAIL -> {
-                    LogUtils.e(TAG + it.`object` as Plant)
+                    LogUtils.e(TAG + it.any as Plant)
                 }
             }
         }

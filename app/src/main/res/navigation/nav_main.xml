@@ -19,13 +19,13 @@
             app:destination="@id/meFragment" />
     </fragment>
 
-    <hold_state_fragment
+    <fragment_navigator
         android:id="@+id/newFragment"
         android:name="com.just.news.ui.fragment.NewFragment"
         android:label="newFragment"
         tools:layout="@layout/fragment_new" />
 
-    <fragment
+    <fragment_navigator
         android:id="@+id/meFragment"
         android:name="com.just.news.ui.fragment.MeFragment"
         android:label="meFragment"
@@ -33,9 +33,9 @@
         <action
             android:id="@+id/action_meFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
-    </fragment>
+    </fragment_navigator>
 
-    <fragment
+    <fragment_navigator
         android:id="@+id/settingFragment"
         android:name="com.just.news.ui.fragment.SettingFragment"
         android:label="settingFragment"
@@ -43,6 +43,6 @@
         <action
             android:id="@+id/action_settingFragment_to_meFragment"
             app:destination="@id/meFragment" />
-    </fragment>
+    </fragment_navigator>
 
 </navigation>
