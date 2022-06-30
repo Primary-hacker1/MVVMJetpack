@@ -40,6 +40,11 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
         navControllerNavigation.navigatorProvider.addNavigator(navigator)
         navControllerNavigation.setGraph(R.navigation.nav_main)
         NavigationUI.setupWithNavController(binding.bottomHomeTabs, navHostFragment.navController)
+
+        binding.bottomHomeTabs.setOnNavigationItemSelectedListener {
+            navControllerNavigation.navigate(it.itemId)
+            return@setOnNavigationItemSelectedListener true
+        }
     }
 
 

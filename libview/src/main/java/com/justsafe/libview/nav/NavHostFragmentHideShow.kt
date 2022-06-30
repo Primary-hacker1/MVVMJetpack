@@ -24,11 +24,10 @@ class NavHostFragmentHideShow : NavHostFragment() {
 
     private val containerId: Int
         get() {
+            // 如果此 Fragment 不是通过 add(containerViewId, Fragment) 添加的，则回退到使用我们自己的 ID
             val id = id
             return if (id != 0 && id != View.NO_ID) {
                 id
             } else R.id.nav_host_fragment_container
-            // Fallback to using our own ID if this Fragment wasn't added via
-            // add(containerViewId, Fragment)
         }
 }

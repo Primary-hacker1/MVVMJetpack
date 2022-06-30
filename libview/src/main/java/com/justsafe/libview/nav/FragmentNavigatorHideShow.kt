@@ -1,12 +1,15 @@
 package com.justsafe.libview.nav
 
 import android.content.Context
+import android.os.Bundle
 import android.util.Log
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.FragmentNavigator
@@ -29,14 +32,37 @@ class FragmentNavigatorHideShow(
         navOptions: NavOptions?,
         navigatorExtras: Navigator.Extras?
     ) {
-        //super.navigate(entries, navOptions, navigatorExtras)
+//        super.navigate(entries, navOptions, navigatorExtras)
         if (mFragmentManager.isStateSaved) {
-            Log.i("why", "Ignoring navigate() call: FragmentManager has already saved its state")
+            Log.i("why", "忽略 navigate() 调用：FragmentManager 已经保存了它的状态")
             return
         }
         for (entry in entries) {
             navigate(entry, navOptions, navigatorExtras)
         }
+    }
+
+    override fun navigate(
+        destination: Destination,
+        args: Bundle?,
+        navOptions: NavOptions?,
+        navigatorExtras: Navigator.Extras?
+    ): NavDestination? {
+        val tag: String = destination.id.toString()
+        val transaction: FragmentTransaction = mFragmentManager.beginTransaction()
+        val initialNavigate = false
+        val currentFragment: Fragment? = mFragmentManager.primaryNavigationFragment
+        if (currentFragment != null) {
+            transaction.hide(currentFragment)
+        }
+        val fragment: Fragment? = mFragmentManager.findFragmentByTag(tag)
+        if (fragment != null) {
+            transaction.show(fragment)
+        }
+        transaction.setPrimaryNavigationFragment(fragment)
+        transaction.setReorderingAllowed(true)
+        transaction.commitNow()
+        return (if (initialNavigate) destination else null)!!
     }
 
     private fun navigate(
@@ -72,7 +98,7 @@ class FragmentNavigatorHideShow(
                         savedIds.remove(entry.id)
                 )
         if (restoreState) {
-            // Restore back stack does all the work to restore the entry
+            // 恢复回栈完成恢复条目的所有工作
             mFragmentManager.restoreBackStack(entry.id)
             state.push(entry)
             return
@@ -121,7 +147,7 @@ class FragmentNavigatorHideShow(
         //ft.add(mContainerId, frag)
         ft.setPrimaryNavigationFragment(frag)
         @IdRes val destId = destination.id
-        // TODO Build first class singleTop behavior for fragments
+        // 为片段构建一流的 singleTop 行为
         val isSingleTopReplacement = (
                 navOptions != null && !initialNavigation &&
                         navOptions.shouldLaunchSingleTop() &&
@@ -132,12 +158,10 @@ class FragmentNavigatorHideShow(
                 true
             }
             isSingleTopReplacement -> {
-                // Single Top means we only want one instance on the back stack
+                // 单顶意味着我们只想要一个实例在后堆栈上
                 if (backStack.size > 1) {
-                    // If the Fragment to be replaced is on the FragmentManager's
-                    // back stack, a simple replace() isn't enough so we
-                    // remove it from the back stack and put our replacement
-                    // on the back stack in its place
+                    //如果要替换的 Fragment 在 FragmentManager 的后栈中，一个简单的 replace() 是不够的，
+                    // 所以我们将它从后栈中删除，并将我们的替换放在后栈中的位置
                     mFragmentManager.popBackStack(
                         entry.id,
                         FragmentManager.POP_BACK_STACK_INCLUSIVE
@@ -158,10 +182,11 @@ class FragmentNavigatorHideShow(
         }
         ft.setReorderingAllowed(true)
         ft.commit()
-        // The commit succeeded, update our view of the world
+        // 提交成功，更新我们的世界观
         if (isAdded) {
             state.push(entry)
         }
-        // The commit succeeded, update our view of the world
     }
+
+
 }
