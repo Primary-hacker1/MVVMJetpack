@@ -1,19 +1,8 @@
 [![Platform][1]][2] [![GitHub license][3]][4]  [![GitHub license][5]][6]
 
-[1]:https://img.shields.io/badge/platform-Android-blue.svg
+# 👕👕👕:富仁集团专属框架！
 
-[2]:https://github.com/hegaojian/JetpackMvvm
-
-[3]:https://img.shields.io/github/release/hegaojian/JetpackMvvm.svg
-
-[4]:https://github.com/hegaojian/JetpackMvvm/releases/latest
-
-[5]:https://img.shields.io/badge/license-Apache%202-blue.svg
-
-[6]:https://github.com/hegaojian/JetpackMvvm/blob/master/LICENSE
-
-# 👕👕👕:JetPackMvvm
-
+- **autosize为头条适配，serial串口封装通用，common架构设计，libview自定义view源码
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation、Retrofit、 RxJava、
   hilt组件,后期增加flow持续更新最新最屌技术**
 - **使用kotlin语言，添加大量拓展函数，简化代码**

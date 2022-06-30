@@ -7,7 +7,7 @@
 
         <import type="com.just.news.R" />
 
-        <import type="com.just.news.MainActivity" />
+        <import type="com.just.machine.ui.activity.MainActivity" />
 
 
         <variable

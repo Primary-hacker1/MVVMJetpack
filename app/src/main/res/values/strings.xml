@@ -5,4 +5,7 @@
     <string name="newS">最新</string>
     <string name="setting">设置</string>
     <string name="queryDatabase">查询数据库</string>
+    <string name="name">账号</string>
+    <string name="pass">密码</string>
+    <string name="submit">登录</string>
 </resources>

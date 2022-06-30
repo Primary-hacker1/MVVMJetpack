@@ -6,9 +6,9 @@
     app:startDestination="@id/mainFragment">
 
     <!--  hold_state_fragment 保活机制  -->
-    <fragment
+    <fragment_navigator
         android:id="@+id/mainFragment"
-        android:name="com.just.news.ui.fragment.MainFragment"
+        android:name="com.just.machine.ui.fragment.MainFragment"
         android:label="mainFragment"
         tools:layout="@layout/fragment_main">
         <action
@@ -17,17 +17,17 @@
         <action
             android:id="@+id/action_mainFragment_to_meFragment"
             app:destination="@id/meFragment" />
-    </fragment>
+    </fragment_navigator>
 
     <fragment_navigator
         android:id="@+id/newFragment"
-        android:name="com.just.news.ui.fragment.NewFragment"
+        android:name="com.just.machine.ui.fragment.NewFragment"
         android:label="newFragment"
         tools:layout="@layout/fragment_new" />
 
     <fragment_navigator
         android:id="@+id/meFragment"
-        android:name="com.just.news.ui.fragment.MeFragment"
+        android:name="com.just.machine.ui.fragment.MeFragment"
         android:label="meFragment"
         tools:layout="@layout/fragment_me">
         <action
@@ -37,7 +37,7 @@
 
     <fragment_navigator
         android:id="@+id/settingFragment"
-        android:name="com.just.news.ui.fragment.SettingFragment"
+        android:name="com.just.machine.ui.fragment.SettingFragment"
         android:label="settingFragment"
         tools:layout="@layout/fragment_setting">
         <action

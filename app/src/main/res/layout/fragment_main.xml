@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.just.news.ui.viewmodel.NewViewModel" />
+            type="com.just.machine.ui.viewmodel.NewViewModel" />
 
     </data>
 
@@ -27,7 +27,7 @@
             android:id="@+id/btn_me"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/queryDatabase" />
+            android:text="跳转" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_item_main"

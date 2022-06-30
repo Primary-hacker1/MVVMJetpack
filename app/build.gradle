@@ -79,9 +79,10 @@ kapt {
 
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':libview')
     implementation project(path: ':common')
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':autosize')
     implementation gradleBase.core
     implementation gradleBase.appcompat
     testImplementation gradleBase.junit

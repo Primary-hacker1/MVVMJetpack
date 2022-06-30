@@ -57,6 +57,8 @@ dependencies {
     api 'com.uber.autodispose:autodispose:1.1.0'
     api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'
 
+    api files('libs/log4j-1.2.13.jar')
+
     implementation gradleBase.appcompat
     testImplementation gradleBase.junit
 

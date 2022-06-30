@@ -26,6 +26,22 @@
         <entry key="..\:/JustSafe/app/src/main/res/layout/select_form_fragment.xml" value="0.23777173913043478" />
         <entry key="..\:/JustSafe/app/src/main/res/layout/view_toolbar.xml" value="0.15729483282674772" />
         <entry key="..\:/JustSafe/app/src/main/res/menu/bottom_navigation_main_emc.xml" value="0.21944444444444444" />
+        <entry key="..\:/app/MVVMJetpack/app/src/main/res/layout/activity_main.xml" value="0.21422101449275363" />
+        <entry key="..\:/app/MVVMJetpack/app/src/main/res/layout/fragment_login.xml" value="0.36614583333333334" />
+        <entry key="..\:/app/MVVMJetpack/app/src/main/res/menu/bottom_navigation_main_emc.xml" value="0.36614583333333334" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.264" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/drawable-v24/main_home.xml" value="0.264" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/drawable-v24/main_new.xml" value="0.264" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/drawable-v24/main_personal.xml" value="0.264" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/fragment_main.xml" value="0.1875" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/fragment_me.xml" value="0.1875" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/fragment_new.xml" value="0.1875" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/fragment_setting.xml" value="0.1875" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/layout/view_toolbar.xml" value="0.36614583333333334" />
+        <entry key="..\:/gitlab/vendingmachine/app/src/main/res/menu/bottom_navigation_main_emc.xml" value="0.1875" />
+        <entry key="..\:/gitlab/vendingmachine/lib_serial/src/main/res/drawable/ic_launcher_background.xml" value="0.264" />
+        <entry key="..\:/gitlab/vendingmachine/lib_serial/src/main/res/layout/activity_main.xml" value="0.18206521739130435" />
       </map>
     </option>
   </component>

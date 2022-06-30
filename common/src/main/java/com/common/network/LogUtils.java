@@ -6,7 +6,7 @@ import com.common.BuildConfig;
 
 
 /**
- * Log封装
+ * Log封装logcat输出不本地输出，仅供程序员查看
  */
 public class LogUtils {
 
@@ -31,18 +31,14 @@ public class LogUtils {
     }
 
     private static String createLog(String log) {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("================");
-        buffer.append(methodName);
-        buffer.append("(").append(className).append(":").append(lineNumber).append(")================:");
-        buffer.append(log);
-        return buffer.toString();
+        return "================" +
+                methodName +
+                "(" + className + ":" + lineNumber + ")================:" +
+                log;
     }
 
     /**
-     * 获取文件名、方法名、所在行数
-     *
-     * @param sElements
+     * @param sElements 获取文件名、方法名、所在行数
      */
     private static void getMethodNames(StackTraceElement[] sElements) {
         className = sElements[1].getFileName();

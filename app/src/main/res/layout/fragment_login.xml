@@ -7,32 +7,21 @@
 
         <variable
             name="vm"
-            type="com.just.news.ui.viewmodel.NewViewModel" />
+            type="com.just.machine.ui.viewmodel.NewViewModel" />
 
     </data>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@mipmap/logoin_bg">
+        android:background="@color/text9">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="220dp"
-            android:background="@mipmap/login_logo" />
-
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            android:id="@+id/tv_name"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/iv_background"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:text="汽车城"-->
-<!--            android:textColor="@color/cf5f5f5"-->
-<!--            android:textSize="@dimen/space_26" />-->
+            android:layout_marginTop="220dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,9 +34,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="26dp"
-                android:paddingTop="20dp"
                 android:layout_marginRight="26dp"
                 android:orientation="vertical"
+                android:paddingTop="20dp"
                 tools:ignore="MissingConstraints,NotSibling">
 
 
@@ -55,15 +44,14 @@
                     android:id="@+id/atv_login_account"
                     android:layout_width="match_parent"
                     android:layout_height="31dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
                     android:background="@drawable/bg_input"
-                    android:hint="账号"
+                    android:hint="@string/name"
                     android:maxLength="11"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textColorHint="@color/white"
-                    android:textSize="@dimen/space_15" />
+                    android:textSize="@dimen/space_15"
+                    tools:ignore="SpUsage" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -76,16 +64,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
                         android:background="@drawable/bg_input"
-                        android:hint="密码"
+                        android:hint="@string/pass"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:singleLine="true"
                         android:textColorHint="@color/white"
                         android:textSize="@dimen/space_15"
                         app:delete_x="0"
-                        app:ed_backgroundColor="false" />
+                        app:ed_backgroundColor="false"
+                        tools:ignore="SpUsage" />
 
                 </RelativeLayout>
 
@@ -99,7 +87,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="33dp"
                 android:background="@drawable/succeed_blue_btn"
-                android:text="登录"
+                android:text="@string/submit"
                 android:textColor="@color/colorWhile"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="@id/ll_input"

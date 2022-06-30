@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/handover.iml" filepath="$PROJECT_DIR$/.idea/modules/handover.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/handover.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/handover.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/autosize/handover.autosize.iml" filepath="$PROJECT_DIR$/.idea/modules/autosize/handover.autosize.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/handover.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/handover.common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/libview/handover.libview.iml" filepath="$PROJECT_DIR$/.idea/modules/libview/handover.libview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_serial/handover.serial.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_serial/handover.serial.iml" />
     </modules>
   </component>
 </project>

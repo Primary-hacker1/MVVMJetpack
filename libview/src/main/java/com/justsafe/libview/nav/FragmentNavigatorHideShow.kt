@@ -13,7 +13,7 @@ import androidx.navigation.fragment.FragmentNavigator
 import java.util.*
 
 /**
- * 作者　: hegaojian
+ * 作者　: zt
  * 时间　: 2021/6/29
  * 描述　: 使用Hide/Show处理Fragment，使Fragment执行 onPause/onResume.避免页面重建.
  */
@@ -48,7 +48,16 @@ class FragmentNavigatorHideShow(
         try {
             val field = FragmentNavigator::class.java.getDeclaredField("savedIds")
             field.isAccessible = true
-            savedIds = field[this] as LinkedHashSet<String>
+            if (field[this] is LinkedHashSet<*>) {
+                val fields = field[this] as LinkedHashSet<*>
+                val linkedHashSet = LinkedHashSet<String>()
+                fields.forEach {
+                    if (it is String) {
+                        linkedHashSet.add(it)
+                    }
+                }
+                savedIds = linkedHashSet
+            }
         } catch (e: NoSuchFieldException) {
             e.printStackTrace()
         } catch (e: IllegalAccessException) {
@@ -95,7 +104,7 @@ class FragmentNavigatorHideShow(
             ft.setMaxLifecycle(fragment, Lifecycle.State.STARTED)
             ft.hide(fragment)
         }
-        var targetFrag: Fragment? = null
+        var targetFrag: Fragment?
         val tag = destination.id.toString()
         targetFrag = mFragmentManager.findFragmentByTag(tag)
         if (targetFrag != null) {
@@ -154,9 +163,5 @@ class FragmentNavigatorHideShow(
             state.push(entry)
         }
         // The commit succeeded, update our view of the world
-    }
-
-    companion object {
-        private const val TAG = "why"
     }
 }

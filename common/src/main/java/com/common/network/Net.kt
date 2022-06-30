@@ -1,5 +1,6 @@
 package com.common.network
 
+import com.common.log.ThinkerLogger
 import okhttp3.Interceptor
 import java.util.concurrent.TimeUnit
 
@@ -37,22 +38,35 @@ object Net {
     }
 
     private fun getOkHttpClient(): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor()
-        if (LogUtils.isDebug) {
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        }
         val headerInterceptor = Interceptor { chain ->
             val builder = chain.request().newBuilder()
-            //请求头携token
-            builder.addHeader("Authorization", "")
+            builder.addHeader("Content-Type", "application/json")
+//            builder.addHeader("Authorization", "Bearer " + ProfileManager.instance.token!!)//请求头携token
             chain.proceed(builder.build())
         }
+
         return OkHttpClient.Builder()
             .connectTimeout(timeOut, TimeUnit.SECONDS)
-            .addInterceptor(loggingInterceptor)
+            .addInterceptor(getLogger)
             .addInterceptor(headerInterceptor)
             .writeTimeout(timeOut, TimeUnit.SECONDS)
             .readTimeout(timeOut, TimeUnit.SECONDS)
             .build()
     }
+
+    /**
+     * 日志拦截器，拦截日志打印
+     *
+     * @return
+     */
+    private val getLogger: HttpLoggingInterceptor
+        get() {
+            val logger = ThinkerLogger.getInstance().getLogger("httpServer")
+            val level: HttpLoggingInterceptor.Level = HttpLoggingInterceptor.Level.BODY
+            //新建log拦截器
+            val loggingInterceptor =
+                HttpLoggingInterceptor { message: String? ->logger.info(message) }
+            loggingInterceptor.setLevel(level)
+            return loggingInterceptor
+        }
 }

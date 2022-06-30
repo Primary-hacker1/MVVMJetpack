@@ -43,11 +43,10 @@ import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 
-
 /**
  *create by 2019/12/30
  * 扩展函数基类
- *@author yx
+ *@author zt
  */
 fun Activity.toast(msg: String?, duration: Int = Toast.LENGTH_SHORT) {
     if (TextUtils.isEmpty(msg)) {
@@ -58,6 +57,13 @@ fun Activity.toast(msg: String?, duration: Int = Toast.LENGTH_SHORT) {
 
 fun Activity.toast(msg: Int?, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, msg!!, duration).show()
+}
+
+fun Fragment.toast(msg: String?, duration: Int = Toast.LENGTH_SHORT) {
+    if (TextUtils.isEmpty(msg)) {
+        return
+    }
+    Toast.makeText(activity, msg!!, duration).show()
 }
 
 fun <T> Single<T>.single(): Single<T> =
@@ -215,7 +221,7 @@ fun createBitmapSafely(width: Int, height: Int, config: Bitmap.Config, retryCoun
  */
 var lastClickTime = 0L
 
-fun View.clickNoRepeat(interval: Long = 500, action: (view: View) -> Unit) {
+fun View.setNoRepeatListener(interval: Long = 500, action: (view: View) -> Unit) {
     setOnClickListener {
         val currentTime = System.currentTimeMillis()
         if (lastClickTime != 0L && (currentTime - lastClickTime < interval)) {
@@ -252,7 +258,6 @@ fun Any?.notNull(notNullAction: (value: Any) -> Unit, nullAction1: () -> Unit) {
         nullAction1.invoke()
     }
 }
-
 
 
 /**

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.just.news.ui.fragment.LoginFragment"
+        android:name="com.just.machine.ui.fragment.LoginFragment"
         android:label="newFragment"
         tools:layout="@layout/fragment_login" />
 
