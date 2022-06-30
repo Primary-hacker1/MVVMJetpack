@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="me.jessyan.autosize">
+
+    <application>
+        <provider
+            android:name="me.jessyan.autosize.InitProvider"
+            android:authorities="${applicationId}.autosize-init-provider"
+            android:exported="false"
+            android:multiprocess="true"/>
+    </application>
+</manifest>

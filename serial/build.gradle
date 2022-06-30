@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode globalConfiguration["androidVersionCode"]
+        versionName globalConfiguration["androidVersionName"]
+        ndkVersion globalConfiguration["androidNdkVersion"]
+
+        multiDexEnabled globalConfiguration["androidMultiDexEnabled"]
+        testInstrumentationRunner globalConfiguration["testInstrumentationRunner"]
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            LogDebug = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            LogDebug = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions{
+        jvmTarget = '11'
+    }
+
+    dataBinding {
+        //noinspection DataBindingWithoutKapt
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ['*.jar', '*.aar'])
+    implementation files('libs/SerialPort_v1.0_20220525_release.aar')
+
+    implementation gradleBase.appcompat
+    implementation gradleBase.core
+}
+repositories {
+    mavenCentral()
+}
