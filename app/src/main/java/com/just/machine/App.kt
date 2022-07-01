@@ -2,6 +2,9 @@ package com.just.machine
 
 import android.app.Activity
 import android.app.Application
+import com.just.machine.helper.UriConfig
+import com.just.machine.model.SharedPreferencesUtils
+import com.justsafe.libview.util.SystemUtil
 
 
 import dagger.hilt.android.HiltAndroidApp
@@ -12,9 +15,14 @@ import me.jessyan.autosize.utils.AutoSizeLog
 import java.util.*
 
 @HiltAndroidApp
-open class App : Application(){
+open class App : Application() {
+    companion object {
+        var instance: App? = null
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this
         /**
          * @param AutoSize 今日头条终极适配
          * */
