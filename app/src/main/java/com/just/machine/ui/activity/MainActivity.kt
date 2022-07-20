@@ -39,12 +39,6 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
             FragmentNavigatorHideShow(this, navHostFragment.childFragmentManager, R.id.main_layout)
         navControllerNavigation.navigatorProvider.addNavigator(navigator)
         navControllerNavigation.setGraph(R.navigation.nav_main)
-        NavigationUI.setupWithNavController(binding.bottomHomeTabs, navHostFragment.navController)
-
-        binding.bottomHomeTabs.setOnNavigationItemSelectedListener {
-            navControllerNavigation.navigate(it.itemId)
-            return@setOnNavigationItemSelectedListener true
-        }
     }
 
 
