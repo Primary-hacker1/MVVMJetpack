@@ -1,10 +1,10 @@
 [![Platform][1]][2] [![GitHub license][3]][4]  [![GitHub license][5]][6]
 
-# 👕👕👕:富仁集团专属框架！
+# 👕👕👕:组件化快速开发专属框架！
 
 - **autosize为头条适配，serial串口封装通用，common架构设计，libview自定义view源码
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation、Retrofit、 RxJava、
-  hilt组件,后期增加flow持续更新最新最屌技术**
+  hilt组件,增加flow持续更新最新**
 - **使用kotlin语言，添加大量拓展函数，简化代码**
 - **加入Retrofit网络请求,协程，帮你简化各种操作，让你快速请求网络**
 
