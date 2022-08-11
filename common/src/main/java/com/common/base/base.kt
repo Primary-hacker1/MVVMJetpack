@@ -84,6 +84,8 @@ fun Activity.navigateToActivity(c: Class<*>, bundle: Bundle) {
     startActivity(intent)
 }
 
+fun<T> Single<T>.async()=this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+
 @CheckReturnValue
 @SchedulerSupport(SchedulerSupport.NONE)
 fun <T> Single<T>.subscribes(

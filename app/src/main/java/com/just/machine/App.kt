@@ -2,6 +2,7 @@ package com.just.machine
 
 import android.app.Activity
 import android.app.Application
+import com.common.log.ThinkerLogger
 import com.just.machine.helper.UriConfig
 import com.just.machine.model.SharedPreferencesUtils
 import com.justsafe.libview.util.SystemUtil
@@ -22,7 +23,10 @@ open class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         instance = this
+
+        ThinkerLogger.getInstance().init(UriConfig.LOG_PATH)//日志输出本地
         /**
          * @param AutoSize 今日头条终极适配
          * */

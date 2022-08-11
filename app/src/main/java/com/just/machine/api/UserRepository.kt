@@ -1,6 +1,6 @@
 package com.just.machine.api
 
-import com.just.machine.helper.async
+import com.common.base.async
 import com.just.machine.model.NewResponse
 import javax.inject.Inject
 
