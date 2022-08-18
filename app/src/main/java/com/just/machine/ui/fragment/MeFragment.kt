@@ -7,9 +7,9 @@ import androidx.navigation.fragment.findNavController
 import com.common.base.CommonBaseFragment
 import com.common.base.gone
 import com.common.network.LogUtils
+import com.just.machine.model.Constants
 import com.just.news.R
 import com.just.news.databinding.FragmentMeBinding
-import com.just.machine.model.Constants.me
 import com.just.machine.ui.viewmodel.NewViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +28,7 @@ class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
     }
 
     private fun initToolbar() {
-        binding.toolbar.title = me//标题
+        binding.toolbar.title = Constants.me//标题
         binding.toolbar.tvRight.gone()
         binding.toolbar.ivTitleBack.gone()
     }

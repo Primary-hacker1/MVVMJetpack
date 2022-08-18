@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.common.base.*
+import com.just.machine.model.Constants
 import com.just.news.databinding.FragmentNewBinding
-import com.just.machine.model.Constants.news
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class NewFragment : CommonBaseFragment<FragmentNewBinding>() {
 
     private fun initToolbar() {
-        binding.toolbar.title = news//标题
+        binding.toolbar.title = Constants.news//标题
         binding.toolbar.tvRight.gone()
         binding.toolbar.ivTitleBack.visible()
     }

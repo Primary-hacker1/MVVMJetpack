@@ -53,5 +53,4 @@ dependencies {
     implementation presentationDependencies.navigation_ui_ktx
     implementation presentationDependencies.glide
     implementation presentationDependencies.gson
-
 }
