@@ -439,7 +439,7 @@ LogUtils.e()可以快速定位错误代码的位置，单机连接跳转至错�
 ## 联系
 
 - QQ交流群：750467053 
-![QQ交流群](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/qrcode_1660787905159.jpg)
+![QQ交流群](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/qrcode_1660787905159.png)
 
 ## License
 
