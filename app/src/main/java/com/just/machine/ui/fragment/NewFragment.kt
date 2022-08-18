@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.common.base.*
-import com.common.network.LogUtils
 import com.just.news.databinding.FragmentNewBinding
 import com.just.machine.model.Constants.news
 import dagger.hilt.android.AndroidEntryPoint

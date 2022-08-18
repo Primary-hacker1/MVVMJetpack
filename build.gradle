@@ -12,7 +12,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.3'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.36"
     }
 }
@@ -38,11 +38,10 @@ allprojects {
     }
 
     ext {
+        //发布debug版本修改此参数，发布release版本同时去掉debug
         androidApplicationId = 'com.just.news'
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testApplicationId = 'com.elab3.android.presentation.presentation.test'
         releaseVersionNameSuffix = androidTargetSdkVersion
-        //发布debug版本修改此参数，发布release版本同时去掉debug
         androidVersionName = "1.0"
         androidVersionCode = 1
         apkVersion = "" + androidVersionName

@@ -27,10 +27,8 @@ open class App : Application() {
         instance = this
 
         ThinkerLogger.getInstance().init(UriConfig.LOG_PATH)//日志输出本地
-        /**
-         * @param AutoSize 今日头条终极适配
-         * */
-        AutoSize.initCompatMultiProcess(this)
+
+        AutoSize.initCompatMultiProcess(this)//今日头条终极适配
         AutoSizeConfig.getInstance() //是否让框架支持自定义 Fragment 的适配参数, 由于这个需求是比较少见的, 所以须要使用者手动开启
             .setUseDeviceSize(true)
             .setBaseOnWidth(false)//全局适配宽高
