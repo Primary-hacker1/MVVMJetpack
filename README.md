@@ -10,6 +10,8 @@
 
 ## 演示Demo
 
+![对比图](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/compared.png)
+
 - **已经使用2年多时间优化和踩bug，现已经可以完全实现单一vm和单activity模式，快速开发，冗余代码几乎为0，解耦5.0分，之后会一直更新为了更高阶开发身法努力！**
 
 [comment]: <> (#### 效果图展示)
