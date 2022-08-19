@@ -19,7 +19,6 @@ class LoginActivity : CommonBaseActivity<ActivityLoginBinding>() {
          * @param context -
          */
         fun startJUSTLoginActivity(context: Context) {
-            if (BaseUtil.isFastDoubleClick()) return
             val intent = Intent(context, LoginActivity::class.java)
             context.startActivity(intent)
         }

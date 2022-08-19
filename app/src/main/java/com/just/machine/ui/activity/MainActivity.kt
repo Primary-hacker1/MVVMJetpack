@@ -20,7 +20,6 @@ class MainActivity : CommonBaseActivity<ActivityMainBinding>() {
          * @param context -跳转主界面
          */
         fun startMainActivity(context: Context?) {
-            if (BaseUtil.isFastDoubleClick()) return//双击过快处理
             val intent = Intent(context, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
             context?.startActivity(intent)
