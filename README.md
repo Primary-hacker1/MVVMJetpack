@@ -216,9 +216,10 @@ val mainViewModel : MainViewModel by viewModels()
 ### stateView.isLoading.value = true
 
 ## 4.4 开启打印日志开关
-
-LogUtils.e()可以快速定位错误代码的位置，单机连接跳转至错误代码
+``` kotlin
+LogUtils.e()//可以快速定位错误代码的位置，单机连接跳转至错误代码
 ThinkerLogger.getInstance().init(UriConfig.LOG_PATH)//日志输出本地
+```
 
 ## 5.获取ViewModel
 
@@ -232,6 +233,8 @@ ViewModelProvider.AndroidViewModelFactory(application)).get(MainViewModel::class
 ## 6.写了一些常用的拓展函数
 
 base类里有基本常用的扩展函数
+
+``` kotlin
 fun Activity.toast(msg: Int?, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, msg!!, duration).show()
 }
