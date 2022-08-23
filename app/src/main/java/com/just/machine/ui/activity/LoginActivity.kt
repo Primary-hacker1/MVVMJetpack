@@ -5,14 +5,13 @@ import android.content.Intent
 import androidx.activity.viewModels
 import com.common.base.CommonBaseActivity
 import com.just.news.databinding.ActivityLoginBinding
-import com.just.machine.ui.viewmodel.NewViewModel
-import com.justsafe.libview.util.BaseUtil
+import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginActivity : CommonBaseActivity<ActivityLoginBinding>() {
+class LoginActivity : CommonBaseActivity<ActivityLoginBinding>() {//布局ID
 
-    private val viewModel by viewModels<NewViewModel>()
+    private val viewModel by viewModels<MainViewModel>()//委托
 
     companion object {
         /**

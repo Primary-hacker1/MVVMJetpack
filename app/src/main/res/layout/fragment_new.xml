@@ -6,7 +6,7 @@
         <import type="com.just.news.R" />
         <variable
             name="viewModel"
-            type="com.just.machine.ui.viewmodel.NewViewModel" />
+            type="com.just.machine.ui.viewmodel.MainViewModel" />
     </data>
 
     <LinearLayout

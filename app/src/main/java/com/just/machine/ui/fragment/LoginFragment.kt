@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import com.common.base.CommonBaseFragment
 import com.just.machine.ui.activity.MainActivity
 import com.just.news.databinding.FragmentLoginBinding
-import com.just.machine.ui.viewmodel.NewViewModel
+import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
 
-    private val viewModel by viewModels<NewViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun initView() {
         binding.btnLogin.setOnClickListener {

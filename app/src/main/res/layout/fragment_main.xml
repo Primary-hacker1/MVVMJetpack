@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.just.machine.ui.viewmodel.NewViewModel" />
+            type="com.just.machine.ui.viewmodel.MainViewModel" />
 
     </data>
 

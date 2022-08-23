@@ -10,7 +10,7 @@ import com.common.network.LogUtils
 import com.just.machine.model.Constants
 import com.just.news.R
 import com.just.news.databinding.FragmentMeBinding
-import com.just.machine.ui.viewmodel.NewViewModel
+import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MeFragment : CommonBaseFragment<FragmentMeBinding>() {
 
-    private val viewModel by viewModels<NewViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun loadData() {//懒加载
 

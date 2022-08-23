@@ -13,7 +13,7 @@ import com.just.machine.dao.Plant
 import com.just.news.databinding.FragmentMainBinding
 import com.just.machine.model.Constants
 import com.just.machine.ui.adapter.MainAdapter
-import com.just.machine.ui.viewmodel.NewViewModel
+import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -25,12 +25,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
-    private val viewModel by viewModels<NewViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     private val adapter by lazy { MainAdapter(viewModel.itemNews, R.layout.item_new, 0) }
 
     override fun loadData() {//懒加载
-        viewModel.getNews("")//插入或者请求网络数据
+        viewModel.getDates("")//插入或者请求网络数据
     }
 
     override fun initView() {

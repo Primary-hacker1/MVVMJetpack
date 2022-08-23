@@ -21,7 +21,7 @@ import javax.inject.Inject
  * @author zt
  */
 @HiltViewModel
-class NewViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private var repository: UserRepository,
     private var plantDao: PlantRepository
 ) : BaseViewModel() {
@@ -31,7 +31,7 @@ class NewViewModel @Inject constructor(
     /**
      *@param type 协程请求->直接获取结果的
      */
-    fun getNews(type: String) {
+    fun getDates(type: String) {
 
         viewModelScope.launch {
             val plants: MutableList<Plant> = ArrayList()
