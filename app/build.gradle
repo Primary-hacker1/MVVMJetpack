@@ -100,7 +100,7 @@ dependencies {
     implementation presentationDependencies.room_ktx
 
     // work
-    implementation 'androidx.work:work-runtime-ktx:2.5.0'
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
     // lifecycle
     implementation presentationDependencies.lifecycle_viewmodel_ktx
