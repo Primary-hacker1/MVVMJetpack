@@ -27,7 +27,7 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     private val viewModel by viewModels<MainViewModel>()
 
-    private val adapter by lazy { MainAdapter(viewModel.itemNews, R.layout.item_new, 0) }
+    private val adapter by lazy { MainAdapter() }
 
     override fun loadData() {//懒加载
         viewModel.getDates("")//插入或者请求网络数据
@@ -37,17 +37,28 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
         initToolbar()
 
         val layoutManager1 = LinearLayoutManager(context)
+
         binding.rvItemMain.layoutManager = layoutManager1
+
+
         binding.rvItemMain.adapter = adapter
 
         binding.btnMe.setOnClickListener {
             navigate(it, R.id.newFragment)
         }
 
+        viewModel.getPlant()
+
         viewModel.mEventHub.observe(this) {
             when (it.action) {
                 LiveDataEvent.LOGIN_FAIL -> {
-                    LogUtils.e(TAG + it.any as Plant)
+                    if (it.any is Plant) {
+                        val bean = it.any as Plant
+                        val listBean = ArrayList<Plant>()
+                        listBean.add(bean)
+                        adapter.setItemsBean(listBean)
+                        LogUtils.e(TAG + it.any as Plant)
+                    }
                 }
             }
         }

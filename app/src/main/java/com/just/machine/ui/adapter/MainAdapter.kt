@@ -1,26 +1,28 @@
 package com.just.machine.ui.adapter
 
-import androidx.databinding.ObservableList
-import com.common.base.BaseDataBingViewHolder
 import com.common.base.BaseRecyclerViewAdapter
+import com.just.machine.dao.Plant
+import com.just.news.R
 import com.just.news.databinding.ItemNewBinding
-import com.just.machine.helper.GlideApp
-import com.just.machine.model.Data
 
-class MainAdapter(itemData: ObservableList<Data>, layoutId: Int, dataId: Int) :
-    BaseRecyclerViewAdapter<Data, ItemNewBinding>(
-        itemData, layoutId, dataId
-    ) {
+class MainAdapter : BaseRecyclerViewAdapter<Plant, ItemNewBinding>() {
 
-    override fun bindViewHolder(
-        viewHolder: BaseDataBingViewHolder<ItemNewBinding>,
-        position: Int,
-        t: Data
-    ) {
-        super.bindViewHolder(viewHolder, position, t)
-        viewHolder.binding.title.text = itemData[position].title
-        viewHolder.binding.source.text = itemData[position].source
-        GlideApp.loadImage(itemData[position].imgsrc, viewHolder.binding.image)
+    override fun bindData(item: Plant) {
+        binding.item = item
+    }
+
+    override fun getLayoutRes(): Int {
+        return R.layout.item_new
+    }
+
+    private var listener: MainListener? = null
+
+    interface MainListener {
+        fun onClickItem(bean: ItemNewBinding)
+    }
+
+    fun setItemOnClickListener(listener: MainListener) {
+        this.listener = listener
     }
 
 }

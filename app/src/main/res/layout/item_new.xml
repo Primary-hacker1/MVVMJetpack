@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="item"
+            type="com.just.machine.dao.Plant" />
+    </data>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="120dp">
@@ -18,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
+                android:text="@{item.name}"
                 android:textColor="@color/text3"
                 android:textSize="16sp" />
 
@@ -26,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:text="@{item.description}"
                 android:textColor="@color/text9"
                 android:textSize="14sp" />
         </RelativeLayout>

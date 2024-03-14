@@ -33,24 +33,6 @@ public class Binding {
         }
     }
 
-    @BindingAdapter({"itmes"})
-    public static <T> void addItem(RecyclerView recyclerView, ObservableList<T> it) {
-        BaseRecyclerViewAdapter adapter = (BaseRecyclerViewAdapter) recyclerView.getAdapter();
-        if (adapter != null) {
-            adapter.onSetItem(it);
-        }
-    }
-
-    @BindingAdapter({"setItmes"})
-    public static <T> void setItem(RecyclerView recyclerView, ObservableList<Data> it) {
-        if (it != null) {
-            recyclerView.setAdapter(new MainAdapter((ObservableList<Data>) it,
-                    R.layout.item_new,
-                    0));
-        }
-
-    }
-
     @BindingAdapter({"listener"})
     public static <T> void setListener(RecyclerView recyclerView, List<T> it) {
         BaseRecyclerViewAdapter adapter = (BaseRecyclerViewAdapter) recyclerView.getAdapter();
