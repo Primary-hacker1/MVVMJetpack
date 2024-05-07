@@ -62,27 +62,30 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    /**
-     *@param type 协程请求->带loading的
-     */
-    fun getNewsLoading(type: String) {
-        async({ repository.getNews("") }, {
-            //返回结果
-        }, true, {}, {})
-    }
+    fun getPlant1() = plantDao.getPlant("123")
 
-    /**
-     *@param type rxjava请求->直接获取结果的
-     */
-    fun getRxNews(type: String) {
-        repository.getRxNews(type)
-            .`as`(auto(this))
-            .subscribes({
 
-            }, {
+/**
+ *@param type 协程请求->带loading的
+ */
+fun getNewsLoading(type: String) {
+    async({ repository.getNews("") }, {
+        //返回结果
+    }, true, {}, {})
+}
 
-            })
-    }
+/**
+ *@param type rxjava请求->直接获取结果的
+ */
+fun getRxNews(type: String) {
+    repository.getRxNews(type)
+        .`as`(auto(this))
+        .subscribes({
+
+        }, {
+
+        })
+}
 }
 
 

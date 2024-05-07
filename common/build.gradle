@@ -44,6 +44,8 @@ dependencies {
     implementation gradleBase.core
     api 'com.google.android.material:material:1.4.0'
     api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+
     api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     api 'com.squareup.retrofit2:retrofit:2.9.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'

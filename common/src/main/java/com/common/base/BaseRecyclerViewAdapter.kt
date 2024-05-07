@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class BaseRecyclerViewAdapter<T, VB : ViewDataBinding> :
     RecyclerView.Adapter<BaseRecyclerViewAdapter<T, VB>.ViewHolder>() {
 
+    protected val tag: String = BaseRecyclerViewAdapter::class.java.simpleName
+
     var items: MutableList<T> = mutableListOf() // 使用 MutableList 以支持删除操作
 
-    private var itemClickListener: ((T) -> Unit)? = null
+    private var itemClickListener: ((T, Int) -> Unit)? = null
 
     lateinit var binding: VB
 
@@ -34,16 +36,16 @@ abstract class BaseRecyclerViewAdapter<T, VB : ViewDataBinding> :
 
     inner class ViewHolder(val binding: VB) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: T) {
-            bindData(item)
+            bindData(item, adapterPosition)
 
             binding.root.setOnClickListener {
-                itemClickListener?.invoke(item)
+                itemClickListener?.invoke(item, adapterPosition)
             }
             binding.executePendingBindings()
         }
     }
 
-    abstract fun bindData(item: T)
+    abstract fun bindData(item: T, position: Int)
     abstract fun getLayoutRes(): Int
 
     fun setItemsBean(items: MutableList<T>) {
@@ -64,7 +66,7 @@ abstract class BaseRecyclerViewAdapter<T, VB : ViewDataBinding> :
         }
     }
 
-    fun setItemClickListener(listener: (T) -> Unit) {
+    fun setItemClickListener(listener: (item: T, position: Int) -> Unit) {
         this.itemClickListener = listener
     }
 }

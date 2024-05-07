@@ -27,6 +27,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.common.network.RequestObserver
 import com.common.throwe.BaseResponseThrowable
@@ -38,9 +39,17 @@ import io.reactivex.annotations.SchedulerSupport
 import io.reactivex.disposables.Disposable
 import io.reactivex.internal.functions.ObjectHelper
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.*
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
+import kotlin.coroutines.CoroutineContext
+
+
+import kotlinx.coroutines.flow.collect
 
 
 /**
@@ -84,7 +93,8 @@ fun Activity.navigateToActivity(c: Class<*>, bundle: Bundle) {
     startActivity(intent)
 }
 
-fun<T> Single<T>.async()=this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+fun <T> Single<T>.async() =
+    this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 
 @CheckReturnValue
 @SchedulerSupport(SchedulerSupport.NONE)
@@ -170,6 +180,23 @@ val mainThread by lazy {
 
 fun onUI(callback: () -> Unit) {
     mainThread.post(callback)
+}
+
+
+
+inline fun <T> LifecycleOwner.observe(
+    flow: Flow<T>,
+    context: CoroutineContext = Dispatchers.IO,
+    callbackContext: CoroutineContext = Dispatchers.Main,
+    crossinline function: (T) -> Unit
+) {
+    lifecycleScope.launch(context) {
+        flow.collect {
+            withContext(callbackContext) {
+                function.invoke(it)
+            }
+        }
+    }
 }
 
 
@@ -577,10 +604,12 @@ fun String.parseColor(): Int {
             val v = (value + value).toInt(16)
             Color.rgb(v, v, v)
         }
+
         2 -> {
             val v = value.toInt(16)
             Color.rgb(v, v, v)
         }
+
         3 -> {
             val r = value.substring(0, 1)
             val g = value.substring(1, 2)
@@ -591,6 +620,7 @@ fun String.parseColor(): Int {
                 (b + b).toInt(16)
             )
         }
+
         4, 5 -> {
             val a = value.substring(0, 1)
             val r = value.substring(1, 2)
@@ -603,12 +633,14 @@ fun String.parseColor(): Int {
                 (b + b).toInt(16)
             )
         }
+
         6, 7 -> {
             val r = value.substring(0, 2).toInt(16)
             val g = value.substring(2, 4).toInt(16)
             val b = value.substring(4, 6).toInt(16)
             Color.rgb(r, g, b)
         }
+
         8 -> {
             val a = value.substring(0, 2).toInt(16)
             val r = value.substring(2, 4).toInt(16)
@@ -616,6 +648,7 @@ fun String.parseColor(): Int {
             val b = value.substring(6, 8).toInt(16)
             Color.argb(a, r, g, b)
         }
+
         else -> {
             Color.WHITE
         }

@@ -15,6 +15,7 @@ import com.just.machine.model.Constants
 import com.just.machine.ui.adapter.MainAdapter
 import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.common.base.observe
 
 
 /**
@@ -27,7 +28,7 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
     private val viewModel by viewModels<MainViewModel>()
 
-    private val adapter by lazy { MainAdapter() }
+    private val adapter by lazy { MainAdapter(requireContext()) }
 
     override fun loadData() {//懒加载
         viewModel.getDates("")//插入或者请求网络数据
@@ -47,22 +48,26 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
             navigate(it, R.id.newFragment)
         }
 
+
+        observe(viewModel.getPlant1()) {
+            adapter.setItemsBean(mutableListOf(it))
+        }
+
         viewModel.getPlant()
 
         viewModel.mEventHub.observe(this) {
             when (it.action) {
-                LiveDataEvent.LOGIN_FAIL -> {
+                LiveDataEvent.LOGIN_FAIL or LiveDataEvent.JUST_ERROR_FAIL -> {
                     if (it.any is Plant) {
                         val bean = it.any as Plant
-                        val listBean = ArrayList<Plant>()
-                        listBean.add(bean)
-                        adapter.setItemsBean(listBean)
+                        adapter.setItemsBean(mutableListOf(bean))
                         LogUtils.e(TAG + it.any as Plant)
                     }
                 }
             }
         }
     }
+
 
     private fun initToolbar() {
         binding.toolbar.title = Constants.succeedName
