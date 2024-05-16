@@ -248,6 +248,7 @@ ViewModelProvider.AndroidViewModelFactory(application)).get(MainViewModel::class
 ## 6.写了一些常用的拓展函数
 
 base类里有基本常用的扩展函数
+用法直接在activity调用toast("格调架构欢迎您！")等省去了很多自定义view写法
 
 ``` kotlin
 fun Activity.toast(msg: Int?, duration: Int = Toast.LENGTH_SHORT) {
@@ -265,6 +266,6 @@ fun Fragment.toast(msg: String?, duration: Int = Toast.LENGTH_SHORT) {
 ## 联系
 
 - QQ交流群：285944345
-  ![QQ交流群](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/qrcode_1660787905159.png)
+  ![QQ交流群](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/qrcode_1715829336053.png)
 
 
