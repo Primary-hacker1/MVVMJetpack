@@ -1,5 +1,5 @@
-package com.common.viewmodel;
+package com.common.viewmodel
 
-public enum ViewEvent {
+enum class ViewEvent {
     CREATED, DESTROY
 }
