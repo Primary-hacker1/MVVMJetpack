@@ -13,106 +13,98 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
-
-import static me.jessyan.autosize.AutoSizeConfig.DEPENDENCY_ANDROIDX;
-import static me.jessyan.autosize.AutoSizeConfig.DEPENDENCY_SUPPORT;
-
-import androidx.fragment.app.FragmentActivity;
+import android.app.Activity
+import android.app.Application.ActivityLifecycleCallbacks
+import android.os.Bundle
+import androidx.fragment.app.FragmentActivity
 
 /**
  * ================================================
- * {@link ActivityLifecycleCallbacksImpl} 可用来代替在 BaseActivity 中加入适配代码的传统方式
- * {@link ActivityLifecycleCallbacksImpl} 这种方案类似于 AOP, 面向接口, 侵入性低, 方便统一管理, 扩展性强, 并且也支持适配三方库的 {@link Activity}
- * <p>
+ * [ActivityLifecycleCallbacksImpl] 可用来代替在 BaseActivity 中加入适配代码的传统方式
+ * [ActivityLifecycleCallbacksImpl] 这种方案类似于 AOP, 面向接口, 侵入性低, 方便统一管理, 扩展性强, 并且也支持适配三方库的 [Activity]
+ *
+ *
  * Created by JessYan on 2018/8/8 14:32
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifecycleCallbacks {
+class ActivityLifecycleCallbacksImpl(autoAdaptStrategy: AutoAdaptStrategy?) :
+    ActivityLifecycleCallbacks {
     /**
      * 屏幕适配逻辑策略类
      */
-    private AutoAdaptStrategy mAutoAdaptStrategy;
+    private var mAutoAdaptStrategy: AutoAdaptStrategy?
+
     /**
      * 让 Fragment 支持自定义适配参数
      */
-    private FragmentLifecycleCallbacksImpl mFragmentLifecycleCallbacks;
-    private FragmentLifecycleCallbacksImplToAndroidx mFragmentLifecycleCallbacksToAndroidx;
+    private var mFragmentLifecycleCallbacks: FragmentLifecycleCallbacksImpl? = null
+    private var mFragmentLifecycleCallbacksToAndroidx: FragmentLifecycleCallbacksImplToAndroidx? =
+        null
 
-    public ActivityLifecycleCallbacksImpl(AutoAdaptStrategy autoAdaptStrategy) {
-        if (DEPENDENCY_ANDROIDX) {
-            mFragmentLifecycleCallbacksToAndroidx = new FragmentLifecycleCallbacksImplToAndroidx(autoAdaptStrategy);
-        } else if (DEPENDENCY_SUPPORT){
-            mFragmentLifecycleCallbacks = new FragmentLifecycleCallbacksImpl(autoAdaptStrategy);
+    init {
+        if (AutoSizeConfig.Companion.DEPENDENCY_ANDROIDX) {
+            mFragmentLifecycleCallbacksToAndroidx =
+                FragmentLifecycleCallbacksImplToAndroidx(autoAdaptStrategy)
+        } else if (AutoSizeConfig.Companion.DEPENDENCY_SUPPORT) {
+            mFragmentLifecycleCallbacks = FragmentLifecycleCallbacksImpl(autoAdaptStrategy)
         }
-        mAutoAdaptStrategy = autoAdaptStrategy;
+        mAutoAdaptStrategy = autoAdaptStrategy
     }
 
-    @Override
-    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        if (AutoSizeConfig.getInstance().isCustomFragment()) {
-            if (mFragmentLifecycleCallbacksToAndroidx != null && activity instanceof androidx.fragment.app.FragmentActivity) {
-                ((androidx.fragment.app.FragmentActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(mFragmentLifecycleCallbacksToAndroidx, true);
-            } else if (mFragmentLifecycleCallbacks != null && activity instanceof FragmentActivity) {
-                ((FragmentActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(mFragmentLifecycleCallbacks, true);
+    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+        if (AutoSizeConfig.instance?.isCustomFragment == true) {
+            if (mFragmentLifecycleCallbacksToAndroidx != null && activity is FragmentActivity) {
+                activity.supportFragmentManager.registerFragmentLifecycleCallbacks(
+                    mFragmentLifecycleCallbacksToAndroidx!!,
+                    true
+                )
+            } else if (mFragmentLifecycleCallbacks != null && activity is FragmentActivity) {
+                activity.supportFragmentManager.registerFragmentLifecycleCallbacks(
+                    mFragmentLifecycleCallbacks!!,
+                    true
+                )
             }
         }
 
         //Activity 中的 setContentView(View) 一定要在 super.onCreate(Bundle); 之后执行
         if (mAutoAdaptStrategy != null) {
-            mAutoAdaptStrategy.applyAdapt(activity, activity);
+            mAutoAdaptStrategy!!.applyAdapt(activity, activity)
         }
     }
 
-    @Override
-    public void onActivityStarted(Activity activity) {
+    override fun onActivityStarted(activity: Activity) {
         if (mAutoAdaptStrategy != null) {
-            mAutoAdaptStrategy.applyAdapt(activity, activity);
+            mAutoAdaptStrategy!!.applyAdapt(activity, activity)
         }
     }
 
-    @Override
-    public void onActivityResumed(Activity activity) {
-
+    override fun onActivityResumed(activity: Activity) {
     }
 
-    @Override
-    public void onActivityPaused(Activity activity) {
-
+    override fun onActivityPaused(activity: Activity) {
     }
 
-    @Override
-    public void onActivityStopped(Activity activity) {
-
+    override fun onActivityStopped(activity: Activity) {
     }
 
-    @Override
-    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-
+    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
     }
 
-    @Override
-    public void onActivityDestroyed(Activity activity) {
-
+    override fun onActivityDestroyed(activity: Activity) {
     }
 
     /**
      * 设置屏幕适配逻辑策略类
      *
-     * @param autoAdaptStrategy {@link AutoAdaptStrategy}
+     * @param autoAdaptStrategy [AutoAdaptStrategy]
      */
-    public void setAutoAdaptStrategy(AutoAdaptStrategy autoAdaptStrategy) {
-        mAutoAdaptStrategy = autoAdaptStrategy;
-        if (mFragmentLifecycleCallbacksToAndroidx != null) {
-            mFragmentLifecycleCallbacksToAndroidx.setAutoAdaptStrategy(autoAdaptStrategy);
-        } else if (mFragmentLifecycleCallbacks != null) {
-            mFragmentLifecycleCallbacks.setAutoAdaptStrategy(autoAdaptStrategy);
-        }
+    fun setAutoAdaptStrategy(autoAdaptStrategy: AutoAdaptStrategy?) {
+        mAutoAdaptStrategy = autoAdaptStrategy
+        mFragmentLifecycleCallbacksToAndroidx?.setAutoAdaptStrategy(autoAdaptStrategy)
+            ?: mFragmentLifecycleCallbacks?.setAutoAdaptStrategy(autoAdaptStrategy)
     }
 }

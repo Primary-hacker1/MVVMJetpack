@@ -13,46 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 /**
  * ================================================
- * {@link FragmentLifecycleCallbacksImpl} 可用来代替在 BaseFragment 中加入适配代码的传统方式
- * {@link FragmentLifecycleCallbacksImpl} 这种方案类似于 AOP, 面向接口, 侵入性低, 方便统一管理, 扩展性强, 并且也支持适配三方库的 {@link Fragment}
- * <p>
+ * [FragmentLifecycleCallbacksImpl] 可用来代替在 BaseFragment 中加入适配代码的传统方式
+ * [FragmentLifecycleCallbacksImpl] 这种方案类似于 AOP, 面向接口, 侵入性低, 方便统一管理, 扩展性强, 并且也支持适配三方库的 [Fragment]
+ *
+ *
  * Created by JessYan on 2018/8/25 13:52
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public class FragmentLifecycleCallbacksImpl extends FragmentManager.FragmentLifecycleCallbacks {
+class FragmentLifecycleCallbacksImpl(
     /**
      * 屏幕适配逻辑策略类
      */
-    private AutoAdaptStrategy mAutoAdaptStrategy;
-
-    public FragmentLifecycleCallbacksImpl(AutoAdaptStrategy autoAdaptStrategy) {
-        mAutoAdaptStrategy = autoAdaptStrategy;
-    }
-
-    @Override
-    public void onFragmentCreated(FragmentManager fm, Fragment f, Bundle savedInstanceState) {
+    private var mAutoAdaptStrategy: AutoAdaptStrategy?
+) : FragmentManager.FragmentLifecycleCallbacks() {
+    override fun onFragmentCreated(fm: FragmentManager, f: Fragment, savedInstanceState: Bundle?) {
         if (mAutoAdaptStrategy != null) {
-            mAutoAdaptStrategy.applyAdapt(f, f.getActivity());
+            mAutoAdaptStrategy!!.applyAdapt(f, f.activity)
         }
     }
 
     /**
      * 设置屏幕适配逻辑策略类
      *
-     * @param autoAdaptStrategy {@link AutoAdaptStrategy}
+     * @param autoAdaptStrategy [AutoAdaptStrategy]
      */
-    public void setAutoAdaptStrategy(AutoAdaptStrategy autoAdaptStrategy) {
-        mAutoAdaptStrategy = autoAdaptStrategy;
+    fun setAutoAdaptStrategy(autoAdaptStrategy: AutoAdaptStrategy?) {
+        mAutoAdaptStrategy = autoAdaptStrategy
     }
 }

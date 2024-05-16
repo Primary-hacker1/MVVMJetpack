@@ -121,7 +121,7 @@ fun <T> SingleSubscribeProxy<T>.subscribes(
 
 //跳转类
 inline fun <reified T : Activity> Context.startActivity(action: Intent.() -> Unit) {
-    var intent = Intent(this, T::class.java)
+    val intent = Intent(this, T::class.java)
     action(intent)
     this.startActivity(intent)
 }

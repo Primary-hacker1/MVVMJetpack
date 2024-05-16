@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize.internal;
-
-import android.app.Activity;
+package me.jessyan.autosize.internal
 
 /**
  * ================================================
- * AndroidAutoSize 默认项目中的所有模块都使用适配功能, 三方库的 {@link Activity} 也不例外
- * 如果某个页面不想使用适配功能, 请让该页面 {@link Activity} 实现此接口
+ * AndroidAutoSize 默认项目中的所有模块都使用适配功能, 三方库的 [Activity] 也不例外
+ * 如果某个页面不想使用适配功能, 请让该页面 [Activity] 实现此接口
  * 实现此接口表示放弃适配, 所有的适配效果都将失效
- * <p>
+ *
+ *
  * Created by JessYan on 2018/8/9 09:54
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public interface CancelAdapt {
-}
+interface CancelAdapt 

@@ -13,61 +13,63 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.content.Context;
-import android.app.Application;
-import android.content.ContentProvider;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.net.Uri;
-
-import me.jessyan.autosize.utils.AutoSizeUtils;
+import android.app.Application
+import android.content.ContentProvider
+import android.content.ContentValues
+import android.database.Cursor
+import android.net.Uri
+import me.jessyan.autosize.utils.AutoSizeUtils
 
 /**
  * ================================================
- * 通过声明 {@link ContentProvider} 自动完成初始化
+ * 通过声明 [ContentProvider] 自动完成初始化
  * Created by JessYan on 2018/8/19 11:55
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public class InitProvider extends ContentProvider {
-    @Override
-    public boolean onCreate() {
-        Context application = getContext().getApplicationContext();
+class InitProvider : ContentProvider() {
+    override fun onCreate(): Boolean {
+        var application = context!!.applicationContext
         if (application == null) {
-            application = AutoSizeUtils.getApplicationByReflect();
+            application = AutoSizeUtils.getApplicationByReflect()
         }
-        AutoSizeConfig.getInstance()
-                .setLog(true)
-                .init((Application) application)
-                .setUseDeviceSize(false);
-        return true;
+        AutoSizeConfig.instance?.setLog(true)
+            ?.init(application as Application)
+            ?.setUseDeviceSize(false)
+        return true
     }
 
-    @Override
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
+    override fun query(
+        uri: Uri,
+        projection: Array<String>?,
+        selection: String?,
+        selectionArgs: Array<String>?,
+        sortOrder: String?
+    ): Cursor? {
+        return null
     }
 
-    @Override
-    public String getType(Uri uri) {
-        return null;
+    override fun getType(uri: Uri): String? {
+        return null
     }
 
-    @Override
-    public Uri insert(Uri uri, ContentValues values) {
-        return null;
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+        return null
     }
 
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
+        return 0
     }
 
-    @Override
-    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        return 0;
+    override fun update(
+        uri: Uri,
+        values: ContentValues?,
+        selection: String?,
+        selectionArgs: Array<String>?
+    ): Int {
+        return 0
     }
 }

@@ -13,131 +13,76 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.DisplayMetrics;
+import android.os.Parcel
+import android.os.Parcelable
+import android.util.DisplayMetrics
 
 /**
  * ================================================
- * {@link DisplayMetrics} 封装类
- * <p>
+ * [DisplayMetrics] 封装类
+ *
+ *
  * Created by JessYan on 2018/8/11 16:42
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public class DisplayMetricsInfo implements Parcelable {
-    private float density;
-    private int densityDpi;
-    private float scaledDensity;
-    private float xdpi;
-    private int screenWidthDp;
-    private int screenHeightDp;
+class DisplayMetricsInfo : Parcelable {
+    var density: Float
+    var densityDpi: Int
+    var scaledDensity: Float
+    var xdpi: Float
+    var screenWidthDp: Int = 0
+    var screenHeightDp: Int = 0
 
-    public DisplayMetricsInfo(float density, int densityDpi, float scaledDensity, float xdpi) {
-        this.density = density;
-        this.densityDpi = densityDpi;
-        this.scaledDensity = scaledDensity;
-        this.xdpi = xdpi;
+    constructor(density: Float, densityDpi: Int, scaledDensity: Float, xdpi: Float) {
+        this.density = density
+        this.densityDpi = densityDpi
+        this.scaledDensity = scaledDensity
+        this.xdpi = xdpi
     }
 
-    public DisplayMetricsInfo(float density, int densityDpi, float scaledDensity, float xdpi, int screenWidthDp, int screenHeightDp) {
-        this.density = density;
-        this.densityDpi = densityDpi;
-        this.scaledDensity = scaledDensity;
-        this.xdpi = xdpi;
-        this.screenWidthDp = screenWidthDp;
-        this.screenHeightDp = screenHeightDp;
+    constructor(
+        density: Float,
+        densityDpi: Int,
+        scaledDensity: Float,
+        xdpi: Float,
+        screenWidthDp: Int,
+        screenHeightDp: Int
+    ) {
+        this.density = density
+        this.densityDpi = densityDpi
+        this.scaledDensity = scaledDensity
+        this.xdpi = xdpi
+        this.screenWidthDp = screenWidthDp
+        this.screenHeightDp = screenHeightDp
     }
 
-    public float getDensity() {
-        return density;
+    override fun describeContents(): Int {
+        return 0
     }
 
-    public void setDensity(float density) {
-        this.density = density;
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        dest.writeFloat(this.density)
+        dest.writeInt(this.densityDpi)
+        dest.writeFloat(this.scaledDensity)
+        dest.writeFloat(this.xdpi)
+        dest.writeInt(this.screenWidthDp)
+        dest.writeInt(this.screenHeightDp)
     }
 
-    public int getDensityDpi() {
-        return densityDpi;
+    protected constructor(`in`: Parcel) {
+        this.density = `in`.readFloat()
+        this.densityDpi = `in`.readInt()
+        this.scaledDensity = `in`.readFloat()
+        this.xdpi = `in`.readFloat()
+        this.screenWidthDp = `in`.readInt()
+        this.screenHeightDp = `in`.readInt()
     }
 
-    public void setDensityDpi(int densityDpi) {
-        this.densityDpi = densityDpi;
-    }
-
-    public float getScaledDensity() {
-        return scaledDensity;
-    }
-
-    public void setScaledDensity(float scaledDensity) {
-        this.scaledDensity = scaledDensity;
-    }
-
-    public float getXdpi() {
-        return xdpi;
-    }
-
-    public void setXdpi(float xdpi) {
-        this.xdpi = xdpi;
-    }
-
-    public int getScreenWidthDp() {
-        return screenWidthDp;
-    }
-
-    public void setScreenWidthDp(int screenWidthDp) {
-        this.screenWidthDp = screenWidthDp;
-    }
-
-    public int getScreenHeightDp() {
-        return screenHeightDp;
-    }
-
-    public void setScreenHeightDp(int screenHeightDp) {
-        this.screenHeightDp = screenHeightDp;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeFloat(this.density);
-        dest.writeInt(this.densityDpi);
-        dest.writeFloat(this.scaledDensity);
-        dest.writeFloat(this.xdpi);
-        dest.writeInt(this.screenWidthDp);
-        dest.writeInt(this.screenHeightDp);
-    }
-
-    protected DisplayMetricsInfo(Parcel in) {
-        this.density = in.readFloat();
-        this.densityDpi = in.readInt();
-        this.scaledDensity = in.readFloat();
-        this.xdpi = in.readFloat();
-        this.screenWidthDp = in.readInt();
-        this.screenHeightDp = in.readInt();
-    }
-
-    public static final Creator<DisplayMetricsInfo> CREATOR = new Creator<DisplayMetricsInfo>() {
-        @Override
-        public DisplayMetricsInfo createFromParcel(Parcel source) {
-            return new DisplayMetricsInfo(source);
-        }
-
-        @Override
-        public DisplayMetricsInfo[] newArray(int size) {
-            return new DisplayMetricsInfo[size];
-        }
-    };
-
-    @Override
-    public String toString() {
+    override fun toString(): String {
         return "DisplayMetricsInfo{" +
                 "density=" + density +
                 ", densityDpi=" + densityDpi +
@@ -145,6 +90,19 @@ public class DisplayMetricsInfo implements Parcelable {
                 ", xdpi=" + xdpi +
                 ", screenWidthDp=" + screenWidthDp +
                 ", screenHeightDp=" + screenHeightDp +
-                '}';
+                '}'
+    }
+
+    companion object {
+        val CREATOR: Parcelable.Creator<DisplayMetricsInfo?> =
+            object : Parcelable.Creator<DisplayMetricsInfo?> {
+                override fun createFromParcel(source: Parcel): DisplayMetricsInfo? {
+                    return DisplayMetricsInfo(source)
+                }
+
+                override fun newArray(size: Int): Array<DisplayMetricsInfo?> {
+                    return arrayOfNulls(size)
+                }
+            }
     }
 }

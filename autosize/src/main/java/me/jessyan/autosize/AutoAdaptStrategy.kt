@@ -13,30 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.app.Activity;
-import android.app.Application;
-import android.util.DisplayMetrics;
+import android.app.Activity
+import android.util.DisplayMetrics
 
 /**
  * ================================================
- * 屏幕适配逻辑策略类, 可通过 {@link AutoSizeConfig#init(Application, boolean, AutoAdaptStrategy)}
- * 和 {@link AutoSizeConfig#setAutoAdaptStrategy(AutoAdaptStrategy)} 切换策略
+ * 屏幕适配逻辑策略类, 可通过 [AutoSizeConfig.init]
+ * 和 [AutoSizeConfig.setAutoAdaptStrategy] 切换策略
  *
  * @see DefaultAutoAdaptStrategy
  * Created by JessYan on 2018/8/9 15:13
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public interface AutoAdaptStrategy {
-
+interface AutoAdaptStrategy {
     /**
      * 开始执行屏幕适配逻辑
      *
-     * @param target   需要屏幕适配的对象 (可能是 {@link Activity} 或者 Fragment)
-     * @param activity 需要拿到当前的 {@link Activity} 才能修改 {@link DisplayMetrics#density}
+     * @param target   需要屏幕适配的对象 (可能是 [Activity] 或者 Fragment)
+     * @param activity 需要拿到当前的 [Activity] 才能修改 [DisplayMetrics.density]
      */
-    void applyAdapt(Object target, Activity activity);
+    fun applyAdapt(target: Any, activity: Activity?)
 }

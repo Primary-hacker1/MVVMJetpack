@@ -19,7 +19,7 @@ import com.just.machine.helper.UriConfig.PLANT_DATA_FILENAME
  *@author zt
  * 此应用程序的房间数据库
  */
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(entities = [Plant::class], version = 2, exportSchema = false)
 //@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 

@@ -13,33 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.jessyan.autosize;
+package me.jessyan.autosize
 
-import android.app.Activity;
+import android.app.Activity
 
 /**
  * ================================================
  * 屏幕适配监听器，用于监听屏幕适配时的一些事件
- * <p>
+ *
+ *
  * Created by JessYan on 2018/10/30 16:29
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * [Contact me](mailto:jess.yan.effort@gmail.com)
+ * [Follow me](https://github.com/JessYanCoding)
  * ================================================
  */
-public interface onAdaptListener {
+interface onAdaptListener {
     /**
      * 在屏幕适配前调用
      *
-     * @param target   需要屏幕适配的对象 (可能是 {@link Activity} 或者 Fragment)
-     * @param activity 当前 {@link Activity}
+     * @param target   需要屏幕适配的对象 (可能是 [Activity] 或者 Fragment)
+     * @param activity 当前 [Activity]
      */
-    void onAdaptBefore(Object target, Activity activity);
+    fun onAdaptBefore(target: Any?, activity: Activity?)
 
     /**
      * 在屏幕适配后调用
      *
-     * @param target   需要屏幕适配的对象 (可能是 {@link Activity} 或者 Fragment)
-     * @param activity 当前 {@link Activity}
+     * @param target   需要屏幕适配的对象 (可能是 [Activity] 或者 Fragment)
+     * @param activity 当前 [Activity]
      */
-    void onAdaptAfter(Object target, Activity activity);
+    fun onAdaptAfter(target: Any?, activity: Activity?)
 }
