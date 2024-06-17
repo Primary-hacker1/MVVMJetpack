@@ -16,6 +16,7 @@ import com.just.machine.ui.adapter.MainAdapter
 import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import com.common.base.observe
+import com.common.base.toast
 
 
 /**
@@ -57,11 +58,17 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
 
         viewModel.mEventHub.observe(this) {
             when (it.action) {
-                LiveDataEvent.LOGIN_FAIL or LiveDataEvent.JUST_ERROR_FAIL -> {
+                LiveDataEvent.LOGIN_FAIL or LiveDataEvent.JUST_ERROR_FAIL -> {//请求成功返回
                     if (it.any is Plant) {
                         val bean = it.any as Plant
                         adapter.setItemsBean(mutableListOf(bean))
                         LogUtils.e(TAG + it.any as Plant)
+                    }
+                }
+
+                LiveDataEvent.LOGIN_FAIL->{//请求失败返回
+                    if(it.any is String){
+                        toast(it.toString())
                     }
                 }
             }

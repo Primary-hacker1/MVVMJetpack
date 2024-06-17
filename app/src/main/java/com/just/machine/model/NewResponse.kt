@@ -5,7 +5,7 @@ package com.just.machine.model
  *@author zt
  */
 data class NewResponse(
-    val data: List<Data>,
+    val data: List<Data>?,
     var code: String,
     var mesage: String
 )

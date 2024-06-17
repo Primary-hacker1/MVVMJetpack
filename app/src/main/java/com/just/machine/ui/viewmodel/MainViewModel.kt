@@ -42,9 +42,19 @@ class MainViewModel @Inject constructor(
 
         async({ repository.getNews(type) }, {
             itemNews.clear()
-            itemNews.addAll(it.data)
+            it.data?.let { it1 -> itemNews.addAll(it1) }
+
+            mEventHub.value = it.data?.let { it1 ->
+                LiveDataEvent(
+                    LiveDataEvent.LOGIN_SUCCESS,
+                    it1
+                )
+            }
         }, {
-            it.printStackTrace()
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.LOGIN_FAIL,
+                it
+            )
         }, {
 
         })
@@ -65,27 +75,27 @@ class MainViewModel @Inject constructor(
     fun getPlant1() = plantDao.getPlant("123")
 
 
-/**
- *@param type 协程请求->带loading的
- */
-fun getNewsLoading(type: String) {
-    async({ repository.getNews("") }, {
-        //返回结果
-    }, true, {}, {})
-}
+    /**
+     *@param type 协程请求->带loading的
+     */
+    fun getNewsLoading(type: String) {
+        async({ repository.getNews("") }, {
+            //返回结果
+        }, true, {}, {})
+    }
 
-/**
- *@param type rxjava请求->直接获取结果的
- */
-fun getRxNews(type: String) {
-    repository.getRxNews(type)
-        .`as`(auto(this))
-        .subscribes({
+    /**
+     *@param type rxjava请求->直接获取结果的
+     */
+    fun getRxNews(type: String) {
+        repository.getRxNews(type)
+            .`as`(auto(this))
+            .subscribes({
 
-        }, {
+            }, {
 
-        })
-}
+            })
+    }
 }
 
 
