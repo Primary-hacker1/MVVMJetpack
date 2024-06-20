@@ -4,12 +4,10 @@ import android.content.Context
 import android.content.Intent
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import com.common.base.CommonBaseActivity
 import com.just.news.R
 import com.just.news.databinding.ActivityMainBinding
 import com.justsafe.libview.nav.FragmentNavigatorHideShow
-import com.justsafe.libview.util.BaseUtil
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

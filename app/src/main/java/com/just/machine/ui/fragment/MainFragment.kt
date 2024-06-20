@@ -15,12 +15,11 @@ import com.just.machine.model.Constants
 import com.just.machine.ui.adapter.MainAdapter
 import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import com.common.base.observe
 import com.common.base.toast
 
 
 /**
- *create by 2020/6/19
+ *create by 2024/6/19
  * 主界面
  *@author zt
  */
@@ -32,15 +31,14 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
     private val adapter by lazy { MainAdapter(requireContext()) }
 
     override fun loadData() {//懒加载
-        viewModel.getDates("")//插入或者请求网络数据
     }
 
     override fun initView() {
         initToolbar()
 
-        val layoutManager1 = LinearLayoutManager(context)
+        val layoutManager = LinearLayoutManager(context)
 
-        binding.rvItemMain.layoutManager = layoutManager1
+        binding.rvItemMain.layoutManager = layoutManager
 
 
         binding.rvItemMain.adapter = adapter
@@ -49,10 +47,11 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
             navigate(it, R.id.newFragment)
         }
 
+        viewModel.getDates("")//插入或者请求网络数据
 
-        observe(viewModel.getPlant1()) {
-            adapter.setItemsBean(mutableListOf(it))
-        }
+//        observe(viewModel.getPlant1()) {
+//            adapter.setItemsBean(mutableListOf(it))
+//        } 这是另一种获取数据的方法
 
         viewModel.getPlant()
 

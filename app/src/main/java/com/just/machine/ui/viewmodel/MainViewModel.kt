@@ -35,14 +35,14 @@ class MainViewModel @Inject constructor(
 
         viewModelScope.launch {
             val plants: MutableList<Plant> = ArrayList()
-            val plant = Plant("123", "张涛的数据库操作", "", 6, 7, "http//：www.baidu.com")
+            val plant = Plant("123", "数据库操作", "", 6, 7, "http//：www.baidu.com")
             plants.add(plant)
             plantDao.insertAll(plants)
         }
 
         async({ repository.getNews(type) }, {
-            itemNews.clear()
-            it.data?.let { it1 -> itemNews.addAll(it1) }
+//            itemNews.clear()
+//            it.data?.let { it1 -> itemNews.addAll(it1) }
 
             mEventHub.value = it.data?.let { it1 ->
                 LiveDataEvent(
@@ -73,7 +73,6 @@ class MainViewModel @Inject constructor(
     }
 
     fun getPlant1() = plantDao.getPlant("123")
-
 
     /**
      *@param type 协程请求->带loading的

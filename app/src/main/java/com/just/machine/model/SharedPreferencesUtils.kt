@@ -19,7 +19,7 @@ class SharedPreferencesUtils private constructor() {
         private const val NAME = "per_user_name"
     }
 
-    var serialNo: String? = null
+    var userName: String? = null
         get() {
             if (field == null) {
                 field = CommonSharedPreferences.getSPValue(NAME, "")
@@ -35,7 +35,7 @@ class SharedPreferencesUtils private constructor() {
      * 登录信息销毁
      */
     fun logout() {
-        serialNo = ""
+        userName = ""
     }
 
 }

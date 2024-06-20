@@ -19,7 +19,7 @@ ext {
     core = "1.6.0"
     hilt = "2.36"
     lifecycle = "2.3.1"
-    datastore_core = "1.0.0-alpha04"
+    datastore_core = "1.0.0"
 
     gradleBase = [
             junit    : "junit:junit:${junit}",

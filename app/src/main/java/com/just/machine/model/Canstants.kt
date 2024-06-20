@@ -7,5 +7,6 @@ interface Constants {
         const val news = "首页"
         const val me = "我的"
         const val setting = "设置"
+        const val dialog = "dialog"//loading弹窗文案
     }
 }
