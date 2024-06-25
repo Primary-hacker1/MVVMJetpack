@@ -265,7 +265,7 @@ fun Fragment.toast(msg: String?, duration: Int = Toast.LENGTH_SHORT) {
 
 ## 联系
 
-- QQ交流群：285944345
+- QQ交流群：914028824
   ![QQ交流群](https://github.com/Primary-hacker1/MVVMJetpack/blob/main/aat/qrcode_1715829336053.png)
 
 
