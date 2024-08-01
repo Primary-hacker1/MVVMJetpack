@@ -7,7 +7,12 @@ import androidx.lifecycle.lifecycleScope
 import com.common.base.CommonBaseFragment
 import com.common.base.setNoRepeatListener
 import com.common.base.toast
+import com.common.network.LogUtils
+import com.common.viewmodel.LiveDataEvent
+import com.just.machine.dao.Plant
 import com.just.machine.model.DataStoreHelper
+import com.just.machine.model.LoginBean
+import com.just.machine.model.LoginData
 import com.just.machine.ui.activity.MainActivity
 import com.just.news.databinding.FragmentLoginBinding
 import com.just.machine.ui.viewmodel.MainViewModel
@@ -40,16 +45,39 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
                 return@setNoRepeatListener
             }
 
-            lifecycleScope.launch {//存储ds
-                DataStoreHelper.getInstance().saveUserName(binding.atvLoginAccount.text.toString())
-            }
+            viewModel.login(
+                LoginBean(
+                    binding.atvLoginAccount.text.toString(),
+                    binding.atvLoginPassword.text.toString()
+                )
+            )
+        }
 
-            lifecycleScope.launch {//存储ds
-                DataStoreHelper.getInstance().saveUserName(binding.atvLoginPassword.text.toString())
-            }
+        viewModel.mEventHub.observe(this) {
+            when (it.action) {
+                LiveDataEvent.LOGIN_SUCCESS -> {//请求成功返回
+                    if (it.any is LoginData) {
+                        val bean = it.any as LoginData
+                        LogUtils.e(TAG + bean)
+                        lifecycleScope.launch {//存储ds
+                            DataStoreHelper.getInstance().saveUserName(binding.atvLoginAccount.text.toString())
+                        }
 
-            MainActivity.startMainActivity(context)
-            activity?.finish()
+                        lifecycleScope.launch {//存储ds
+                            DataStoreHelper.getInstance().saveUserName(binding.atvLoginPassword.text.toString())
+                        }
+
+                        MainActivity.startMainActivity(context)
+                        activity?.finish()
+                    }
+                }
+
+                LiveDataEvent.LOGIN_FAIL -> {//请求失败返回
+                    if (it.any is String) {
+                        toast(it.toString())
+                    }
+                }
+            }
         }
     }
 

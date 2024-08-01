@@ -1,4 +1,4 @@
-rootProject.name='handover'
+rootProject.name='mall'
 include ':app'
 include ':common'
 include ':libview'

@@ -1,6 +1,7 @@
 package com.just.machine.api
 
-import com.common.base.async
+import com.just.machine.model.LoginBean
+import com.just.machine.model.LoginData
 import com.just.machine.model.NewResponse
 import javax.inject.Inject
 
@@ -12,8 +13,6 @@ class UserRepository @Inject internal constructor(private val apiService: BaseAp
     /**
      * 协程请求
      */
-    suspend fun getNews(type: String): NewResponse = apiService.getNews(type)
-
-    fun getRxNews(type: String)=apiService.getRxNews(type).async()
+    suspend fun login(loginBean: LoginBean): NewResponse<LoginData> = apiService.login(loginBean)
 
 }

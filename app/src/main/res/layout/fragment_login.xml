@@ -46,7 +46,7 @@
                     android:layout_height="31dp"
                     android:background="@drawable/bg_input"
                     android:hint="@string/name"
-                    android:maxLength="11"
+                    android:maxLength="30"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textColorHint="@color/white"

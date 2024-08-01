@@ -7,7 +7,8 @@ import com.just.machine.App
  *@author zt
  */
 object UriConfig {
-    const val BASE_URL = "http://192.168.1.105:8080/inspect/" //本地测试
+    const val BASE_URL = "http://119.3.234.32:6913/admin" //线上测试
+//    const val BASE_URL = "http://localhost:9527/admin/" //本地测试
 
     const val DATABASE_NAME = "news-db"
 

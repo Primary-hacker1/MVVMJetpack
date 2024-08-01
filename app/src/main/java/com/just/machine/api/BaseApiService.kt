@@ -1,9 +1,10 @@
 package com.just.machine.api
 
+import com.just.machine.model.LoginBean
+import com.just.machine.model.LoginData
 import com.just.machine.model.NewResponse
-import io.reactivex.Single
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 /**
  *create by 2020/3/19
@@ -11,9 +12,7 @@ import retrofit2.http.Path
  */
 interface BaseApiService {
 
-    @GET("/nc/article/headline/{id}/0-10.html")
-    suspend fun getNews(@Path("id") id : String?): NewResponse
+    @POST("auth/login")
+    suspend fun login(@Body loginBean : LoginBean?): NewResponse<LoginData>
 
-    @GET("/nc/article/headline/{id}/0-10.html")
-    fun getRxNews(@Path("id") id : String?): Single<NewResponse>
 }
