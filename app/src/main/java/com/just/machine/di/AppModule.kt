@@ -1,6 +1,6 @@
 package com.just.machine.di
 
-import com.common.network.Net
+import com.just.machine.helper.Net
 import com.just.machine.api.BaseApiService
 import com.just.machine.helper.UriConfig
 import dagger.Module

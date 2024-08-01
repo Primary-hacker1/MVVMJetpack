@@ -1,6 +1,8 @@
-package com.common.network
+package com.just.machine.helper
 
 import com.common.log.ThinkerLogger
+import com.common.network.LogUtils
+import com.just.machine.model.DataStoreHelper
 import okhttp3.Interceptor
 import java.util.concurrent.TimeUnit
 
@@ -11,6 +13,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Net {
+    private var tag: String = Net::class.simpleName.toString()
     private var retrofit: Retrofit? = null
     private var okHttpClient: OkHttpClient? = null
     private var timeOut = 6000L
@@ -41,7 +44,15 @@ object Net {
         val headerInterceptor = Interceptor { chain ->
             val builder = chain.request().newBuilder()
             builder.addHeader("Content-Type", "application/json")
-//            builder.addHeader("Authorization", "Bearer " + ProfileManager.instance.token!!)//请求头携token
+            builder.addHeader(
+                "X-Litemall-Admin-Token",
+                DataStoreHelper.getInstance().exampleToken.toString()
+            )//请求头携token
+            builder.addHeader(
+                "X-Litemall-Tenantid",
+                DataStoreHelper.getInstance().exampleTenantId.toString()
+            )
+            LogUtils.d(tag + DataStoreHelper.getInstance().exampleToken.toString())
             chain.proceed(builder.build())
         }
 
@@ -65,7 +76,7 @@ object Net {
             val level: HttpLoggingInterceptor.Level = HttpLoggingInterceptor.Level.BODY
             //新建log拦截器
             val loggingInterceptor =
-                HttpLoggingInterceptor { message: String? ->logger.info(message) }
+                HttpLoggingInterceptor { message: String? -> logger.info(message) }
             loggingInterceptor.setLevel(level)
             return loggingInterceptor
         }

@@ -27,6 +27,8 @@ class DataStoreHelper(private val context: Context) {
         val USERID = intPreferencesKey("userId")
         val USERNAME = stringPreferencesKey("userName")
         val PASS = stringPreferencesKey("pass")
+        val TOKEN = stringPreferencesKey("token")
+        val TENANTID = stringPreferencesKey("tenantId")
         val REMEMBER_THE_PASSWORD = booleanPreferencesKey("rememberThePassword")
 
         private var INSTANCE: DataStoreHelper? = null
@@ -87,6 +89,30 @@ class DataStoreHelper(private val context: Context) {
             preferences[REMEMBER_THE_PASSWORD] ?: false
         }
 
+    val exampleToken: Flow<String?> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }
+        .map { preferences ->
+            preferences[TOKEN]
+        }
+
+    val exampleTenantId: Flow<String?> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }
+        .map { preferences ->
+            preferences[TENANTID]
+        }
+
 
     suspend fun saveUserId(value: Int) {
         dataStore.edit { preferences ->
@@ -103,6 +129,18 @@ class DataStoreHelper(private val context: Context) {
     suspend fun savePass(value: String) {
         dataStore.edit { preferences ->
             preferences[PASS] = value
+        }
+    }
+
+    suspend fun saveToken(value: String) {
+        dataStore.edit { preferences ->
+            preferences[TOKEN] = value
+        }
+    }
+
+    suspend fun saveTenantId(value: String) {
+        dataStore.edit { preferences ->
+            preferences[TENANTID] = value
         }
     }
 

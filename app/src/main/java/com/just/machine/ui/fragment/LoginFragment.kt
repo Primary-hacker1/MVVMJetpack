@@ -61,10 +61,9 @@ class LoginFragment : CommonBaseFragment<FragmentLoginBinding>() {
                         LogUtils.e(TAG + bean)
                         lifecycleScope.launch {//存储ds
                             DataStoreHelper.getInstance().saveUserName(binding.atvLoginAccount.text.toString())
-                        }
-
-                        lifecycleScope.launch {//存储ds
-                            DataStoreHelper.getInstance().saveUserName(binding.atvLoginPassword.text.toString())
+                            DataStoreHelper.getInstance().savePass(binding.atvLoginPassword.text.toString())
+                            DataStoreHelper.getInstance().saveToken(bean.token)
+                            DataStoreHelper.getInstance().saveTenantId(bean.tenantId)
                         }
 
                         MainActivity.startMainActivity(context)
