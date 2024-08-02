@@ -2,10 +2,8 @@ package com.just.machine.ui.fragment
 
 import android.animation.ValueAnimator
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.view.drawToBitmap
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +20,7 @@ import com.common.base.toast
 import com.common.base.visible
 import com.just.machine.model.Order
 import com.just.machine.model.OrderListData
+import com.just.machine.ui.dialog.OrderDetailsDialogFragment
 import com.just.news.databinding.FragmentOrderBinding
 
 
@@ -60,23 +59,33 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
 
         binding.btnToShipped.setNoRepeatListener {
             animateUnderline(binding.btnToShipped)
+            viewModel.orderList(1, 50, 2)//查询已完成
         }
 
         binding.btnShipped.setNoRepeatListener {
             animateUnderline(binding.btnShipped)
+            viewModel.orderList(1, 50, 3)//已发货
         }
 
         binding.btnAfterSales.setNoRepeatListener {
             animateUnderline(binding.btnAfterSales)
+//            viewModel.orderList(1, 50, 3)//售后中
         }
 
         binding.btnDone.setNoRepeatListener {
             animateUnderline(binding.btnDone)
+            viewModel.orderList(1, 50, 4)//查询已完成
+        }
+
+        binding.btnClean.setNoRepeatListener {
+            animateUnderline(binding.btnClean)
+            viewModel.orderList(1, 50, 5)//查询已取消
         }
 
         viewModel.mEventHub.observe(this) {
             when (it.action) {
                 LiveDataEvent.ORDERLIST_SUCCESS -> { // 请求成功返回
+                    adapter.items.clear()
                     if (it.any is OrderListData) {
                         val bean = it.any as OrderListData
 
@@ -95,6 +104,16 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
                 }
             }
         }
+
+        adapter.setOrderClick(object : OrderAdapter.OrderClickListener {
+            //订单点击事件
+            override fun onClickOrder(order: Order) {
+                OrderDetailsDialogFragment.startOrderDetailsDialogFragment(
+                    parentFragmentManager,
+                    order
+                )
+            }
+        })
     }
 
     private fun animateUnderline(selectedTextView: TextView) {

@@ -3,6 +3,7 @@ package com.just.machine.ui.adapter
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.BaseRecyclerViewAdapter
+import com.common.base.setNoRepeatListener
 import com.common.network.LogUtils
 import com.just.machine.model.Goods
 import com.just.machine.model.Order
@@ -13,6 +14,8 @@ class OrderAdapter(val context: Context) :
     BaseRecyclerViewAdapter<Order, ItemOrderBinding>() {
 
     private var adapter: GoodsAdapter? = null
+
+    private var orderClickListener: OrderClickListener? = null
 
     override fun bindData(item: Order, position: Int) {
         binding.item = item
@@ -35,7 +38,20 @@ class OrderAdapter(val context: Context) :
 
         binding.tvOrderStatus.text = description
 
+        binding.llOrder.setNoRepeatListener {
+            orderClickListener?.onClickOrder(item)
+        }
+
     }
+
+    fun setOrderClick(orderClick: OrderClickListener) {
+        this.orderClickListener = orderClick
+    }
+
+    interface OrderClickListener {
+        fun onClickOrder(order: Order)
+    }
+
 
     override fun getLayoutRes(): Int {
         return R.layout.item_order

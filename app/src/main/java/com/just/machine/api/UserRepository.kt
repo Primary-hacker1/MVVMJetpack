@@ -4,6 +4,7 @@ import com.just.machine.model.LoginBean
 import com.just.machine.model.LoginData
 import com.just.machine.model.NewResponse
 import com.just.machine.model.OrderListData
+import retrofit2.http.Query
 import javax.inject.Inject
 
 /**
@@ -16,36 +17,23 @@ class UserRepository @Inject internal constructor(private val apiService: BaseAp
      */
     suspend fun login(loginBean: LoginBean): NewResponse<LoginData> = apiService.login(loginBean)
 
-//    suspend fun orderList(
-//        page: Int? = 1,
-//        limit: Int? = 50,
-//        showType: String? = "0",//0全部
-//        shipSn: String? = "",
-//        goodsId: String? = "",
-//        brandId: String? = "",
-//        mobile: String? = "",
-//        orderSn: String? = "",
-//        timeArray: List<String>? = ArrayList(),
-//        orderStatusArray: List<String>? = ArrayList(),
-//        sort: String? = "add_time",
-//        order: String? = "desc"
-//    ): NewResponse<OrderListData> =
-//        apiService.orderList(
-//            page,
-//            limit,
-//            showType,
-//            shipSn,
-//            goodsId,
-//            brandId,
-//            mobile,
-//            orderSn,
-//            timeArray,
-//            orderStatusArray,
-//            sort,
-//            order
-//        )
-
-    suspend fun orderList(): NewResponse<OrderListData> =
-        apiService.orderList()
+    suspend fun orderList(
+        page: Int?,
+        limit: Int?,
+        showType: Int?,
+        sort: String?,
+        order: String?,
+        start: String?,
+        end: String?
+    ): NewResponse<OrderListData> =
+        apiService.orderList(
+            page,
+            limit,
+            showType,
+            sort,
+            order,
+            start,
+            end
+        )
 
 }

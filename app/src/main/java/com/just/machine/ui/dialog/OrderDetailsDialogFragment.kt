@@ -4,34 +4,33 @@ import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.FragmentManager
 import com.common.base.BaseDialogFragment
-import com.just.machine.model.Constants
+import com.just.machine.model.Order
 import com.just.news.R
-import com.just.news.databinding.FragmentDialogLoadingBinding
+import com.just.news.databinding.DialogFragmentOrderDetailsBinding
+
 /**
  * 订单详情弹窗
  */
-class LoadingDialogFragment:  BaseDialogFragment<FragmentDialogLoadingBinding>() {
-
-    private var dialogContent = ""
+class OrderDetailsDialogFragment : BaseDialogFragment<DialogFragmentOrderDetailsBinding>() {
 
     companion object {
         /**
          * @param fragmentManager FragmentManager
          */
-        fun startLoadingDialogFragment(
+        fun startOrderDetailsDialogFragment(
             fragmentManager: FragmentManager,
-            content:String
-        ): LoadingDialogFragment {
+            order: Order
+        ): OrderDetailsDialogFragment {
 
-            val dialogFragment = LoadingDialogFragment()
+            val dialogFragment = OrderDetailsDialogFragment()
             dialogFragment.show(
                 fragmentManager,
-                LoadingDialogFragment::javaClass.toString()
+                OrderDetailsDialogFragment::javaClass.toString()
             )
 
             val bundle = Bundle()
 
-            bundle.putString(Constants.dialog, content)
+            bundle.putSerializable(Order::class.simpleName, order)
 
             dialogFragment.arguments = bundle
 
@@ -45,7 +44,7 @@ class LoadingDialogFragment:  BaseDialogFragment<FragmentDialogLoadingBinding>()
     }
 
     override fun initView() {
-        binding.loadingTips.text = dialogContent
+
     }
 
     override fun initListener() {
@@ -53,10 +52,11 @@ class LoadingDialogFragment:  BaseDialogFragment<FragmentDialogLoadingBinding>()
     }
 
     override fun initData() {
-        dialogContent = arguments?.getString(Constants.dialog, "").toString()
+        val order = arguments?.getSerializable(Order::class.simpleName) as Order
+
     }
 
     override fun getLayout(): Int {
-       return R.layout.fragment_dialog_loading
+        return R.layout.dialog_fragment_order_details
     }
 }

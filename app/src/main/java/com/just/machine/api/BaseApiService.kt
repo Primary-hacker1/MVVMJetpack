@@ -36,5 +36,14 @@ interface BaseApiService {
 //    ): NewResponse<OrderListData>
 
     @GET("order/list")
-    suspend fun orderList(): NewResponse<OrderListData>
+    suspend fun orderList(
+        @Query("page") page: Int?,
+        @Query("limit") limit: Int?,
+        @Query("showType") showType: Int?,
+        @Query("sort") sort: String?,
+        @Query("order") order: String?,
+        @Query("start") start: String?,
+        @Query("end") end: String?
+    ): NewResponse<OrderListData>
+
 }

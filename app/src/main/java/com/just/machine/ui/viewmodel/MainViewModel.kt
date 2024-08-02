@@ -20,8 +20,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private var repository: UserRepository,
-    private var plantDao: PlantRepository
+    private var repository: UserRepository, private var plantDao: PlantRepository
 ) : BaseViewModel() {
 
 
@@ -43,31 +42,37 @@ class MainViewModel @Inject constructor(
     fun login(loginBean: LoginBean) {//登陆
         async({ repository.login(loginBean) }, {
             mEventHub.value = LiveDataEvent(
-                LiveDataEvent.LOGIN_SUCCESS,
-                it.data
+                LiveDataEvent.LOGIN_SUCCESS, it.data
             )
         }, {
             mEventHub.value = LiveDataEvent(
-                LiveDataEvent.LOGIN_FAIL,
-                it
+                LiveDataEvent.LOGIN_FAIL, it
             )
         }, {
 
         })
     }
 
-    fun orderList() {//查询所有订单
+    fun orderList(
+        page: Int? = 1,
+        limit: Int? = 50,
+        showType: Int? = 0,
+        sort: String? = "add_time",
+        order: String? = "desc",
+        start: String? = "",
+        end: String? = ""
+    ) {//查询所有订单
         async({
-            repository.orderList()
-        }, {
-            mEventHub.value = LiveDataEvent(
-                LiveDataEvent.ORDERLIST_SUCCESS,
-                it.data
+            repository.orderList(
+                page, limit, showType, sort, order, start, end
             )
         }, {
             mEventHub.value = LiveDataEvent(
-                LiveDataEvent.ORDERLIST_FAIL,
-                it
+                LiveDataEvent.ORDERLIST_SUCCESS, it.data
+            )
+        }, {
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.ORDERLIST_FAIL, it
             )
         }, {
 
@@ -79,8 +84,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             plantDao.getPlant("123").collect {
                 mEventHub.value = LiveDataEvent(
-                    LiveDataEvent.LOGIN_FAIL,
-                    it
+                    LiveDataEvent.LOGIN_FAIL, it
                 )
             }
         }

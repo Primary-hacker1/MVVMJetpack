@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -23,21 +21,22 @@
             setTitleImage="@{R.drawable.ic_back}"
             titleRight='@{"submit"}' />
 
-        <LinearLayout
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:fillViewport="true">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_8">
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/space_8"
+                android:paddingEnd="@dimen/space_8">
 
                 <TextView
                     android:id="@+id/btn_all_order"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/textView1"
                     android:padding="6dp"
                     android:text="全部订单"
                     android:textSize="12sp" />
@@ -46,7 +45,6 @@
                     android:id="@+id/btn_to_shipped"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/btn_all_order"
                     android:padding="6dp"
                     android:text="待发货"
                     android:textSize="12sp" />
@@ -55,7 +53,6 @@
                     android:id="@+id/btn_shipped"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/btn_to_shipped"
                     android:padding="6dp"
                     android:text="已发货"
                     android:textSize="12sp" />
@@ -64,7 +61,6 @@
                     android:id="@+id/btn_after_sales"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/btn_shipped"
                     android:padding="6dp"
                     android:text="售后中"
                     android:textSize="12sp" />
@@ -73,21 +69,27 @@
                     android:id="@+id/btn_done"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/btn_after_sales"
                     android:padding="6dp"
                     android:text="已完成"
                     android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/btn_clean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="已取消"
+                    android:textSize="12sp" />
+
 
                 <View
                     android:id="@+id/underline"
                     android:layout_width="wrap_content"
                     android:layout_height="2dp"
-                    android:layout_below="@id/textView1"
-                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="4dp"
                     android:background="@android:color/holo_blue_light" />
-            </RelativeLayout>
-        </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_order"
