@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">PosConSendTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string-array name="port">
+        <item>NET</item>
+        <item>BLE</item>
+        <item>USB</item>
+    </string-array>
+    <string name="connect">连接</string>
+    <string name="discon">它是连接</string>
+    <string name="hint">请输入IP</string>
+    <string name="contextandcode">打印背景下,线,BarCodeAndQRcode</string>
+    <string name="read">读到缓冲区</string>
+    <string name="image">印刷图像</string>
+    <string name="image1">打印光栅图像</string>
+    <string name="text">打印文本 text</string>
+    <string name="barcode">打印条码</string>
+    <string name="bleselect">请选择BLE开发</string>
+    <string name="usbselect">请选择USB开发</string>
+    <string name="toast_discon_success">断开连接成功</string>
+    <string name="toast_discon_faile">断开连接成功</string>
+    <string name="toast_present_con">没有联系</string>
+    <string name="send_success">发送成功</string>
+    <string name="send_failed">发送失败了</string>
+    <string name="not_con_printer">没有联系</string>
+    <string name="usb_pre_con">目前连接的Usb开发:</string>
+    <string name="con_success">连接成功</string>
+    <string name="con_failed">连接失败了</string>
+    <string name="con_has_discon">连接已断开</string>
+    <string name="sb">选择</string>
+    <string name="start_pos_activity">发射 PosPrint</string>
+    <string name="qrcode">打印QRcode</string>
+    <string name="excel">读取Excel缓冲区</string>
+    <string name="check">检查纸</string>
+</resources>

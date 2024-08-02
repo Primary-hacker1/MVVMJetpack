@@ -82,6 +82,7 @@ dependencies {
     implementation project(path: ':libview')
     implementation project(path: ':common')
     implementation project(path: ':autosize')
+    implementation project(path: ':xp460b')
     implementation gradleBase.core
     implementation gradleBase.appcompat
     testImplementation gradleBase.junit

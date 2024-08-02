@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.just.machine.model.Goods" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/rl_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@id/image"
+            android:layout_toRightOf="@id/image"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@{item.goodsName}"
+                android:textColor="@color/text3"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_18">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数量："
+                    android:textColor="@color/text9"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(item.number)}"
+                    android:textColor="@color/text9"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/text9"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+</layout>

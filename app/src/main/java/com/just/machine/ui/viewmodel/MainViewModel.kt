@@ -7,6 +7,7 @@ import com.just.machine.api.UserRepository
 import com.just.machine.dao.Plant
 import com.just.machine.dao.PlantRepository
 import com.just.machine.model.LoginBean
+import com.just.machine.model.OrderListBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -39,7 +40,7 @@ class MainViewModel @Inject constructor(
 
     }
 
-    fun login(loginBean: LoginBean) {
+    fun login(loginBean: LoginBean) {//登陆
         async({ repository.login(loginBean) }, {
             mEventHub.value = LiveDataEvent(
                 LiveDataEvent.LOGIN_SUCCESS,
@@ -48,6 +49,24 @@ class MainViewModel @Inject constructor(
         }, {
             mEventHub.value = LiveDataEvent(
                 LiveDataEvent.LOGIN_FAIL,
+                it
+            )
+        }, {
+
+        })
+    }
+
+    fun orderList() {//查询所有订单
+        async({
+            repository.orderList()
+        }, {
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.ORDERLIST_SUCCESS,
+                it.data
+            )
+        }, {
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.ORDERLIST_FAIL,
                 it
             )
         }, {

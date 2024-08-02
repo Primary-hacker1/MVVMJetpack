@@ -15,6 +15,7 @@ class LiveDataEvent {
         const val LOGIN_SUCCESS: Int = 0x01
 
 
+        const val ORDERLIST_SUCCESS: Int = 0x03
         /**
          * 登录错误
          *
@@ -22,6 +23,9 @@ class LiveDataEvent {
          * @return -
          */
         const val LOGIN_FAIL: Int = 0x02
+
+
+        const val ORDERLIST_FAIL: Int = 0x04
 
         /**
          * 可判断所有错误

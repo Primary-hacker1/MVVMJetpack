@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.just.news.R" />
+
+        <variable
+            name="viewModel"
+            type="com.just.machine.ui.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_toolbar"
+            setTitleImage="@{R.drawable.ic_back}"
+            titleRight='@{"submit"}' />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_all_order"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="全部订单"
+                android:textColor="@color/text3"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ll_"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_to_shipped"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="待发货"
+                android:textColor="@color/text3"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btn_routine"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_shipped"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="已发货"
+                android:textColor="@color/text3"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_after_sales"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="售后中"
+                android:textColor="@color/text3"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_done"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="已完成"
+                android:textColor="@color/text3"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</layout>

@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.just.news.R
 
@@ -29,6 +30,7 @@ object GlideApp {
             // .priority(Priority.HIGH)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .dontAnimate()
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(16))) // 16dp 圆角半径
             .fitCenter()
 
         Glide.with(context!!).load(url).apply(options).into(imageView!!)

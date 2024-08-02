@@ -1,0 +1,7 @@
+Executable : /Users/user/StudioProjects/SDK/cmake/3.18.1/bin/ninja
+arguments : 
+-C
+/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/arm64-v8a
+xp460b
+jvmArgs : 
+

@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/arm64-v8a'
+ninja: no work to do.

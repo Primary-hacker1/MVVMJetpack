@@ -24,10 +24,10 @@
             titleRight='@{"submit"}' />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_me"
+            android:id="@+id/btn_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="跳转" />
+            android:text="我的订单" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_item_main"

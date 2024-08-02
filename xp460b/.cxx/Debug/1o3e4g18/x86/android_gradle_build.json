@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/user/StudioProjects/SDK/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/.cxx/Debug/1o3e4g18/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/user/StudioProjects/SDK/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/.cxx/Debug/1o3e4g18/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "xp460b::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "xp460b",
+      "output": "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/build/intermediates/cxx/Debug/1o3e4g18/obj/x86/libxp460b.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/user/StudioProjects/SDK/ndk/22.1.7171670/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/user/StudioProjects/SDK/ndk/22.1.7171670/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

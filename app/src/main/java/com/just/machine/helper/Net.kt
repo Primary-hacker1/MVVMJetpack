@@ -3,6 +3,8 @@ package com.just.machine.helper
 import com.common.log.ThinkerLogger
 import com.common.network.LogUtils
 import com.just.machine.model.DataStoreHelper
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import java.util.concurrent.TimeUnit
 
@@ -41,18 +43,22 @@ object Net {
     }
 
     private fun getOkHttpClient(): OkHttpClient {
+
         val headerInterceptor = Interceptor { chain ->
+            val token = runBlocking {
+                DataStoreHelper.getInstance().exampleToken.firstOrNull() ?: ""
+            }
+            val tenantId = runBlocking {
+                DataStoreHelper.getInstance().exampleTenantId.firstOrNull() ?: ""
+            }
+
+            LogUtils.d(tag + "Adding headers - Token: $token, TenantId: $tenantId")
+
             val builder = chain.request().newBuilder()
             builder.addHeader("Content-Type", "application/json")
-            builder.addHeader(
-                "X-Litemall-Admin-Token",
-                DataStoreHelper.getInstance().exampleToken.toString()
-            )//请求头携token
-            builder.addHeader(
-                "X-Litemall-Tenantid",
-                DataStoreHelper.getInstance().exampleTenantId.toString()
-            )
-            LogUtils.d(tag + DataStoreHelper.getInstance().exampleToken.toString())
+            builder.addHeader("X-Litemall-Admin-Token", token)
+            builder.addHeader("X-Litemall-Tenantid", tenantId)
+
             chain.proceed(builder.build())
         }
 

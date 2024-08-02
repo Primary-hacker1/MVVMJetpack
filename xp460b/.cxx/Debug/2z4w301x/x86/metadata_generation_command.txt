@@ -1,0 +1,23 @@
+                    Executable : /Users/user/StudioProjects/SDK/cmake/3.18.1/bin/cmake
+arguments : 
+-H/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/src/main/cpp
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=19
+-DANDROID_PLATFORM=android-19
+-DANDROID_ABI=x86
+-DCMAKE_ANDROID_ARCH_ABI=x86
+-DANDROID_NDK=/Users/user/StudioProjects/SDK/ndk/22.1.7171670
+-DCMAKE_ANDROID_NDK=/Users/user/StudioProjects/SDK/ndk/22.1.7171670
+-DCMAKE_TOOLCHAIN_FILE=/Users/user/StudioProjects/SDK/ndk/22.1.7171670/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/user/StudioProjects/SDK/cmake/3.18.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/build/intermediates/cxx/Debug/2z4w301x/obj/x86
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/build/intermediates/cxx/Debug/2z4w301x/obj/x86
+-DCMAKE_BUILD_TYPE=Debug
+-B/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/x86
+-GNinja
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 2

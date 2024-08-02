@@ -36,6 +36,16 @@
     </fragment_navigator>
 
     <fragment_navigator
+        android:id="@+id/orderFragment"
+        android:name="com.just.machine.ui.fragment.OrderFragment"
+        android:label="orderFragment"
+        tools:layout="@layout/fragment_order">
+        <action
+            android:id="@+id/action_meFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment_navigator>
+
+    <fragment_navigator
         android:id="@+id/settingFragment"
         android:name="com.just.machine.ui.fragment.SettingFragment"
         android:label="settingFragment"

@@ -1,0 +1,3 @@
+/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/.cxx/Debug/2z4w301x/arm64-v8a/CMakeFiles/xp460b.dir

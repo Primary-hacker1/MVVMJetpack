@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/.cxx/Debug/1o3e4g18/x86",
+  "command": "/Users/user/StudioProjects/SDK/ndk/22.1.7171670/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android21 --gcc-toolchain=/Users/user/StudioProjects/SDK/ndk/22.1.7171670/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/user/StudioProjects/SDK/ndk/22.1.7171670/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dxp460b_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -o CMakeFiles/xp460b.dir/xp460b.cpp.o -c /Users/user/StudioProjects/Demo/ManagementSystem/xp460b/src/main/cpp/xp460b.cpp",
+  "file": "/Users/user/StudioProjects/Demo/ManagementSystem/xp460b/src/main/cpp/xp460b.cpp"
+}
+]
