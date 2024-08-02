@@ -23,15 +23,29 @@
             setTitleImage="@{R.drawable.ic_back}"
             titleRight='@{"submit"}' />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_order"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/ll_order"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的订单" />
+            android:background="@drawable/order_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/space_6">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_item_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_order"
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_48"
+                android:background="@drawable/order" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的订单"
+                android:textSize="@dimen/space_12" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 </layout>

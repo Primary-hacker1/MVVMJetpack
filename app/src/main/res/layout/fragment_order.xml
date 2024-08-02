@@ -28,75 +28,65 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_all_order"
-                android:layout_width="0dp"
-                android:layout_height="28dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="全部订单"
-                android:textColor="@color/text3"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/ll_"
-                tools:ignore="MissingConstraints" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_to_shipped"
-                android:layout_width="0dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="@dimen/space_10"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="待发货"
-                android:textColor="@color/text3"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/btn_routine"
-                tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/btn_all_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/textView1"
+                    android:padding="6dp"
+                    android:text="全部订单"
+                    android:textSize="12sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_shipped"
-                android:layout_width="0dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="@dimen/space_10"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="已发货"
-                android:textColor="@color/text3"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
-                tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/btn_to_shipped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/btn_all_order"
+                    android:padding="6dp"
+                    android:text="待发货"
+                    android:textSize="12sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_after_sales"
-                android:layout_width="0dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="@dimen/space_10"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="售后中"
-                android:textColor="@color/text3"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
-                tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/btn_shipped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/btn_to_shipped"
+                    android:padding="6dp"
+                    android:text="已发货"
+                    android:textSize="12sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_done"
-                android:layout_width="0dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="@dimen/space_10"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="已完成"
-                android:textColor="@color/text3"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/btn_wasserman"
-                tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/btn_after_sales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/btn_shipped"
+                    android:padding="6dp"
+                    android:text="售后中"
+                    android:textSize="12sp" />
 
+                <TextView
+                    android:id="@+id/btn_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/btn_after_sales"
+                    android:padding="6dp"
+                    android:text="已完成"
+                    android:textSize="12sp" />
+
+                <View
+                    android:id="@+id/underline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/textView1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/holo_blue_light" />
+            </RelativeLayout>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

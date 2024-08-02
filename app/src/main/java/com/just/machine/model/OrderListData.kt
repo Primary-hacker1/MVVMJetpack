@@ -32,7 +32,7 @@ data class Order(
     val orderSn: String,           // 订单编号
     val outTradeNo: String,        // 外部交易号
     val brandId: String,           // 品牌ID
-    val orderStatus: Int,          // 订单状态代码
+    val orderStatus: Short,          // 订单状态代码
     val orderStatusText: String,   // 订单状态描述
     val aftersaleStatus: Int,      // 售后状态代码
     val consignee: String,         // 收货人姓名

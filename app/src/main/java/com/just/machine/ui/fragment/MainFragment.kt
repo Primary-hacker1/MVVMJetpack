@@ -3,19 +3,16 @@ package com.just.machine.ui.fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.CommonBaseFragment
 import com.common.base.gone
+import com.common.base.setNoRepeatListener
 import com.common.viewmodel.LiveDataEvent
 import com.just.news.R
 import com.just.news.databinding.FragmentMainBinding
 import com.just.machine.model.Constants
-import com.just.machine.ui.adapter.OrderAdapter
 import com.just.machine.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import com.common.base.toast
-import com.common.network.LogUtils
-import com.just.machine.model.DataStoreHelper
 
 
 /**
@@ -36,6 +33,10 @@ class MainFragment : CommonBaseFragment<FragmentMainBinding>() {
         initToolbar()
 
         binding.btnOrder.setOnClickListener {
+            navigate(it, R.id.orderFragment)
+        }
+
+        binding.llOrder.setNoRepeatListener {
             navigate(it, R.id.orderFragment)
         }
 
