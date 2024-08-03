@@ -4,7 +4,7 @@ import com.just.machine.model.LoginBean
 import com.just.machine.model.LoginData
 import com.just.machine.model.NewResponse
 import com.just.machine.model.OrderListData
-import retrofit2.http.Query
+import com.just.machine.model.OrdersShipmentsBean
 import javax.inject.Inject
 
 /**
@@ -16,7 +16,6 @@ class UserRepository @Inject internal constructor(private val apiService: BaseAp
      * 协程请求
      */
     suspend fun login(loginBean: LoginBean): NewResponse<LoginData> = apiService.login(loginBean)
-
     suspend fun orderList(
         page: Int?,
         limit: Int?,
@@ -36,4 +35,5 @@ class UserRepository @Inject internal constructor(private val apiService: BaseAp
             end
         )
 
+    suspend fun ordersShipments(orders: OrdersShipmentsBean): NewResponse<String> = apiService.ordersShipments(orders)
 }

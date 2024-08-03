@@ -11,4 +11,5 @@
     <string name="order_time">下单时间：</string>
     <string name="order_status">订单状态：</string>
     <string name="order_sn">订单编号：</string>
+    <string name="user_avatar">User Avatar</string>
 </resources>

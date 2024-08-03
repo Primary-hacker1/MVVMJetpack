@@ -3,6 +3,8 @@ package com.just.machine.ui.adapter
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.BaseRecyclerViewAdapter
+import com.common.base.gone
+import com.common.base.visible
 import com.just.machine.model.Goods
 import com.just.machine.model.Order
 import com.just.news.R
@@ -34,9 +36,24 @@ class OrderAdapter(val context: Context) :
 
         binding.tvOrderStatus.text = description
 
-        binding.llOrder.setOnClickListener {
+        binding.btnOrderDetail.setOnClickListener {
             orderClickListener?.onClickOrder(item)
         }
+
+        binding.checkbox.setOnCheckedChangeListener(null) // 首先移除之前的监听器，以避免冲突
+
+        binding.checkbox.isChecked = item.isChecked == true
+
+        binding.checkbox.setOnCheckedChangeListener { _, isChecked ->
+            item.isChecked = isChecked
+        }
+
+        if (item.isShow == true) {
+            binding.checkbox.visible()
+        } else {
+            binding.checkbox.gone()
+        }
+
 
     }
 

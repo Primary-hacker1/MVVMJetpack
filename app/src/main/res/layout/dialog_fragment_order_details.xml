@@ -1,30 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="com.just.news.R" />
-
         <variable
-            name="item"
-            type="com.just.machine.model.Goods" />
+            name="order"
+            type="com.just.machine.model.Order" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/view_toolbar"
-            setTitleImage="@{R.drawable.ic_back}"
-            titleRight='@{"submit"}' />
-
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="弹窗测试" />
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/userAvatarImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/user_avatar"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/userNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{order.userName}"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/userMobileTextView"
+                app:layout_constraintStart_toEndOf="@id/userAvatarImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userMobileTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{order.userMobile}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/orderStatusTextView"
+                app:layout_constraintStart_toStartOf="@id/userNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/userNameTextView" />
+
+            <TextView
+                android:id="@+id/orderStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{order.orderStatusText}"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userMobileTextView" />
+
+            <TextView
+                android:id="@+id/orderPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"已支付：" + String.valueOf(order.orderPrice)}'
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userMobileTextView" />
+
+            <TextView
+                android:id="@+id/orderSnTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{order.orderSn}"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderStatusTextView" />
+
+            <TextView
+                android:id="@+id/addTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{order.addTime}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/orderSnTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/orderSnTextView" />
+
+            <!-- 顺丰单号 -->
+            <TextView
+                android:id="@+id/shipSnTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"顺丰运单号: " + order.shipSn}'
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/consigneeTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderSnTextView" />
+
+            <!-- 收货人姓名 -->
+            <TextView
+                android:id="@+id/consigneeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"收货人姓名: " + order.consignee}'
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/mobileTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shipSnTextView" />
+
+            <!-- 收货人手机号 -->
+            <TextView
+                android:id="@+id/mobileTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"收货人手机号: " + order.mobile}'
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/addressTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/consigneeTextView" />
+
+            <!-- 收货地址 -->
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{"收货地址: " + order.address}'
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mobileTextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/goodsRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/copyButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressTextView" />
+
+            <!-- 复制按钮 -->
+            <Button
+                android:id="@+id/copyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="复制地址"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/printButton"
+                app:layout_constraintTop_toBottomOf="@id/goodsRecyclerView" />
+
+            <!-- 打印按钮 -->
+            <Button
+                android:id="@+id/printButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打印"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goodsRecyclerView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

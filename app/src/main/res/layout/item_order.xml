@@ -10,7 +10,6 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_6"
@@ -22,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
@@ -50,6 +50,13 @@
                 android:textColor="@color/text9"
                 android:textSize="11sp" />
 
+            <CheckBox
+                android:id="@+id/checkbox"
+                style="@style/CustomCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_18"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -128,6 +135,35 @@
                 android:text="@{String.valueOf(item.actualPrice)}"
                 android:textColor="@color/read"
                 android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_12"
+                android:maxLines="1"
+                android:text="是否打印过："
+                android:textColor="@color/text3"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_isPrint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_6"
+                android:textColor="@color/grade"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/btn_order_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_12"
+                android:maxLines="1"
+                android:text="查看详情>"
+                android:background="@drawable/order_bg"
+                android:textColor="@color/text3"
+                android:textSize="10sp" />
+
         </LinearLayout>
 
     </LinearLayout>

@@ -6,6 +6,7 @@
     <color name="text3">#333333</color>
     <color name="text9">#999999</color>
     <color name="read">#FF0000</color>
+    <color name="grade">#259000</color>
     <color name="colorWhile">#fff</color>
 
 </resources>

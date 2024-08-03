@@ -8,6 +8,7 @@ import com.just.machine.dao.Plant
 import com.just.machine.dao.PlantRepository
 import com.just.machine.model.LoginBean
 import com.just.machine.model.OrderListBean
+import com.just.machine.model.OrdersShipmentsBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -73,6 +74,22 @@ class MainViewModel @Inject constructor(
         }, {
             mEventHub.value = LiveDataEvent(
                 LiveDataEvent.ORDERLIST_FAIL, it
+            )
+        }, {
+
+        })
+    }
+
+    fun ordersShipments(orders: OrdersShipmentsBean) {
+        async({
+            repository.ordersShipments(orders)
+        }, {
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.ORDERS_SUCCESS, it.errmsg
+            )
+        }, {
+            mEventHub.value = LiveDataEvent(
+                LiveDataEvent.ORDERLIST_FAIL, it.errMsg
             )
         }, {
 

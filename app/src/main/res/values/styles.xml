@@ -7,6 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="CustomCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <item name="android:button">@drawable/custom_checkbox_selector</item>
+    <item name="android:padding">8dp</item>
+    </style>
+
     <style name="TabLayoutBoldText" parent="TextAppearance.AppCompat">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
