@@ -3,8 +3,6 @@ package com.just.machine.ui.adapter
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.common.base.BaseRecyclerViewAdapter
-import com.common.base.setNoRepeatListener
-import com.common.network.LogUtils
 import com.just.machine.model.Goods
 import com.just.machine.model.Order
 import com.just.news.R
@@ -34,11 +32,9 @@ class OrderAdapter(val context: Context) :
 
         val description = OrderStatus.fromCode(item.orderStatus)?.description ?: "未知状态"
 
-        LogUtils.d(tag + description)
-
         binding.tvOrderStatus.text = description
 
-        binding.llOrder.setNoRepeatListener {
+        binding.llOrder.setOnClickListener {
             orderClickListener?.onClickOrder(item)
         }
 

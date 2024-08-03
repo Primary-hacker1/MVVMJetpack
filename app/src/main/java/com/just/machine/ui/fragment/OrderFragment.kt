@@ -93,7 +93,7 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
 
                         adapter.setItemsBean(list as MutableList<Order>)
 
-                        LogUtils.e(TAG + it.any.toString())
+//                        LogUtils.d(TAG + it.any.toString())
                     }
                 }
 
@@ -108,6 +108,7 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
         adapter.setOrderClick(object : OrderAdapter.OrderClickListener {
             //订单点击事件
             override fun onClickOrder(order: Order) {
+                LogUtils.d(tag + order.toString())
                 OrderDetailsDialogFragment.startOrderDetailsDialogFragment(
                     parentFragmentManager,
                     order
