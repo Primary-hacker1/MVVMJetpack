@@ -50,14 +50,14 @@ data class Order(
     val orderPrice: Double,        // 订单总金额
     val actualPrice: Double,       // 实际支付金额
     val payTime: String,           // 支付时间
-    val shipSn: String?,           // 物流单号（可为空）
+    val shipSn: String?,           // 物流单号（可为空）顺丰
     val shipTime: String?,         // 发货时间（可为空）
     val refundAmount: Double,      // 退款金额
     val confirmTime: String?,      // 确认收货时间（可为空）
     val goodsVoList: List<Goods>,  // 商品详情列表
     val addTime: String,           // 订单创建时间
     val updateTime: String,         // 订单更新时间
-    var isChecked: Boolean?,         // 是否选中
+    var isChecked: Boolean? = false,         // 是否选中
     var isShow: Boolean? = false,         // 是否显示
 ) : Serializable
 

@@ -54,6 +54,8 @@ class OrderAdapter(val context: Context) :
             binding.checkbox.gone()
         }
 
+        if (item.isPrint) binding.tvIsPrint.text = "是"
+        else binding.tvIsPrint.text = "否"
 
     }
 

@@ -246,7 +246,6 @@ public class MainActivity extends Activity {
                                 .show();
                     }
                 }, () -> {
-                    // TODO Auto-generated method stub
                     //初始化一个list
                     ArrayList<byte[]> list = new ArrayList<byte[]>();
                     //在打印请可以先设置打印内容的字符编码类型，默认为gbk，请选择打印机可识别的类型，参看编程手册，打印代码页
@@ -288,38 +287,34 @@ public class MainActivity extends Activity {
             }
         });
         //单独打印文本
-        btn3.setOnClickListener(new OnClickListener() {
+        btn3.setOnClickListener(v -> {
+            //此处用binder里的另外一个发生数据的方法,同样，也要按照编程手册上的示例一样，先设置标签大小
+            //如果数据处理较为复杂，请勿选择此方法
+            //上面的发送方法的数据处理是在工作线程中完成的，不会阻塞UI线程
+            byte[] data0 = DataForSendToPrinterTSC.sizeBydot(640, 320);
+            byte[] data4 = DataForSendToPrinterTSC.gapBydot(16, 0);
+            byte[] data1 = DataForSendToPrinterTSC.cls();
 
-            @Override
-            public void onClick(View v) {
-                //此处用binder里的另外一个发生数据的方法,同样，也要按照编程手册上的示例一样，先设置标签大小
-                //如果数据处理较为复杂，请勿选择此方法
-                //上面的发送方法的数据处理是在工作线程中完成的，不会阻塞UI线程
-                byte[] data0 = DataForSendToPrinterTSC.sizeBydot(640, 320);
-                byte[] data4 = DataForSendToPrinterTSC.gapBydot(16, 0);
-                byte[] data1 = DataForSendToPrinterTSC.cls();
+            byte[] data2 = DataForSendToPrinterTSC.text(10, 10, "5", 0, 2, 2, "12345678");
+            byte[] data3 = DataForSendToPrinterTSC.print(1);
+            byte[] data = byteMerger(byteMerger(byteMerger(byteMerger(data0, data4), data1), data2), data3);
+            if (isConnect) {
+                binder.write(data, new UiExecute() {
 
-                byte[] data2 = DataForSendToPrinterTSC.text(10, 10, "5", 0, 2, 2, "12345678");
-                byte[] data3 = DataForSendToPrinterTSC.print(1);
-                byte[] data = byteMerger(byteMerger(byteMerger(byteMerger(data0, data4), data1), data2), data3);
-                if (isConnect) {
-                    binder.write(data, new UiExecute() {
+                    @Override
+                    public void onsucess() {
+                        Toast.makeText(getApplicationContext(), getString(R.string.send_success), Toast.LENGTH_SHORT)
+                                .show();
+                    }
 
-                        @Override
-                        public void onsucess() {
-                            Toast.makeText(getApplicationContext(), getString(R.string.send_success), Toast.LENGTH_SHORT)
-                                    .show();
-                        }
-
-                        @Override
-                        public void onfailed() {
-                            Toast.makeText(getApplicationContext(), getString(R.string.send_failed), Toast.LENGTH_SHORT)
-                                    .show();
-                        }
-                    });
-                } else {
-                    Toast.makeText(getApplicationContext(), getString(R.string.not_con_printer), Toast.LENGTH_SHORT).show();
-                }
+                    @Override
+                    public void onfailed() {
+                        Toast.makeText(getApplicationContext(), getString(R.string.send_failed), Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                });
+            } else {
+                Toast.makeText(getApplicationContext(), getString(R.string.not_con_printer), Toast.LENGTH_SHORT).show();
             }
         });
         //打印条码
@@ -336,32 +331,28 @@ public class MainActivity extends Activity {
                     public void onfailed() {
 
                     }
-                }, new ProcessData() {
+                }, () -> {
+                    //初始化一个list
+                    ArrayList<byte[]> list = new ArrayList<byte[]>();
+                    //通过工具类得到一个指令的byte[]数据,以文本为例
+                    //首先得设置size标签尺寸,宽60mm,高30mm,也可以调用以dot或inch为单位的方法具体换算参考编程手册
+                    byte[] data0 = DataForSendToPrinterTSC.sizeBymm(80,
+                            40);
+                    list.add(data0);
+                    //设置Gap,同上
+                    list.add(DataForSendToPrinterTSC.gapBymm(2, 0));
+                    //清除缓存
+                    list.add(DataForSendToPrinterTSC.cls());
 
-                    @Override
-                    public List<byte[]> processDataBeforeSend() {
-                        //初始化一个list
-                        ArrayList<byte[]> list = new ArrayList<byte[]>();
-                        //通过工具类得到一个指令的byte[]数据,以文本为例
-                        //首先得设置size标签尺寸,宽60mm,高30mm,也可以调用以dot或inch为单位的方法具体换算参考编程手册
-                        byte[] data0 = DataForSendToPrinterTSC.sizeBymm(80,
-                                40);
-                        list.add(data0);
-                        //设置Gap,同上
-                        list.add(DataForSendToPrinterTSC.gapBymm(2, 0));
-                        //清除缓存
-                        list.add(DataForSendToPrinterTSC.cls());
-
-                        //打印条码
-                        list.add(DataForSendToPrinterTSC.barCode(60, 50,
-                                "128", 100, 1, 0, 2, 2, "abcdef12345"));
-                        //打印二维码
+                    //打印条码
+                    list.add(DataForSendToPrinterTSC.barCode(60, 50,
+                            "128", 100, 1, 0, 2, 2, "abcdef12345"));
+                    //打印二维码
 //							list.add(DataForSendToPrinterTSC.qrCode(200,100,"L", 4, "M", 0, "M2", "S7", "abcdef12345"));
 
-                        //打印
-                        list.add(DataForSendToPrinterTSC.print(1));
-                        return list;
-                    }
+                    //打印
+                    list.add(DataForSendToPrinterTSC.print(1));
+                    return list;
                 });
             } else {
                 Toast.makeText(getApplicationContext(), getString(R.string.not_con_printer), Toast.LENGTH_SHORT).show();

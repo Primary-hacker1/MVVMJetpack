@@ -16,7 +16,8 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name="com.just.machine.ui.activity.LoginActivity"
+        <activity
+            android:name="com.just.machine.ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.just.machine.ui.activity.MainActivity" />
+
+        <service android:name="net.posprinter.service.PosprinterService" />
     </application>
 
 </manifest>
