@@ -203,6 +203,11 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
         binding.toolbar.tvRight.textSize = 12f
 
         binding.toolbar.tvRight.setNoRepeatListener { //打印并发货
+            if (!isConnect) {
+                toast(getString(R.string.not_con_printer))
+                return@setNoRepeatListener
+            }
+
             val list = adapter.items
 
             // 如果所有订单都为已付款状态，则选择的是待发货按钮
@@ -623,7 +628,7 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
 
     override fun onDestroy() {
         super.onDestroy()
-        MainActivity.binder.disconnectCurrentPort(object : UiExecute {
+        binder?.disconnectCurrentPort(object : UiExecute {
             override fun onsucess() {
             }
 

@@ -23,7 +23,7 @@
     <string name="toast_present_con">没有联系</string>
     <string name="send_success">发送成功</string>
     <string name="send_failed">发送失败了</string>
-    <string name="not_con_printer">没有联系</string>
+    <string name="not_con_printer">没有连接打印机</string>
     <string name="usb_pre_con">目前连接的Usb开发:</string>
     <string name="con_success">连接成功</string>
     <string name="con_failed">连接失败了</string>
