@@ -1,3 +1,7 @@
 # ninja log v5
 0	373	1722589441	CMakeFiles/xp460b.dir/xp460b.cpp.o	4aaf8ceed24f3b8
 373	463	1722589441	/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/build/intermediates/cxx/Debug/2z4w301x/obj/arm64-v8a/libxp460b.so	3c0f78c6b8071413
+0	23	0	clean	b2565f0b791926a6
+0	25	0	clean	b2565f0b791926a6
+1	349	1722748615	CMakeFiles/xp460b.dir/xp460b.cpp.o	4aaf8ceed24f3b8
+349	453	1722748615	/Users/user/IdeaProjects/xmdd/litemall-app/xp460b/build/intermediates/cxx/Debug/2z4w301x/obj/arm64-v8a/libxp460b.so	3c0f78c6b8071413

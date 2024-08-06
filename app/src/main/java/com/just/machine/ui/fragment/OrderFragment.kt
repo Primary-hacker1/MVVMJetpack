@@ -441,7 +441,7 @@ class OrderFragment : CommonBaseFragment<FragmentOrderBinding>() {
 
                     override fun onfailed() {
                         isConnect = false
-                        toast(getString(R.string.con_has_discon))
+//                        toast(getString(R.string.con_has_discon))
                         LogUtils.d(tag + getString(R.string.con_has_discon))
                     }
                 })
